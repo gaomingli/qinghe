@@ -40,7 +40,7 @@ Page({
               urlApi("/user/Login/wechatLogin","post",params).then((res)=>{
                 if(res.data.code){
                   wx.setStorageSync("userInfo", t);
-                  wx.setStorageSync("token",res.data.data.token);
+                  wx.setStorageSync("tokenn",res.data.data.token);
                   if(that.data.type==1){
                     wx.navigateTo({
                       url: that.data.path,

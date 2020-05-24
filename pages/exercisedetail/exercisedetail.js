@@ -50,7 +50,7 @@ Page({
   getData:function(){
     var that = this;
     urlApi('portal/article/index', "post",{id:this.data.getID.id,category_id :this.data.getID.category_id}).then((res) => {
-      e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5); 
+    
       if(res.data.code){
         that.setData({
           thumbnail:res.data.data.thumbnail,
@@ -66,6 +66,8 @@ Page({
           activity_book_people:res.data.data.activity_book_people,
           activity_btn_name:res.data.data.activity_btn_name
         })
+        debugger;
+        e.WxParse.wxParse("agreement", "html",res.data.data.post_content, that, 5); 
       }else{
         wx.showToast({
           title: res.data.msg

@@ -1,4 +1,5 @@
 <!--pages/exercisedetail/exercisedetail.wxml-->
+<import src="/library/wxParse/wxParse.wxml"></import>
 <view class='exercisedetail'>
 <view class='exercise_bg'>
 <image src='{{thumbnail}}'></image>
@@ -24,9 +25,11 @@
 </view>
 
 <view class='introduce'>
-<i-card title="活动说明" class="viewCard">
+<view  class="viewCard">
+   <view>活动说明</view>
    <template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
-</i-card>
+</view>
+
 </view>
 
 <view class='numTotal'>
@@ -43,4 +46,4 @@
 </navigator>
 </view>
 </view>
-<import src="/library/wxParse/wxParse.wxml"></import>
+
