@@ -10,10 +10,7 @@ Page({
   data: {
     //分类导航
     menuList: [],
-    assessment:[
-      { "id": 1, "assess_img": "../../icon/psychometrics/family.png", "assess_name": "幼儿气质类型评估","assess_number":12455},
-      { "id": 2, "assess_img": "../../icon/psychometrics/family.png", "assess_name": "成人气质类型评估","assess_number":56232}
-    ]
+    current:0
   },
 
   /**
@@ -28,6 +25,10 @@ Page({
    */
   onReady: function () {
 
+  },
+  getCurrent:function(e){
+    const { type } = e.currentTarget.dataset;
+    this.setData({current:type})
   },
 
   /**

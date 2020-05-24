@@ -1,7 +1,6 @@
 @import "/template/hotrecommed/hotrecommed.wxss";
 page{padding-bottom: 110rpx;}
 .bg_top{background-color: #ffffff;}
-.bg_bottom{padding-bottom:15rpx;/*margin-bottom: 140rpx;*/}
 /*搜索部分*/
 .searchBox{
   margin: 25rpx 30rpx;
@@ -43,7 +42,7 @@ page{padding-bottom: 110rpx;}
 .index_menu{display: flex;padding:52rpx 10rpx 55rpx 10rpx;}
 .index_menu navigator{width:25%;display: flex;align-items: center;flex-direction: column;}
 .index_menu navigator image{width: 76rpx;height: 76rpx;}
-.menu_text{font-size:24rpx;color:#333333;margin-top: 22rpx;}
+.menu_text{font-size:24rpx;color:#333333;}
 .index_menu .navto{width:25%;display: flex;align-items: center;flex-direction: column;}
 .index_menu .navto image{width: 76rpx;height: 76rpx;}
 /*公告部分*/
