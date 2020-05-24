@@ -43,7 +43,8 @@ Page({
     obj.id=id
     urlApi("/user/Profile/address_delete","post", obj).then((res)=>{
       wx.showToast({
-        title: res.data.msg
+        title: res.data.msg,
+        icon:"none"
       })         
     })
   },
