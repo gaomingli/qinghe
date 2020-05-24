@@ -37,9 +37,9 @@
 <view class='recommend'>为你推荐</view>
 </view>
     <view class="common_content">
-      <view class="shop_box">
-       <navigator url='/pages/productlist/productlist' >
-        <view class="shop_item" wx:for="{{list}}" wx:key="index">
+      <view class="shop_box"  wx:for="{{list}}" wx:key="index" wx:for-index="index">
+       <navigator url='/pages/productlist/productlist?id={{item.id}}' >
+        <view class="shop_item">
             <image src="{{item.thumbnail}}"></image>
             <view class="title">{{item.post_title}}</view>
             <view class="points"><span>{{item.coin}}</span>积分</view>

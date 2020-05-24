@@ -43,20 +43,28 @@ Page({
   
 
   onShow: function () {
+    this.getData();
+  },
+  getData:function(){
     var that = this;
     urlApi('portal/list/index/id/1', "post").then((res) => {
-      var that = this;
-      res.data.data.length > 0 && res.data.data.map((item,index)=>{
-        item.last_news && item.last_news.length > 0 && item.last_news.map((_item,_index)=>{
-          _item.published_time = timestampToTime(_item.published_time)
+      if(res.data.code){
+        res.data.data.length > 0 && res.data.data.map((item,index)=>{
+          item.last_news && item.last_news.length > 0 && item.last_news.map((_item,_index)=>{
+            _item.published_time = timestampToTime(_item.published_time)
+          })
         })
-      })
-      that.setData({
-        list: res.data.data
-      })
+        that.setData({
+          list: res.data.data
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+
     })
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */

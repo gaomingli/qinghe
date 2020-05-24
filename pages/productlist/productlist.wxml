@@ -1,12 +1,16 @@
 <!--pages/productlist/productlist.wxml-->
 <view class='productlist'>
   <view class="shop_item">
-    <image src="{{shop_img}}"></image>
-    <view class="title">{{title}}</view>
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="index" wx:for-index="index">
+          <image mode="widthFix" src="{{item.photos}}"></image>
+      </swiper-item>
+    </swiper>
+    <view class="title">{{post_title}}</view>
     <view class='pointsandprice'>
       <view class="points">
-        <span>{{points}}</span>积分</view>
-      <view class="price">市场价：{{price}}元</view>
+        <span>{{coin}}</span>积分</view>
+      <view class="price">市场价：{{old_coin}}元</view>
     </view>
   </view>
 
@@ -32,7 +36,7 @@
       <view class='total'>合计:
         <text>{{totalCore}}积分</text>
       </view>
-      <navigator url='/pages/redeemnow/redeemnow' hover-class="none">
+      <navigator url='/pages/redeemnow/redeemnow?id={{id}}' hover-class="none">
         <view class='hot_submit'>
           立即兑换
         </view>

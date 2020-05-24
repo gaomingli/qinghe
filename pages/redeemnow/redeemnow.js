@@ -32,7 +32,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    that.setData({
+      id: options.id
+    })
   },
 
   /**
@@ -42,6 +45,20 @@ Page({
 
   },
 
+  // nowChange:function(){
+  //   var that = this;
+  //   urlApi('portal/article/shop_book', "post",{id:this.data.id}).then((res) => {
+  //     if (res.code) {
+  //       that.setData({
+  //       })
+  //     }else{
+  //       wx.showToast({
+  //         title: res.data.msg
+  //       })
+  //     } 
+
+  //   })
+  // }
   /**
    * 生命周期函数--监听页面显示
    */

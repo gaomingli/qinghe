@@ -15,14 +15,18 @@ time:'2019-05-21',
       {url:"../../icon/head1.png"},
       { url: "../../icon/head2.png" },
       { url: "../../icon/head3.png" }
-    ]
+    ],
+    id:"",
+    fullName:"",
+    tel:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    debugger;
+    this.setData({id:options.id,fullName:options.full_name,tel:options.tel})
   },
 
   /**
@@ -36,7 +40,31 @@ time:'2019-05-21',
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+this.getData();
+  },
+  getData:function(){
+    let that = this;
+    let params={};
+    params["id"]=this.data.id;
+    params["full_name"]=this.data.id;
+    params["tel"]=this.data.id;
+    urlApi('portal/article/activity_book', "post",params).then((res) => {
+    if(res.data.code){
+      that.setData({
+        swiperList: res.data.data.banner,
+        boardList: res.data.data.announcement,
+        psychological: res.data.data.psychological,
+        articleData: res.data.data.last_news,
+        activity: res.data.data.activity,
+        shopData: res.data.data.product
+      })
+    }else{
+      wx.showToast({
+        title: res.data.msg
+      })
+    }
+      
+    })
   },
 
   /**

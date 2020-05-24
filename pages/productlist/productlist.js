@@ -8,12 +8,14 @@ var {
 Page({
   data: {
     value1: "",
-    shop_img: "/icon/books.png",
-    title: "小鸭子办公室沙发抱枕靠垫",
-    points: 2650,
-    price: 120,
+    thumbnail: "",
+    post_title: "",
+    coin: "",
+    old_coin: "",
+    swiperList:[],
     totalCore: 5000,
-    id: "",
+    id: ""
+  },
     // 数量计算
     /**
      * 生命周期函数--监听页面加载
@@ -36,25 +38,25 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-      debugger;
-      // var that = this;
-      // urlApi('portal/article/shop', "post", {
-      //   token: "",
-      //   id: id
-      // }).then((res) => {
-      //   if (res.code) {
-      //     $Toast({
-      //       content: '请求成功',
-      //       type: 'error'
-      //     });
-      //     that.setData({
-      //       value1: res.data.data.articles,
-      //       banner: res.data.data.banner
-      //     })
-      //   } 
+      this.getData();
+    },
+    getData:function(){
+     var that = this;
+      urlApi('portal/article/shop', "post",{id:this.data.id}).then((res) => {
+        if (res.code) {
+          that.setData({
+            post_title: res.data.data.post_title,
+            swiperList: res.data.data.photos,
+            coin: res.data.data.coin,
+            old_coin: res.data.data.old_coin
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg
+          })
+        } 
 
-      // })
+      })
     }
  
-  }
 })

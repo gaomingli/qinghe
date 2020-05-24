@@ -9,14 +9,14 @@
 
 <view class='baseinfo'>
 <i-panel>
-    <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入姓名" />
+    <i-input value="{{ value1 }}" title="姓名" maxlength="100" autofocus placeholder="请输入姓名" bind:change="bindTap"/>
 </i-panel>
 <i-panel>
-    <i-input value="{{ value2 }}" title="手机号" autofocus placeholder="请输入手机号" />
+    <i-input value="{{ value2 }}" title="手机号" maxlength="100"  autofocus placeholder="请输入手机号"  bind:change="bindTapPhone" />
 </i-panel>
 </view>
 
 <view class='okbtn'>
-<view class='ok'>确认</view>
+<view class='ok' bindtap="submit">提交</view>
 </view>
 </view>

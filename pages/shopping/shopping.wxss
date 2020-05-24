@@ -32,6 +32,7 @@ height: 328rpx
   display: flex;
   justify-content:space-between;
   margin-left:30rpx;
+  align-items: center;
   margin-right:30rpx;
 }
 .total_info .user_info,.total_info .right_info{

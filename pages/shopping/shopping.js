@@ -30,9 +30,7 @@ list:[],
    */
   onShow: function () {
     var that = this;
-    urlApi('portal/list/shop', "post", { token: "" }).then((res) => {
-      console.log(res);
-      var that = this;
+    urlApi('portal/list/shop', "post", {}).then((res) => {
       that.setData({
         list: res.data.data.articles,
         banner: res.data.data.banner
