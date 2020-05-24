@@ -43,11 +43,19 @@ Page({
   },
 
 getData:function(){
+  var that = this;
   urlApi('portal/list/index/id/2', "post").then((res) => {
-    var that = this;
-    that.setData({
-      objData: res.data.data
-    })
+    if(res.data.code){
+      that.setData({
+        objData: res.data.data
+      })
+    }else{
+      wx.showToast({
+        title: res.data.msg
+      })
+    }
+    
+    
   })
 },
   /**

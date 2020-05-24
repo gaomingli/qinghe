@@ -35,14 +35,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getData();
+    
+  },
+  getData:function(){
     var that = this;
     urlApi('portal/article/index', "post",{id:this.data.getID.id,category_id :this.data.getID.category_id}).then((res) => {
       e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5); 
-      var that = this;
-      that.setData({ 
-      newsname:res.data.data.post_title,
-      newstime:res.data.data.published_time
-      })
+      if(res.data.code){
+        that.setData({ 
+          newsname:res.data.data.post_title,
+          newstime:res.data.data.published_time
+          })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+      
     })
   },
 

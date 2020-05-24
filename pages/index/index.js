@@ -74,10 +74,13 @@ Page({
     this.getTabBar().setData({
       tabbarIndex: 0
     })
+    this.getData();
+   
+  },
+  getData:function(){
     var that = this;
-    urlApi('', "post").then((res) => {
-      console.log(res);
-      var that = this;
+    urlApi('', "post",{}).then((res) => {
+    if(res.data.code){
       that.setData({
         swiperList: res.data.data.banner,
         boardList: res.data.data.announcement,
@@ -86,6 +89,12 @@ Page({
         activity: res.data.data.activity,
         shopData: res.data.data.product
       })
+    }else{
+      wx.showToast({
+        title: res.data.msg
+      })
+    }
+      
     })
   }
 })

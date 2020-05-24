@@ -47,22 +47,29 @@ Page({
     this.getData();
   },
   getData:function(){
+    var that = this;
     urlApi('portal/article/index', "post",{id:this.data.getID.id,category_id :this.data.getID.category_id}).then((res) => {
       e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5); 
-      var that = this;
-      that.setData({
-        thumbnail:res.data.data.thumbnail,
-        post_title:res.data.data.post_title,
-        post_excerpt:res.data.data.post_excerpt,
-        user_nickname:res.data.data.user_nickname,
-        activity_start:res.data.data.activity_start,
-        num:res.data.data.num,
-        address:res.data.data.address,
-        tel:res.data.data.tel,
-        coin:res.data.data.coin,
-        activity_book_join_num:res.data.data.activity_book_join_num,
-        activity_book_people:res.data.data.activity_book_people
-      })
+      if(res.data.code){
+        that.setData({
+          thumbnail:res.data.data.thumbnail,
+          post_title:res.data.data.post_title,
+          post_excerpt:res.data.data.post_excerpt,
+          user_nickname:res.data.data.user_nickname,
+          activity_start:res.data.data.activity_start,
+          num:res.data.data.num,
+          address:res.data.data.address,
+          tel:res.data.data.tel,
+          coin:res.data.data.coin,
+          activity_book_join_num:res.data.data.activity_book_join_num,
+          activity_book_people:res.data.data.activity_book_people
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+    
     })
   },
   /**

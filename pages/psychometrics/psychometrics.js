@@ -34,11 +34,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    urlApi('portal/list/index/id/3', "post").then((res) => {
-      var that = this;
-      that.setData({
-        menuList: res.data
-      })
+    this.getData();
+    
+  },
+  getData:function(){
+    var that = this;
+    urlApi('portal/list/index/id/3', "post",{}).then((res) => {
+      if(res.data.code){
+        that.setData({
+          menuList: res.data.data
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+    
     })
   },
 
