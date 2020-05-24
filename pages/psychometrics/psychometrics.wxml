@@ -1,4 +1,3 @@
-<import src="/template/hotrecommed/hotrecommed.wxml" />
 <view class='psychometrics'>
 <view class="bg_bottom">
 <view class='bg_index'><image src="../../icon/psychometrics/mainbg.png"></image></view>
@@ -8,9 +7,26 @@
     <view class="common_title">
       <view class="title_left">
         <image src="../../icon/common.png"></image>
-        <view class="txt">热门推荐</view>
+        <view class="txt"  wx:if="{{menuList[current].hot_psychological}}">热门推荐</view>     
       </view>
     </view>
+        <view class='hot_content'  wx:if="{{menuList[current].hot_psychological}}">
+          <view class="common_content">
+          <scroll-view class="" scroll-x>
+              <view class="scroll_box">
+                <view class="hot_box" wx:for="{{menuList[current].hot_psychological}}" wx:key="index">
+                  <image src="{{item.thumbnail}}"></image>
+                  <view class="hot_right">
+                    <view class="hot_title">{{item.post_title}}</view>
+                    <view class="hot_num">{{item.num}}人测过</view>
+                    <navigator url="/pages/evaluation/evaluation" hover-class="none">
+                    <view class="hot_submit">立即测评</view></navigator>
+                  </view>
+                </view>        
+              </view>
+          </scroll-view>
+          </view>
+        </view>
   <view>
 
 </view>
@@ -24,7 +40,7 @@
     </view>
   <!-- 评估列表 -->
     <view class="common_box common_boxs">
-     <view class="hot_box" wx:for="{{menuList[current].hot_psychological}}">
+     <view class="hot_box" wx:for="{{menuList[current].psychological}}">
             <image src="{{item.thumbnail}}"></image>
             <view class="hot_right">
               <view class="hot_title">{{item.post_title}}</view>

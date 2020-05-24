@@ -1,6 +1,5 @@
 <import src="/template/hotrecommed/hotrecommed.wxml" />
 <view class="bg_top">
-
   <view class="searchBox">
     <view class="searchBox_input">
       <image src='/icon/search.png'></image>

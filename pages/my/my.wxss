@@ -61,10 +61,17 @@ right:0;
   justify-content: space-between;
 }
 .one image{
-  width: 70rpx;
-  height: 70rpx;
+  width: 100rpx;
+  height: 100rpx;  
   vertical-align: middle;
 } 
+
+.orderImg{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+
 .two{
   margin-left: 27rpx;
 }

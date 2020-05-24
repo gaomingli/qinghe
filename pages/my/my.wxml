@@ -3,7 +3,7 @@
   <view class='my_bg'>
     <image src='../../icon/my/orderbg.png'></image>
   </view>
-  <view class='personalinfo' wx-if="{{flag}}">
+  <view class='personalinfo'  wx:if="{{flag}}">
     <view class='left_part'>
       <view class='one'>
         <image src="/icon/head2.png"></image>
@@ -21,8 +21,7 @@
       </view>
     </navigator>
   </view>
-  <view wx-else>
-    <view class='personalinfo'>
+    <view class='personalinfo'  wx:else>
       <view class='left_part'>
         <view class='one' bindtap='onJsEvent' data-url="/pages/my/my" data-type="2">
           <image src="/icon/head2.png" style="width:60px;height:60px"></image>
@@ -30,13 +29,12 @@
         </view>
       </view>
     </view>
-  </view>
 
   <view class='my_order'>
     <view class='order'>我的订单</view>
     <view class="index_menu">
-        <view class='one' bindtap='onJsEvent' data-url="/pages/management/management?type={{index}}" wx:for-index="index" data-type="1" wx:for="{{menuList}}">  
-        <image src='{{item.menu_img}}'></image>  
+        <view bindtap='onJsEvent' data-url="/pages/management/management?type={{index}}" wx:for-index="index" data-type="1" wx:for="{{menuList}}">  
+          <image src='{{item.menu_img}}' class="orderImg"></image>  
         <view class="menu_text">{{item.menu_name}}</view>
       </view>
     </view>
