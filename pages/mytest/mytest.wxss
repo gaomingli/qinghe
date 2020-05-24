@@ -1,0 +1,35 @@
+/* pages/mytest/mytest.wxss */
+.part{
+  padding: 40rpx 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.partimg image{
+  width: 234rpx;
+  height: 153rpx;
+}
+.module{
+  margin-left: 45rpx;
+}
+.name{
+  color: #333333;
+  font-size: 32rpx;
+}
+.num{
+  color: #9594A4;
+  font-size: 24rpx;
+  margin: 29rpx 0rpx;
+}
+.look{
+  width: 143rpx;
+  height: 56rpx;
+  color: #fff;
+  background-color: #53B2AA;
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+.look{
+  font-size: 24rpx;
+}

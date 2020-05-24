@@ -1,0 +1,49 @@
+/* pages/choicerole/choicerole.wxss */
+.role{
+  width: 84%;
+  height: 200rpx;
+  padding: 40rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 10rpx #ccc;
+  margin-top: 46rpx;
+  margin-left: auto;
+  margin-right: auto;
+align-items: center
+}
+.part{
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+
+}
+.roleimg image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.userinfo{
+  margin-left: 27rpx;
+}
+.myname{
+  font-size: 34rpx;
+  color: #303442;
+}
+.goto{
+  font-size: 26rpx;
+  color: #73757F;
+  margin-top:10rpx;
+
+}
+.gotobtn{
+  color: #fff;
+  font-size: 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 44rpx;
+  width: 610rpx;
+  background-color: #53B2AA;
+  margin:156rpx auto;
+}

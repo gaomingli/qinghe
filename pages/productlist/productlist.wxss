@@ -1,0 +1,88 @@
+/* pages/productlist/productlist.wxss */
+@import "../index/index.wxss";
+.productlist{
+  background-color: #f8f8f8;
+}
+.content{
+  margin-top: 20rpx
+}
+.content,.shop_item,.calculation{
+  background-color: #fff
+}
+.content .content_title{
+  color: #666;
+  font-size: 26rpx;
+  padding: 20rpx 30rpx
+}
+.content .content_img{
+  width: 100%;
+  height: 416rpx
+}
+.content .content_img image{
+  width: 100%;
+  height: 100%
+}
+.content .content_integral{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content_integral .total{
+  color: #333;
+  font-size: 26rpx
+}
+.content .total text{
+  color: #FE3730;
+  font-size: 28rpx
+}
+.content .content_integral .total{
+  padding: 20rpx 30rpx
+}
+.calculation text{
+color: #666;
+font-size: 26rpx
+}
+.shop_item{
+  width:100%;
+  height: auto
+}
+.shop_item image{
+  width: 100%;
+  height: 500rpx
+}
+.shop_item .title {
+  font-size: 30rpx;
+  margin: 20rpx;
+}
+.shop_item .pointsandprice{
+  display: flex;
+  padding-left: 30rpx;
+  justify-content:space-between;
+  align-items: center;
+  padding-right: 20rpx;
+  padding-bottom:30rpx
+}
+.shop_item .pointsandprice .price{
+  color: #999;
+  font-size: 22rpx
+}
+.shop_item .points span{
+  font-size: 44rpx
+}
+.calculation{
+display: flex;
+justify-content:space-between;
+align-items: center;
+padding: 30rpx
+}
+.hot_submit{
+  width:160rpx;
+  height:60rpx;
+  background:rgba(83,178,170,1);
+  border-radius:28rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  text-align: center;
+  margin-right:30rpx;
+}

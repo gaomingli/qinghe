@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "新闻资讯",
+  "usingComponents": {
+    "i-tabs": "/components/tabs/index",
+    "i-tab": "/components/tab/index"
+  }
+}

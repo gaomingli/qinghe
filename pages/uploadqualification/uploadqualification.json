@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-input": "/components/input/index",
+    "i-radio-group": "/components/radio-group/index",
+    "i-radio": "/components/radio/index"
+  },
+  "navigationBarTitleText": "上传资质"
+}

@@ -1,0 +1,44 @@
+<!--pages/productlist/productlist.wxml-->
+<view class='productlist'>
+  <view class="shop_item">
+    <image src="{{shop_img}}"></image>
+    <view class="title">{{title}}</view>
+    <view class='pointsandprice'>
+      <view class="points">
+        <span>{{points}}</span>积分</view>
+      <view class="price">市场价：{{price}}元</view>
+    </view>
+  </view>
+
+  <view class='calculation'>
+    <view>
+      <text>数量</text>
+    </view>
+    <view>
+      <i-panel title="基础用法">
+        <view style="padding: 16px">
+          <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange" />
+        </view>
+      </i-panel>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view class='content_title'>图文详情</view>
+    <view class='content_img'>
+      <image src="/icon/books.png"></image>
+    </view>
+    <view class='content_integral'>
+      <view class='total'>合计:
+        <text>{{totalCore}}积分</text>
+      </view>
+      <navigator url='/pages/redeemnow/redeemnow' hover-class="none">
+        <view class='hot_submit'>
+          立即兑换
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+</view>
+<i-toast id="toast" />

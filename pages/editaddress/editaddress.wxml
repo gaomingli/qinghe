@@ -1,0 +1,14 @@
+<!--pages/editaddress/editaddress.wxml-->
+<view class='editaddress'>
+<view class='editinfo'>
+<i-panel>
+    <i-input value="{{ form.value1 }}" type="text" title="收货人" placeholder="收货人姓名" />
+    <i-input value="{{ form.value2 }}" type="number" title="联系电话" placeholder="手机号码" />
+    <i-input value="{{ form.value3 }}"  title="地址" placeholder="请选择所在地址"></i-input>
+    <i-input value="{{ form.value4 }}" type="textarea" title="详细地址" placeholder="请输入详细地址" maxlength="50" />
+</i-panel>
+</view>
+
+<view class='hot_submit' bindtap='submit' style="background-color:{{score}};" wx:if="{{style==0}}">确认</view>
+<view class='hot_submit' bindtap='submit' style="background-color:{{score}};" wx:if="{{style==1}}">确认</view>
+</view>

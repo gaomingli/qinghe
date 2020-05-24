@@ -1,0 +1,13 @@
+/* pages/newsdetail/newsdetail.wxss */
+.newsdetail{
+  padding: 39rpx 29rpx;
+}
+.newsdetail .title{
+  color: #333;
+  font-size: 34rpx;
+}
+.newsdetail .time{
+  color: #9594A4;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}

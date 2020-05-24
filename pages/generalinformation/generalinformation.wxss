@@ -1,0 +1,21 @@
+/* pages/generalinformation/generalinformation.wxss */
+@import "../index/index.wxss";
+.generalinformation{
+  background-color: #f8f8f8;
+}
+.generalinformation .hot_submit{
+  width: 80%;
+height:88rpx;
+background:#53B2AA;
+border-radius:44rpx;
+color:#ffffff;
+font-size:30rpx;
+line-height:88rpx;
+text-align:center;
+margin:60rpx auto;
+
+}
+.hot_submit image{
+  width: 36rpx;
+  height: 36rpx
+}

@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <view class='welcome'>欢迎登录</view>
+  <view class="name">安徽省青少年事务社工</view>
+  <view class='userinfo'>
+    <i-panel>
+      <i-input value="{{ value1 }}"  placeholder="请输入账号" maxlength="100" />
+      <i-input value="{{ value2 }}" placeholder="请输入密码" maxlength="100"/>
+    </i-panel>
+  </view>
+  <view class='loginbtn' bindtap='login'>登录</view>
+  <view class='chooice'>
+    <navigator url='../forgetpassword/forgetpassword' hover-class="none">
+      <view class='forget'>忘记密码</view>
+    </navigator>
+    <navigator url='../register/register' hover-class="none">
+      <view class='register'>用户注册</view>
+    </navigator>
+  </view>
+</view>

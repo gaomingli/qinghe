@@ -1,0 +1,44 @@
+/**热门推荐*/
+.common_box{padding: 20rpx 30rpx;margin: 20rpx 0rpx;line-height: 60rpx;background: #ffffff;}
+.common_title{display: flex;justify-content: space-between;align-items: center;}
+.common_title .title_left{display: flex;align-items: center;}
+.title_left image{width: 8rpx;height: 33rpx;}
+.title_left .txt{font-size: 32rpx;font-weight: bold;color: #333333;padding-left:16rpx;}
+.common_box{
+  margin-top: 10rpx;
+  margin-bottom: 0rpx;
+}
+.common_content .scroll_box{display: flex;}
+.hot_box{
+  flex-shrink: 0;
+  width: 421rpx;
+  height: 193rpx;
+  background:#ffffff;
+  box-shadow:0px 2rpx 18rpx 0px rgba(159,159,159,0.2);
+  border-radius:10rpx;
+  padding: 21rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30rpx;
+}
+.hot_box image{width: 169rpx;height: 152rpx;flex-shrink: 0;}
+.hot_box .hot_right{
+  display: flex;flex-direction: column;justify-content: space-between;width: 190rpx;margin-left: 
+  20rpx
+ }
+.hot_box .hot_title{
+  font-size: 28rpx;color: #333333;line-height: 36rpx;
+  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 2rpx;
+}
+.hot_box .hot_num{font-size: 24rpx;color: #999999;line-height: 36rpx;}
+.hot_box .hot_submit{
+  width:143rpx;
+  height:56rpx;
+  background-color:#53B2AA;
+  border-radius:28rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  text-align: center;
+}

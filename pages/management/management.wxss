@@ -1,0 +1,50 @@
+/* pages/management/management.wxss */
+@import "../mycore/mycore.wxss";
+.management{
+background-color: #f8f8f8;
+}
+.ordernum .success{
+  color: #999999;
+}
+.tabcontent .detail{
+  align-items:center;
+}
+.tabcontent{
+  border: none;
+  padding:29rpx 30rpx;
+}
+.content{
+  border-bottom:1px solid #E7E7E7;
+}
+.computed{
+color: #999999;
+font-size: 24rpx;
+display:flex;
+justify-content:flex-end;
+margin-bottom:31rpx;
+
+}
+.computed .total,.computed .score{
+color: #E62828
+}
+.btn{
+  width: 160rpx;
+  height: 60rpx;
+  background-color: #53B2AA;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-top: 30rpx;
+}
+.noneorder{
+ width:631rpx;
+height:464rpx;
+margin:auto;
+
+}
+.noneorder image{
+  width: 100%;
+  height: 100%
+}

@@ -1,0 +1,8 @@
+<!--pages/newsdetail/newsdetail.wxml-->
+<view class='newsdetail'>
+<view class='title'>{{newsname}}</view>
+<view class='time'>{{newstime}}</view>
+<view class='information'></view>
+ <template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
+</view>
+<import src="/library/wxParse/wxParse.wxml"></import>

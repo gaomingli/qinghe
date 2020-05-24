@@ -1,0 +1,51 @@
+/* pages/successful/successful.wxss */
+@import "../index/index.wxss";
+.successful{
+  background-color: #f8f8f8;
+}
+.successful .warning{
+  background-color: #fff;
+  height: 460rpx;
+  align-items:center;
+justify-content:center;
+flex-direction:column;
+display: flex
+}
+.successful .warning .signok{
+  color: #333;
+  font-size: 34rpx;
+  margin-top: 30rpx
+}
+.successful .warning .getcore{
+  margin-top: 26rpx;
+  color: #999;
+  font-size: 26rpx
+}
+.successful .warning image{
+  width: 124rpx;
+  height: 124rpx;
+  margin-top:30rpx;
+
+}
+.successful .sign{
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.successful .sign .infor{
+  margin-left: 50rpx;
+}
+.successful .sign .signtotal{
+  border-bottom: 1px solid #E7E7E7;
+  padding-bottom:20rpx;
+}
+.sign .img{
+  margin-top: 20rpx
+}
+.sign .img image{
+  width: 58rpx;
+  height: 58rpx;
+}

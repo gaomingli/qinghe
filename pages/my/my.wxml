@@ -1,0 +1,56 @@
+<!--pages/my/my.wxml-->
+<view class='my'>
+<view class='my_bg'><image src='../../icon/my/orderbg.png'></image></view>
+<view class='personalinfo'>
+
+<view class='left_part'>
+<view class='one'><image src="/icon/head2.png"></image></view>
+<view class='two'>
+<view class='name'>{{name}}</view>
+<view class='num'><text>{{num}}</text>积分</view>
+</view>
+<view class='three'>{{blong}}</view>
+</view>
+<navigator url='/pages/personalinfo/personalinfo'>
+<view class='right_part'><i-icon type="enter" color="#ffffff" /></view></navigator>
+</view>
+
+<view class='my_order'>
+<view class='order'>我的订单</view>
+ <view class="index_menu">
+      <navigator wx:for="{{menuList}}" url="/pages/management/management" wx:key="index" hover-class="none">
+         <i-icon type="enter" color="#ffffff" />
+        <view class="menu_text">{{item.menu_name}}</view>
+      </navigator>
+    </view>
+</view>
+<view class='part'>
+<i-cell-group>
+
+ <i-cell title="我的测评" is-link url="/pages/mytest/mytest">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+ <i-cell title="我的活动" is-link url="/pages/myexercise/myexercise">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+ <i-cell title="我的评论" is-link url="/pages/comment/comment">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+ <i-cell title="我的积分" is-link url="/pages/mycore/mycore">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+ <i-cell title="收货地址" is-link url="/pages/generalinformation/generalinformation">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+  <i-cell title="联系客服" is-link url="/pages/connect/connect">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+ <i-cell title="意见反馈" is-link url="/pages/feedback/feedback">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+ <i-cell title="切换角色" is-link url="/pages/choicerole/choicerole">
+          <i-icon slot="icon" size="28"/>
+ </i-cell>
+</i-cell-group>
+</view>
+</view>

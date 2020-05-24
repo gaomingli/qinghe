@@ -1,0 +1,22 @@
+<view class="tabbar_box">
+  <view class="tabbar_item" data-index="0" bind:tap="switchTab">
+    <image src="{{tabbarIndex==0?'../icon/home.png':'../icon/home.png'}}"></image>
+    <text>首页</text>
+  </view>
+   <view class="tabbar_item" data-index="1" bind:tap="switchTab">
+    <image src="{{tabbarIndex==1?'../icon/circleed.png':'../icon/circle.png'}}"></image>
+    <text>社工圈</text>
+  </view>
+   <view class="tabbar_item" data-index="2" bind:tap="switchTab">
+    <image src="{{tabbarIndex==2?'../icon/releaseed.png':'../icon/release.png'}}"></image>
+    <text>发布</text>
+  </view>
+   <view class="tabbar_item" data-index="3" bind:tap="switchTab">
+    <image src="{{tabbarIndex==3?'../icon/activity.png':'../icon/activity.png'}}"></image>
+    <text>活动</text>
+  </view>
+   <view class="tabbar_item" data-index="4" bind:tap="switchTab">
+    <image src="{{tabbarIndex==4?'../icon/my.png':'../icon/my.png'}}"></image>
+    <text>我的</text>
+  </view>
+</view>

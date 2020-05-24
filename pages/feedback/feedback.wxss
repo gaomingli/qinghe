@@ -1,0 +1,9 @@
+/* pages/feedback/feedback.wxss */
+@import "/pages/release/release.wxss";
+.textarea{
+  font-size: 26rpx;
+}
+.releaseView{
+bottom: 0;
+position: relative;
+}

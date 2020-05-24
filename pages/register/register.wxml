@@ -1,0 +1,16 @@
+<!--pages/register/register.wxml-->
+<view class='login'>
+<view class='welcome'>欢迎注册</view>
+<view class="name">安徽省青少年事务社工</view>
+<view class='userinfo' style="position:relative">
+<i-panel>
+     <i-input value="{{ value1 }}" autofocus placeholder="请输入账号" maxlength="100"/>
+     <i-input value="{{ value2 }}" autofocus placeholder="请输入验证码" maxlength="100"/>
+     <div style="position:absolute;right:20rpx;top:220rpx;z-index:999"><text wx:if="{{flag}}"  bindtap="abx">获取验证码</text><text wx:if="{{!flag}}">{{inputNum}}</text></div>
+     <i-input value="{{ value3 }}" autofocus placeholder="请输入密码" maxlength="100"/>
+     <i-input value="{{ value4 }}" autofocus placeholder="请确认密码" maxlength="100"/>
+</i-panel>
+</view>
+<view class='loginbtn' bindtap='register'>注册</view>
+</view>
+<i-toast id="toast" />

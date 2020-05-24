@@ -1,0 +1,4 @@
+<!--pages/evaluation/evaluation.wxml-->
+<view class='evaluation'>
+<navigator url='/pages/starttest/starttest'>立即测试</navigator>
+</view>

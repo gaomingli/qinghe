@@ -1,0 +1,16 @@
+<!--pages/redemptionsucceess/redemptionsucceess.wxml-->
+<view class='redemptionsucceess'>
+<view class='warning'>
+<image src='../../icon/ok.png'></image>
+<view class='signok'>兑换成功</view>
+<view class='getcore'>我们将尽快为您发货</view>
+</view>
+<view class='btn_url'>
+<navigator url='' hover-class="none">
+<view class='hot_submit goto'>继续兑换</view>
+</navigator>
+<navigator url='' hover-class="none">
+<view class='hot_submit view'>查看订单</view>
+</navigator>
+</view>
+</view>

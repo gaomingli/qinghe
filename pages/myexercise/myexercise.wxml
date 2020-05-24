@@ -1,0 +1,35 @@
+<!--pages/myexercise/myexercise.wxml-->
+<!--pages/exercise/exercise.wxml-->
+<view class='exercise'>
+<!-- 内容 -->
+<navigator url='../exercisedetail/exercisedetail' hover-class="none">
+<view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
+      <view class="sign_up">
+
+        <view class="sign_top">
+          <image src="../../icon/sign_up.png"></image>
+          <view class="sign_top_right">
+            <view class="title">青少年社会工作能力提升培训</view>
+            <view class="clock"><image src="../../icon/clock.png"></image> <span>2019-08-15 09:00-18:00</span></view>
+            <view class="address"><image src="../../icon/address.png"></image> <span>北京·昌平体育馆</span></view>
+            <view class="people"><image src="../../icon/people.png"></image> <span>一笑倾城</span></view>        
+          </view>
+        </view>
+
+        <view class="sign_bottom">
+          <view class="sign_bottom_left">
+            <image src="../../icon/head1.png"></image>
+            <image src="../../icon/head2.png"></image>
+            <image src="../../icon/head3.png"></image>
+            <span>等20人已报名</span>
+          </view>
+          <view class="sign_bottom_right" wx:if="{{name==true}}">进行中</view>
+           <view class="sign_bottom_right" wx:if="{{name==false}}">已结束</view>
+        </view>
+
+      </view>
+    </view>
+    </navigator>
+<!--  -->
+</view>
+

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-input": "/components/input/index"
+  },
+  "navigationBarTitleText": "报名信息"
+}

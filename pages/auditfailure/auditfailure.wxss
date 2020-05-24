@@ -1,0 +1,2 @@
+/* pages/auditfailure/auditfailure.wxss */
+@import "../underreview/underreview.wxss"

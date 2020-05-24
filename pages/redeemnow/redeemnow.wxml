@@ -1,0 +1,46 @@
+<!--pages/redeemnow/redeemnow.wxml-->
+<view class='redeemnow'>
+<view class='add'>
+<view class='line'>
+<image src="/icon/line.png"></image>
+</view>
+<navigator url='/pages/generalinformation/generalinformation' hover-class="none">
+<view class='address'>
+<image src='/icon/add.png'></image>新增收获地址
+</view>
+</navigator>
+</view>
+
+
+<view class='order'>
+<view class="hot_box" >
+            <image src="/icon/pillow.png"></image>
+            <view class="hot_right">
+              <view class="hot_title">易小豹办公室沙发抱枕靠垫</view>
+              <view class="hot_num">{{core}}积分<text>*{{num}}</text></view>
+            </view>
+          </view>
+</view>
+
+
+
+<view class='message'>
+<text>给卖家留言:{{leavemessage}}</text>
+</view>
+
+
+<view class='content'>
+<view class='content_integral'>
+<view class='total'>合计:<text>{{totalCore}}积分</text></view>
+
+<view class='hot_submit' bind:click="handleOpen1">
+立即兑换
+</view>
+<i-modal title="标题" visible="{{ visible1 }}" bind:ok="handleClose1" bind:cancel="handleClose1">
+    <view>本次兑换需支付<text>{{score}}</text>积分</view>
+    <view>是否确认?</view>
+</i-modal>
+</view>
+</view>
+
+</view>

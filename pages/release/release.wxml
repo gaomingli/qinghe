@@ -1,0 +1,34 @@
+<view>
+<!--top-->
+<view class='top'>
+  <textarea class='textarea' bindinput="input" placeholder="这一刻的想法" name="textarea"
+   placeholder-class="placeholder" maxlength="{{maxlength}}" 
+   auto-height value="{{content}}" focus="{{focus}}"/>
+</view>
+<!-- bottom--> 
+<view class="bottom">
+  <view class="image_content">
+      <!--图片展示-->
+      <view class='image' wx:for="{{img_url}}" wx:key="index">
+        <image class="moment_img" src="{{item}}"  data-index="{{index}}" bindtap="lookImage" bindlongpress="deleteImage" mode='widthFix' ></image>
+      </view>
+      <!--添加按钮-->
+      <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+        <image bindtap="chooseimage" class="moment_img" src='../../icon/release1/plusImg.png'></image>
+      </view>
+  </view>
+  <!-- <button bindtap="send" style='margin-right:5px;margin-left:5px'>发布</button> -->
+  <!-- <view class="releaseView {{content==''?'bg1':'bg2'}}" bindtap="send">发布</view> -->
+
+  <block wx:if="{{content==''}}">
+    <view  class="releaseView bg1">发布</view>
+  </block>
+  <block wx:else>
+    <view  class="releaseView bg2" bindtap="send">发布</view>
+  </block>
+</view>
+
+ 
+  
+<!--bottom end-->
+</view>

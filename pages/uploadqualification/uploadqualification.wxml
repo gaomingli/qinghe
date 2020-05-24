@@ -1,0 +1,42 @@
+<!--pages/uploadqualification/uploadqualification.wxml-->
+<view class='uploadqualification'>
+<view class='common_title'>
+<view class="title_left">
+        <image src="../../icon/common.png"></image>
+        <view class="txt">基本信息</view>
+      </view>
+</view>
+
+<view class='baseinfo'>
+<i-panel title="基础用法">
+    <i-input wx:if="{{show==true}}" value="{{ value1 }}" title="组织名称" autofocus mode="wrapped" placeholder="请输入组织名称" />
+    <i-input value="{{ value2 }}" title="姓名" autofocus mode="wrapped" placeholder="请输入姓名" />
+    <i-input value="{{ value3 }}" title="手机号" autofocus mode="wrapped" placeholder="请输入手机号" />
+    <i-input value="{{ value4 }}" title="身份证" autofocus mode="wrapped" placeholder="请输入您的身份证号码" />
+    <i-input value="{{ value5 }}" title="地址" autofocus mode="wrapped" placeholder="请选择" />
+    <i-input value="{{ value6 }}" title="详细地址" autofocus mode="wrapped" placeholder="请输入详细地址" />
+</i-panel>
+</view>
+
+<view class='common_title'>
+<view class="title_left">
+        <image src="../../icon/common.png"></image>
+        <view class="txt">上传证件照</view>
+      </view>
+</view>
+
+<view class="takephoto">
+<image src='../../icon/takephoto.png'></image>
+<view class='upload' wx:if="{{status==true}}">上传资格证书</view>
+<view class='upload' wx:if="{{status==false}}">上传营业执照</view>
+</view>
+
+<view class='sure'>
+<i-panel>
+    <i-radio value="{{read}}" checked="{{checked}}" bindchange="handleReadChange">
+    </i-radio>
+</i-panel>
+<view class='ok'>确认</view>
+</view>
+
+</view>

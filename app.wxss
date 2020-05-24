@@ -1,0 +1,32 @@
+/* @import "components/Tabs/Tabs.wxss"; */
+.userinfo .i-input-input{
+  font-size: 32rpx;
+  color: #999999;
+  padding:0rpx;
+}
+.userinfo .i-input{
+  padding-left: 0rpx;
+  padding-top: 75rpx;
+  border-bottom:1px solid #E7E7E7;
+  padding-bottom: 18rpx;
+}
+.userinfo .i-cell{
+  font-size: 32rpx;
+}
+.tabChange .i-tabs-tab-title{
+  color:#666;
+font-size:32rpx;
+}
+.tabChange .i-tabs-tab-title-current{
+  color: #333333;
+  font-size: 40rpx;
+  font-weight:bold;
+
+}
+.tabChange .i-tabs-tab-bar{
+  background:#53B2AA;
+}
+
+.userinfo   .i-input-placeholder{
+  font-size: 32rpx;
+}

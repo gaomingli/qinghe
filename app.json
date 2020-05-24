@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/index/index",  
+    "pages/login/login", 
+    "pages/my/my",
+    "pages/feedback/feedback",
+    "pages/mycore/mycore",
+    "pages/redeemnow/redeemnow",
+    "pages/uploadqualification/uploadqualification",
+    "pages/mytest/mytest",
+    "pages/comment/comment",  
+    "pages/starttest/starttest",
+    "pages/myexercise/myexercise",
+    "pages/exercise/exercise",
+    "pages/registerinformation/registerinformation",
+    "pages/choicerole/choicerole",
+    "pages/forgetpassword/forgetpassword",
+    "pages/management/management",
+    "pages/exercisedetail/exercisedetail",
+    "pages/news/news",
+    "pages/successful/successful",
+    "pages/redemptionsucceess/redemptionsucceess",
+    "pages/psychometrics/psychometrics",
+    "pages/generalinformation/generalinformation",
+    "pages/helpcenter/helpcenter",
+    "pages/auditfailure/auditfailure",
+    "pages/underreview/underreview",
+    "pages/productlist/productlist", 
+    "pages/release/release",
+    "pages/shopping/shopping",
+    "pages/personalinfo/personalinfo",
+    "pages/circle/circle",
+    "pages/logs/logs",
+    "pages/newsdetail/newsdetail",   
+    "pages/editaddress/editaddress",   
+    "pages/connect/connect",
+    "pages/evaluation/evaluation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#2B2B2B",
+    "selectedColor": "#53B2AA",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home.png"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "text": "社交圈",
+        "iconPath": "icon/circle.png",
+        "selectedIconPath": "icon/circle.png"
+      },
+      {
+        "pagePath": "pages/release/release",
+        "text": "发布",
+        "iconPath": "icon/release.png",
+        "selectedIconPath": "icon/release.png"
+      },
+      {
+        "pagePath": "pages/exercise/exercise",
+        "text": "活动",
+        "iconPath": "icon/activity.png",
+        "selectedIconPath": "icon/activity.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icon/my.png",
+        "selectedIconPath": "icon/my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

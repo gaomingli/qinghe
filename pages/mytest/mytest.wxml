@@ -1,0 +1,21 @@
+<!--pages/mytest/mytest.wxml-->
+<view class='mytest'>
+<!-- tab切换 -->
+<i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+    <i-tab key="1" title="未完成"></i-tab>
+    <i-tab key="2" title="已完成"></i-tab>
+</i-tabs>
+<view class='part' wx:for="{{list}}" wx:key="index">
+<view class='partimg'><image src="{{item.src}}"></image></view>
+
+<view class='module'>
+<view class='name'>{{item.name}}</view>
+<view class='num'>{{item.num}}人测试</view>
+<navigator url='' hover-class="none">
+<view class='look'>查看报告</view>
+</navigator>
+</view>
+
+</view>
+
+</view>

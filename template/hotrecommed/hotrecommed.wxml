@@ -1,0 +1,20 @@
+
+<template name="hotrecommed">
+<view class='hot_content'>
+<view class="common_content">
+     <scroll-view class="" scroll-x>
+        <view class="scroll_box">
+          <view class="hot_box" wx:for="{{psychological}}" wx:key="index">
+            <image src="{{item.thumbnail}}"></image>
+            <view class="hot_right">
+              <view class="hot_title">{{item.post_title}}</view>
+              <view class="hot_num">{{item.num}}人测过</view>
+               <navigator url="/pages/evaluation/evaluation" hover-class="none">
+              <view class="hot_submit">立即测评</view></navigator>
+            </view>
+          </view>        
+        </view>
+     </scroll-view>
+    </view>
+</view>
+</template>

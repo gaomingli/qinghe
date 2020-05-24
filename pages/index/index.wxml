@@ -1,0 +1,165 @@
+<import src="/template/hotrecommed/hotrecommed.wxml" />
+<view class="bg_top">
+
+  <view class="searchBox">
+    <view class="searchBox_input">
+      <image src='/icon/search.png'></image>
+      <input placeholder='搜索' bindinput='getintsearch' bindconfirm="getSearch" type="text" confirm-type="search"></input>
+    </view>
+  </view>
+
+  <view class="index_swiper">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="index" wx:for-index="index">
+        <navigator hover-class="none" url='item.url'>
+          <image mode="widthFix" src="{{item.image}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="index_menu">
+    <view class="navto" wx:key="index"  bindtap="gotoPage"  wx:for="{{menuList}}"  wx:for-index="index" data-url="{{item.url}}" data-type="{{item.type}}">
+      <image mode="widthFix" src="{{item.menu_img}}"></image>
+      <view class="menu_text">{{item.menu_name}}</view>
+    </view>
+  </view>
+
+  <view class="board">
+    <view class="swiper_notice">公告</view>
+    <swiper class="swiper_container" autoplay="{{true}}" vertical="{{true}}" circular="{{true}}" interval="2000">
+      <block wx:for='{{boardList}}' wx:key="index" wx:for-index="index">
+        <swiper-item>
+          <view class="board_name">{{item.post_title}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<view class="bg_bottom">
+  <view class="common_box">
+    <view class="common_title">
+      <view class="title_left">
+        <image src="/icon/common.png"></image>
+        <view class="txt">热门推荐</view>
+      </view>
+    </view>
+    <view>
+      <template is="hotrecommed" data="{{psychological}}"></template>
+    </view>
+  </view>
+
+  <view class="common_box">
+    <view class="common_title">
+      <view class="title_left">
+        <image src="/icon/common.png"></image>
+        <view class="txt">最新资讯</view>
+      </view>
+      <navigator class="more_div" url='/pages/news/news' hover-class="none">
+        <view style="display:flex;align-items:center;">
+          <text>更多</text>
+          <image src="/icon/more.png" style='margin-left:15rpx'></image>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="common_content">
+      <navigator class="article_box" wx:for="{{articleData}}" wx:key="index" url="/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}" hover-class="none" wx:for-index="index">
+        <view class="article_left">
+          <view class="article_title">
+            {{item.post_title}}
+          </view>
+          <view class="article_des">
+            <span class="time">{{item.time}}前</span>
+            <span>{{item.post_hits}}人浏览</span>
+          </view>
+        </view>
+        <view class="article_right">
+          <image src="{{item.thumbnail}}"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="common_box" style="background:#f8f8f8;padding:20rpx 0rpx;margin-bottom:0rpx;">
+    <view class="common_title" style="background:#ffffff;padding:20rpx 30rpx;">
+      <view class="title_left">
+        <image src="/icon/common.png"></image>
+        <view class="txt">活动报名</view>
+      </view>
+      <navigator class="more_div" bindtap='more' hover-class="none">
+        <view style="display:flex;align-items:center;">
+          <text>更多</text>
+          <image src="/icon/more.png" style='margin-left:15rpx'></image>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
+      <view class="sign_up" wx:for="{{activity}}" wx:key="index" wx:for-index="index">
+        <view class="sign_top">
+          <image src="{{item.thumbnail}}"></image>
+          <view class="sign_top_right">
+            <view class="title">{{item.post_title}}</view>
+            <view class="clock">
+              <image src="/icon/clock.png"></image>
+              <span>{{item.activity_start}}</span>
+            </view>
+            <view class="address">
+              <image src="/icon/address.png"></image>
+              <span>{{item.address}}</span>
+            </view>
+            <view class="people">
+              <image src="/icon/people.png"></image>
+              <span>{{item.user_nickname}}</span>
+            </view>
+
+          </view>
+        </view>
+        <view class="sign_bottom">
+          <view class="sign_bottom_left">
+            <image src="{{i.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
+          </view>
+          <navigator url='/pages/exercisedetail/exercisedetail' hover-class="none">
+            <view class="sign_bottom_right">立即报名</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="common_box">
+    <view class="common_title">
+      <view class="title_left">
+        <image src="/icon/common.png"></image>
+        <view class="txt">公益商城</view>
+      </view>
+      <navigator class="more_div" url='/pages/shopping/shopping' hover-class="none">
+        <view style="display:flex;align-items:center;">
+          <text>更多</text>
+          <image src="/icon/more.png" style='margin-left:15rpx'></image>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="common_content">
+
+      <view class="shop_box">
+        <navigator url='/pages/productlist/productlist?id={{item.id}}' hover-class="none" wx:for="{{shopData}}" wx:key="index" wx:for-index="index">
+          <view class="shop_item">
+            <image src="{{item.thumbnail}}"></image>
+            <view class="title">{{item.post_title}}</view>
+            <view class="points">
+              <span>{{item.coin}}</span>积分</view>
+            <view class="price">市场价：{{item.old_coin}}元</view>
+          </view>
+        </navigator>
+      </view>
+
+    </view>
+  </view>
+  <!--公益商城end-->
+
+</view>

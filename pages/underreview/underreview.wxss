@@ -1,0 +1,21 @@
+/* pages/underreview/underreview.wxss */
+.underreview{
+  margin-top: 246rpx;
+  display: flex;
+  align-items:center;
+  flex-direction:column;
+}
+.bg image{
+  width: 290rpx;
+  height: 174rpx;
+}
+.checking{
+  margin-top: 88rpx;
+  color: #333;
+  font-size: 34rpx;
+}
+.wait{
+  margin-top: 22rpx;
+  color: #999;
+  font-size: 24rpx;
+}

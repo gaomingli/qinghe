@@ -1,0 +1,6 @@
+<!--pages/underreview/underreview.wxml-->
+<view class='underreview'>
+<view class='bg'><image src="../../icon/check.png"></image></view>
+<view class='checking'>资料审核中</view>
+<view class='wait'>请耐心等待</view>
+</view>

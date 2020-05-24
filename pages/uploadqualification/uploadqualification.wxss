@@ -1,0 +1,52 @@
+/* pages/uploadqualification/uploadqualification.wxss */
+@import "../index/index.wxss";
+.uploadqualification{
+  background-color: #f8f8f8;
+}
+.common_title{
+  margin-left: 30rpx;
+  padding-top:32rpx;
+padding-bottom:32rpx;
+
+}
+.title_left .txt{
+font-size: 28rpx;
+color: #333;
+font-weight: normal;
+padding-left:15rpx;
+
+}
+.sure{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.ok{
+  color: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 44rpx;
+  background-color: #53B2AA;
+  width: 610rpx;
+  margin-top: 65rpx;
+  margin-left:auto;
+margin-right:auto;
+
+}
+.takephoto{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+}
+.takephoto image{
+  margin-top: 32rpx;
+  height: 515rpx;
+}
+.upload{
+  color: #000000;
+  font-size: 30rpx;
+  margin-top: 41rpx;
+  margin-bottom: 67rpx;
+}

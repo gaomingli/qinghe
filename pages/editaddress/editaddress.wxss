@@ -1,0 +1,29 @@
+/* pages/editaddress/editaddress.wxss */
+.editaddress{
+  background-color: #f8f8f8;
+}
+.editaddress .editinfo{
+  background-color: #fff;
+}
+.editaddress .choose{
+  width:12rpx;
+  height: 20rpx
+}
+.i-input-title{
+  color: #666;
+  font-size: 28rpx;
+}
+.editaddress .hot_submit{
+width: 80%;
+height:88rpx;
+border-radius:44rpx;
+color:#ffffff;
+font-size:32rpx;
+line-height:88rpx;
+text-align:center;
+margin:60rpx auto;
+}
+.i-input-input{
+  color: #333;
+  font-size: 28rpx
+}

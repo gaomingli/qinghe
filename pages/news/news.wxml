@@ -1,0 +1,41 @@
+<!--pages/news/news.wxml-->
+<view class='news'>
+<view class="bg_top">
+  <!--搜索部分-->
+  <view class="searchBox">
+    <view class="searchBox_input">
+          <image src='/icon/search.png'></image>
+          <input placeholder='搜索资讯' bindinput='getintsearch' bindconfirm="getSearch" type="text" confirm-type="search"></input>
+    </view>      
+  </view>
+  <!-- tab切换 -->
+  <view class='tabChange'>
+      <i-tabs current="{{ current }}" color="#333333" bindchange="handleChange">
+          <i-tab title="{{item.name}}" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:key="index"></i-tab>
+      </i-tabs>
+</view>
+<!-- 图片 -->
+<view class='review_img'>
+<image src='{{list[current].banner}}'></image>
+</view>
+  <!-- 内容 -->
+   <view class="common_box" wx:for="{{list[current].last_news}}" wx:key="index">
+    <view class="common_content">
+      <navigator class="article_box" hover-class="none" url='/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}'>
+        <view class="article_left">
+          <view class="article_title">
+          {{item.post_title}}
+          </view>
+          <view class="article_des">
+            <span class="time">{{item.published_time}}分钟前</span>
+            <span>{{item.post_hits}}人浏览</span>
+          </view>
+        </view>
+        <view class="article_right">
+          <image src="{{item.thumbnail}}"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  </view>
+</view>

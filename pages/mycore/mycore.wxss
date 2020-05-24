@@ -1,0 +1,119 @@
+/* pages/mycore/mycore.wxss */
+.mycore{
+  background-color: #f8f8f8;
+}
+.usecore{
+  padding: 66rpx 70rpx;
+  display: flex;
+justify-content:space-between;
+  align-items:center;
+background-color: #53B2AA;
+}
+.exchange{
+  width: 142rpx;
+  height: 56rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.exchange image{
+  width: 12rpx;
+  height: 12rpx;
+}
+.usecore .core{
+display: flex;
+flex-direction:column;
+color: #fff
+}
+.core .parto{
+font-size: 28rpx;
+}
+.core .parth{
+font-size: 58rpx;
+margin-top: 22rpx;
+font-weight: bold;
+}
+.core .parts{
+font-size: 24rpx;
+margin-top: 70rpx;
+}
+.module{
+margin-top: 20rpx;
+  background-color: #fff;
+}
+.tabcontents{
+  border-bottom:1rpx solid #E7E7E7;
+  padding: 29rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.left_part .done{
+color: #333333;
+font-size: 30rpx;
+}
+.left_part .time{
+  margin-top: 19rpx;
+  font-size: 24rpx;
+  color: #999999
+}
+.right_part{
+  color: #333333;
+  font-size: 36rpx;
+}
+.right{
+  color: #FE3730;
+  font-size: 36rpx;
+}
+/* .tabcontent{
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 38rpx 30rpx;
+}
+.ordernum{
+  display: flex;
+  justify-content: space-between;
+}
+.ordernum .parto{
+  color: #999;
+  font-size: 24rpx;
+}
+ .ordernum .success{
+   color: #333;
+   font-size: 24rpx;
+ }
+  .tabcontent{
+    border-bottom: 1px solid #E7E7E7;
+  }
+ .tabcontent .detail{
+   margin-top: 31rpx;
+   display: flex;
+   justify-content: flex-start;
+ }
+ .contL{
+   margin-right: 30rpx
+ }
+ .contL image{
+  width: 140rpx;
+  height: 140rpx;
+ }
+ .viewo{
+   font-size: 26rpx;
+   color: #333;
+ }
+ .viewt{
+   font-size: 26rpx;
+   color: #E62828;
+   margin-top: 20rpx;
+   margin-bottom: 20rpx;
+ }
+ .viewt text{
+   color: #999;
+   font-size: 24rpx;
+ }
+ .viewh{
+   font-size: 22rpx;
+   color: #999;
+ } */

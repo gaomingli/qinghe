@@ -1,0 +1,2 @@
+/* pages/myexercise/myexercise.wxss */
+@import "../exercise/exercise.wxss"

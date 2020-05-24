@@ -1,0 +1,10 @@
+/* pages/registerinformation/registerinformation.wxss */
+@import "../uploadqualification/uploadqualification.wxss";
+.registerinformation{
+  background-color: #f8f8f8;
+}
+.okbtn{
+  margin-top: 20rpx;
+  padding-top: 13rpx;
+  background-color: #fff
+}

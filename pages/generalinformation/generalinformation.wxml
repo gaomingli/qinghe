@@ -1,0 +1,14 @@
+<!--pages/generalinformation/generalinformation.wxml-->
+<view class='generalinformation'>
+<view class='address' wx:for="{{list}}" wx:key="index" wx:if="list.length>0">
+<view class='infolist'>
+<view>{{item.name}}<text>{{item.num}}</text></view>
+<view><image src="/icon/map.png"></image>{{item.detail}}</view>
+<view></view>
+<view></view>
+</view>
+</view>
+<navigator url='../editaddress/editaddress'>
+<view class='hot_submit'><image src='../../icon/add.png'></image>新增收货地址</view>
+</navigator>
+</view>

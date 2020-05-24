@@ -1,0 +1,16 @@
+<!--pages/comment/comment.wxml-->
+<view class='comment'>
+<view class='record' wx:for="{{list}}" wx:key="index">
+<view class='photo'><image src="{{item.url1}}"></image></view>
+
+<view class='detail'>
+<view class='info'>
+<view class="title">{{item.title}}</view>
+<view class='return'>回复<text>{{item.num}}</text>:{{item.cont}}</view>
+<view class='time'>{{item.time}}</view>
+</view>
+<view class='review'><image src="{{item.url2}}"></image></view>
+</view>
+
+</view>
+</view>

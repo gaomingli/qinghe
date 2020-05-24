@@ -1,0 +1,135 @@
+@import "/template/hotrecommed/hotrecommed.wxss";
+page{padding-bottom: 110rpx;}
+.bg_top{background-color: #ffffff;}
+.bg_bottom{padding-bottom:15rpx;/*margin-bottom: 140rpx;*/}
+/*搜索部分*/
+.searchBox{
+  margin: 25rpx 30rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.searchBox_input{
+  display: flex;
+  width:690rpx;
+  height:65rpx;
+  background:#F8F8F8;
+  border-radius:33px;
+  align-items: center;
+  padding-left: 46rpx;
+}
+.searchBox_input image {
+  width: 27rpx;
+  height: 29rpx;
+  margin-right:25rpx;
+}
+.searchBox_input input{
+  font-size:28rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:#999999;
+}
+
+/*轮播部分*/
+.index_swiper swiper{
+  width: 750rpx;
+  height: 320rpx;
+}
+.index_swiper swiper image{
+  width: 100%;
+}
+
+/*导航部分*/
+.index_menu{display: flex;padding:52rpx 10rpx 55rpx 10rpx;}
+.index_menu navigator{width:25%;display: flex;align-items: center;flex-direction: column;}
+.index_menu navigator image{width: 76rpx;height: 76rpx;}
+.menu_text{font-size:24rpx;color:#333333;margin-top: 22rpx;}
+.index_menu .navto{width:25%;display: flex;align-items: center;flex-direction: column;}
+.index_menu .navto image{width: 76rpx;height: 76rpx;}
+/*公告部分*/
+.board{height: 72rpx;margin:0 46rpx;width: 690rpx;display: flex;align-items: center;background-color:#F8F8F8;border-radius:36rpx;box-sizing: border-box;padding:20rpx 16rpx}
+.swiper_notice{font-size: 22rpx;height:33rpx;width:71rpx;color:rgba(255,255,255);background-color:#F35C65;border-radius:17rpx;margin-right: 14rpx;line-height: 33rpx;text-align: center;}
+.swiper_container{width: 590rpx;height: 33rpx;padding-right: 20rpx;box-sizing: border-box;}
+.board_name{
+    font-size:24rpx;font-family:PingFang SC;font-weight:500;color:#333333;
+    overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 2rpx;
+}
+
+
+
+/*最新资讯*/
+.more_div text{font-size: 24rpx;color: #9A98A4;}
+.more_div image{width: 12rpx;height: 14rpx;margin-left: 5rpx;}
+
+.common_content .article_box{display: flex;justify-content: space-between;border-bottom: 1px solid #E7E7E7;padding-top: 30rpx;}
+.article_box:last-child{
+  border-bottom: none;
+}
+/* .article_left{width:456rpx;} */
+.article_right{margin-left: 43rpx;}
+.article_title{
+  color: #333333;font-size: 32rpx;font-weight: 500;line-height: 48rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3; 
+  }
+.article_des span{font-size:24rpx; font-weight:500;color:#9594A4;}
+.article_des .time{margin-right: 70rpx;}
+.article_right image{width: 234rpx;height: 153rpx;}
+
+/*活动报名**/
+
+.sign_up{width: 690rpx;height:300rpx;background: #ffffff;border-radius: 8rpx;padding:20rpx;}
+.sign_up image{width: 180rpx;height: 183rpx;}
+.sign_top{display: flex;height: 183rpx;}
+
+.sign_top_right{margin-left: 30rpx;height: 183rpx;display: flex;flex-direction: column; justify-content: space-between;}
+.sign_up_right .title{font-size:30rpx;font-weight:bold;color:rgba(51,51,51,1);line-height:48rpx;}
+.clock image{width: 25rpx;height: 25rpx;}
+.address image{width:23rpx;height: 25rpx; }
+.people image{width:21rpx;height: 25rpx; }
+.sign_top_right span{font-size:24rpx;color: #999999; margin-left: 20rpx;}
+.clock,.address,.people{display: flex;align-items: center;height:25rpx;}
+
+.sign_bottom{display: flex;justify-content: space-between;align-items: center;margin-top: 40rpx;}
+.sign_bottom .sign_bottom_left{width: 250rpx;display: flex;overflow: hidden;}
+.sign_bottom_left image{width: 50rpx;height: 50rpx;flex-shrink: 0;}
+.sign_bottom .sign_bottom_right{
+  width: 199rpx;
+  height: 64rpx;
+  background:#53B2AA;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 64rpx;
+}
+
+/*公益商城*/
+.shop_box navigator{
+  width:49%;
+  margin-left: 2%;
+  float: left;
+}
+.shop_box navigator:nth-child(2n+1){
+  margin-left: 0%;
+}
+
+
+
+.shop_item{width: 330rpx;margin: 43rpx 0rpx;}
+.shop_item image{width: 330rpx;height: 345rpx;}
+.shop_item{font-size: 24rpx;color: #999999;}
+.shop_item .title{font-size: 26rpx;color: #333333;line-height: 34rpx;}
+.shop_item .points,.shop_item .price{line-height: 48rpx;}
+.shop_item .points span{font-size: 40rpx;color:#FE3730;font-weight: bold;margin-right: 8rpx;}
+.shop_item .points{
+  margin-top: 25rpx;
+}
+.shop_item .price{
+  color: #999999;
+  font-size: 24rpx;
+}

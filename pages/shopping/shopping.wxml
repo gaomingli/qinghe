@@ -1,0 +1,54 @@
+<!--pages/shopping/shopping.wxml-->
+<view class='shopping'>
+<view class="bg_top">
+<!-- 用户信息 -->
+<view class='total_info'>
+<view class='total_user'>
+<view class='user_info'>
+<image src='../../icon/num.png'></image>
+</view>
+
+<view class='user_info'>
+<view class='available'>用户名</view>
+<view class='information'>普通用户</view>
+</view>
+</view>
+
+<navigator url='/pages/mycore/mycore'>
+<view class='right_info'>
+<view class='available'>可用积分</view>
+<view class='information'>25820</view>
+</view>
+</navigator>
+
+</view>
+<!--  -->
+<view class='change_goods'><image src='{{banner}}'></image></view>
+
+<view class='warning'><image src='/icon/hot.png'></image><text>积分换商品，公益商城隆重上线！</text>
+</view>
+
+</view>
+<!--  -->
+<!-- 商城 -->
+<view class="common_box">
+<view class='box_title'>
+<view class='prefecture'>商品专区</view>
+<view class='recommend'>为你推荐</view>
+</view>
+    <view class="common_content">
+      <view class="shop_box">
+       <navigator url='/pages/productlist/productlist' >
+        <view class="shop_item" wx:for="{{list}}" wx:key="index">
+            <image src="{{item.thumbnail}}"></image>
+            <view class="title">{{item.post_title}}</view>
+            <view class="points"><span>{{item.coin}}</span>积分</view>
+            <view class="price">市场价：{{item.old_coin}}元</view>      
+        </view>
+       </navigator>
+
+      </view>
+    </view>
+  </view>
+<!--  -->
+</view>

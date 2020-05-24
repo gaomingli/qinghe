@@ -1,0 +1,15 @@
+/* pages/exercise/exercise.wxss */
+@import "../index/index.wxss";
+.exercise .i-tabs-tab-title{
+  font-size: 28rpx;
+  color: #666;
+}
+.sign_bottom_left span{
+  font-size:24rpx;
+color:#999999;
+margin-left:20rpx;
+line-height:54rpx;
+}
+.sign_bottom .sign_bottom_left{
+  width: 315rpx;
+}

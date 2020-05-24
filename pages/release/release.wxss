@@ -1,0 +1,48 @@
+/* pages/release/release.wxss */
+.top{padding: 30rpx;background: #F8F8F8}
+.textarea{
+  width: 630rpx;
+  font-size: 30rpx;color: #999999;
+  padding: 32rpx 30rpx;background: #FFFFFF;
+  min-height: 56rpx;
+  line-height: 40rpx;
+  overflow-y:visible; 
+}
+.placeholder {
+  font-size: 30rpx;
+  color: #999999;
+}
+/*底部样式*/
+.bottom{background: #FFFFFF;padding: 40rpx 30rpx;}
+.image{
+  width:31%;
+  /* height: 200rpx; */
+  padding: 4rpx;
+}
+.moment_img{
+  width: 98px;
+  height: 98px;
+}
+.image_content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px
+}
+
+.releaseView{
+  width: 610rpx;
+  height: 88rpx;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  font-weight: 500;
+  border-radius: 44rpx;
+  
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 40rpx;
+  position: absolute;
+  bottom: 200rpx;
+}
+.bg1{background-color: #c6c6c6;}
+.bg2{background-color: rgba(63, 202, 170,1);}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+"i-collapse": "/components/collapse/index",
+"i-collapse-item": "/components/collapse-item/index"
+  },
+  "navigationBarTitleText": "帮助中心"
+}

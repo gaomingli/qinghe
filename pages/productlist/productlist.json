@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品列表",
+  "usingComponents": {
+    "i-cell-group": "/components/cell-group/index",
+    "i-cell": "/components/cell/index",
+    "i-input-number": "/components/input-number/index",
+    "i-toast": "/components/toast/index"
+  }
+}

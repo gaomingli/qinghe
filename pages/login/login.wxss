@@ -1,0 +1,41 @@
+/* pages/login/login.wxss */
+.login{
+  padding: 30rpx 68rpx;
+}
+.welcome{
+  font-size: 48rpx;
+  color: #000000;
+  font-weight: bold;
+}
+.name{
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 24rpx;
+}
+.userinfo{
+  margin-top: 100rpx;
+}
+.loginbtn{
+  margin-top: 80rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  background-color: #C6C6C6;
+  border-radius: 44rpx;
+  text-align: center;
+  line-height: 88rpx;
+  height: 88rpx;
+  width: 610rpx;
+}
+.chooice{
+  display: flex;
+  margin-top: 61rpx;
+  justify-content: space-between;
+}
+.forget{
+  color: #999999;
+  font-size: 28rpx;
+}
+.register{
+  color: #53B2AA;
+  font-size: 28rpx;
+}

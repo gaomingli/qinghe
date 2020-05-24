@@ -1,0 +1,22 @@
+<!--pages/registerinformation/registerinformation.wxml-->
+<view class='registerinformation'>
+<view class='common_title'>
+<view class="title_left">
+        <image src="../../icon/common.png"></image>
+        <view class="txt">报名信息</view>
+      </view>
+</view>
+
+<view class='baseinfo'>
+<i-panel>
+    <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入姓名" />
+</i-panel>
+<i-panel>
+    <i-input value="{{ value2 }}" title="手机号" autofocus placeholder="请输入手机号" />
+</i-panel>
+</view>
+
+<view class='okbtn'>
+<view class='ok'>确认</view>
+</view>
+</view>

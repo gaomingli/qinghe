@@ -1,0 +1,78 @@
+/* pages/redeemnow/redeemnow.wxss */
+@import "../index/index.wxss";
+@import "../productlist/productlist.wxss";
+@import "/template/hotrecommed/hotrecommed.wxss";
+.redeemnow{
+  background-color: #f8f8f8;
+}
+.redeemnow .add{
+   background-color: #fff;
+}
+.redeemnow .address{
+  height: auto;
+  padding:30px;
+margin-bottom:20rpx;
+text-align:center;
+color: #333;
+font-size: 34rpx;
+align-items: stretch;
+}
+
+.redeemnow .address image{
+  height:40rpx;
+width:40rpx;
+
+}
+.redeemnow .line image{
+  height: 10rpx;
+  width: 100%;
+}
+.hot_box{
+  width: 100%
+}
+.message{
+  background-color: #fff;
+  margin-top: 20rpx;
+padding: 30rpx;
+}
+.message text{
+color: #333;
+font-size: 26rpx
+}
+.hot_box{
+  justify-content:flex-start;
+align-items:center;
+}
+
+.hot_box .hot_right{
+  margin-left:20rpx;
+width:auto;
+
+}
+.hot_box .hot_num{
+  line-height:50rpx;
+}
+.hot_submit{
+  line-height:60rpx;
+}
+.content{
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx
+}
+.hot_box .hot_num{
+  color: #E62828;
+  font-size: 26rpx
+}
+.hot_box .hot_num text{
+  color: #999;
+  font-size: 24rpx
+}
+.hot_box image{
+  width:140rpx;
+height:140rpx;
+
+}
+.score{
+  color: #E62828
+}
