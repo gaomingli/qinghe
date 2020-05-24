@@ -1,14 +1,32 @@
 <!--pages/generalinformation/generalinformation.wxml-->
 <view class='generalinformation'>
-<view class='address' wx:for="{{list}}" wx:key="index" wx:if="list.length>0">
-<view class='infolist'>
-<view>{{item.name}}<text>{{item.num}}</text></view>
-<view><image src="/icon/map.png"></image>{{item.detail}}</view>
-<view></view>
-<view></view>
-</view>
-</view>
-<navigator url='../editaddress/editaddress'>
-<view class='hot_submit'><image src='../../icon/add.png'></image>新增收货地址</view>
-</navigator>
+	<view class='address' wx:for="{{list}}" wx:key="index" wx:if="list.length>0">
+		<view class='infolist'>
+			<view class="name">{{item.full_name}}<text class="tel">{{item.tel}}</text></view>
+			<view style="border-bottom: 1px solid #eee">
+				<span class="img"><image class="map_img" src="/icon/address.png"></image></span>
+        <span class="address_detail">{{item.province}}{{item.city}} {{item.district}}{{item.address}}</span>
+			</view>
+			<view class="btnLeft">
+        <radio-group bindchange='radioChange'>
+          <radio value="{{item.id}}" checked="{{item.checked}}">
+            <text class="exam-item">默认地址</text>
+          </radio>
+        </radio-group>
+      </view>
+			<view class="btnRight">
+        <view class="editor">
+          <image class="edi_img" src="/icon/editor.png"></image> 编辑
+        </view>
+        <view class="delete" bindtap="delete" data-id="{{item.id}}">
+          <image class="del_img" src="/icon/delete.png"></image> 删除
+        </view>
+      </view>
+		</view>
+	</view>
+	<navigator url='../editaddress/editaddress'>
+		<view class='hot_submit'>
+			<image src='../../icon/add.png'></image>新增收货地址
+		</view>
+	</navigator>
 </view>

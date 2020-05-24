@@ -1,18 +1,26 @@
 // pages/mytest/mytest.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-current:1,
+  current:1,
     list:[
       { id: 1, src: "/icon/test.png", name:"抑郁风险评估测试",num:39702},
       { id: 2, src: "/icon/test.png", name: "幼儿气质类型评估", num: 39702 }
-    ]
+    ],
+    list_done: [],
+    list_undone: []
   },
-  handleChange(){
-    debugger;
+  // tab切换
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key,
+    });
   },
   
   /**
@@ -33,7 +41,18 @@ current:1,
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    urlApi("/user/Profile/my_psychological","post",{}).then((res)=>{
+      if(res.data.code){
+        this.setData({
+          list_done: res.data.data.done_psychological,
+          list_undone: res.data.data.undone_psychological,
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }            
+    })
   },
 
   /**

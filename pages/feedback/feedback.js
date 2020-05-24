@@ -1,4 +1,7 @@
 // pages/feedback/feedback.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
@@ -13,6 +16,16 @@ Page({
   input: function (e) {
     this.setData({
       content: e.detail.value
+    })
+  },
+
+  send: function() {
+    let obj = {}
+    obj.msg = this.data.content
+    urlApi("/user/Profile/guestbook_post","post", obj).then((res)=>{
+      wx.showToast({
+        title: res.data.msg
+      })         
     })
   },
   /**

@@ -7,13 +7,48 @@ Page({
   data: {
     style:0,
     score:"#C6C6C6",
-    form:{
-      value1: "11",
-      value2: "11",
-      value3: "11",
-      value4: "11"
-    }
+    // form:{
+    //   value1: "",
+    //   value2: "",
+    //   value4: ""
+    // },
+    name: '',
+    phone: '',
+    address: '',
+    address_city: ''
+  },
 
+  getName: function(e) {
+    let name = e.detail.detail.value
+    this.setData({
+      name: name
+    })
+  },
+
+  getPhone: function(e) {
+    let phone = e.detail.detail.value
+    this.setData({
+      phone: phone
+    })
+  },
+
+  getAddress: function(e) {
+    let address = e.detail.detail.value
+    this.setData({
+      address: address
+    })
+  },
+
+  chooseAddress: function() {
+    let that = this
+    wx.chooseLocation({
+      success: function(res) {
+        console.log(res)
+        that.setData({
+          address_city: res.address
+        })
+      }
+    })
   },
 // 验证表单是否填写完整
   submit: function () {
@@ -30,6 +65,33 @@ Page({
       }
     }
     console.log('地址填写完毕，确认', form);
+    let obj = {}
+    obj.province = ''
+    obj.city = ''
+    obj.district = ''
+    obj.address = ''
+    obj.full_name = ''
+    obj.tel = ''
+    urlApi("/user/Profile/address_post","post",obj).then((res)=>{
+      if(res.data.code){
+        let data = res.data.data.map(v => {
+          if (v.default == 1) {
+            v.checked = true
+          } else {
+            v.checked = false
+          }
+          return v
+        })
+
+        this.setData({
+          list: data
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }            
+    })
     that.setData({
       style: 1,
       score: '#53B2AA'

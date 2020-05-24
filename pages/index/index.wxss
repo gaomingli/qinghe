@@ -89,10 +89,10 @@ page{padding-bottom: 110rpx;}
 .sign_top_right{margin-left: 30rpx;height: 183rpx;display: flex;flex-direction: column; justify-content: space-between;}
 .sign_up_right .title{font-size:30rpx;font-weight:bold;color:rgba(51,51,51,1);line-height:48rpx;}
 .clock image{width: 25rpx;height: 25rpx;}
-.address image{width:23rpx;height: 25rpx; }
+.address image{width:42rpx;height: 42rpx; }
 .people image{width:21rpx;height: 25rpx; }
 .sign_top_right span{font-size:24rpx;color: #999999; margin-left: 20rpx;}
-.clock,.address,.people{display: flex;align-items: center;height:25rpx;}
+.clock,.address,.people{display: flex;align-items: center;}
 
 .sign_bottom{display: flex;justify-content: space-between;align-items: center;margin-top: 40rpx;}
 .sign_bottom .sign_bottom_left{width: 250rpx;display: flex;overflow: hidden;}

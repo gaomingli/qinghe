@@ -1,36 +1,44 @@
 <!--pages/mycore/mycore.wxml-->
 <view class='mycore'>
 
-  <view class='usecore'>
-    <view class='core'>
-      <view class='parto'>可用积分</view>
-      <view class='parth'>6005</view>
-      <view class='parts'>可以在积分商城兑换商品</view>
-    </view>
-    <navigator url='/pages/shopping/shopping'>
-    <view class='exchange'>去兑换
-      <image src='/icon/more.png'></image>
-    </view>
-    </navigator>
-  </view>
+	<view class='usecore'>
+		<view class='core'>
+			<view class='parto'>可用积分</view>
+			<view class='parth'>6005</view>
+			<view class='parts'>可以在积分商城兑换商品</view>
+		</view>
+		<navigator url='/pages/shopping/shopping'>
+			<view class='exchange'>去兑换
+				<image src='/icon/more.png'></image>
+			</view>
+		</navigator>
+	</view>
 
-  <view class='record'>
-    <i-tabs current="{{ current }}" bindchange="handleChange" color="#333333">
-      <i-tab key="1" title="积分明细">
-      </i-tab>
-      <i-tab key="2" title="兑换记录">
-      </i-tab>
-    </i-tabs>
-    <view class='module'>
-    <view class='tabcontents' wx:for="{{list}}">
-    <view class='left_part'>
-    <view class='done'>{{item.action}}</view>
-    <view class='time'>{{item.time}}</view>
-    </view>
-    <view class='{{item.score}}>0?right_part:right'>{{item.score}}</view>
-    </view>
-    </view>
-    <!-- <view class='tabcontent' wx:for="{{list}}" wx:index="index">
+	<view class='record'>
+		<i-tabs current="{{ current }}" bindchange="handleChange" color="#333333">
+			<i-tab key="1" title="积分明细">
+			</i-tab>
+			<i-tab key="2" title="兑换记录">
+			</i-tab>
+		</i-tabs>
+		<view class='module'>
+			<view wx:if="{{current == '1'}}" class='tabcontents' wx:for="{{list}}">
+				<view class='left_part'>
+					<view class='done'>{{item.action}}</view>
+					<view class='time'>{{item.time}}</view>
+				</view>
+				<view class='{{item.score}}>0?right_part:right'>{{item.score}}</view>
+			</view>
+
+      <view wx:if="{{current == '2'}}" class='tabcontents' wx:for="{{list_shop}}">
+				<view class='left_part'>
+					<view class='done'>{{item.action}}</view>
+					<view class='time'>{{item.time}}</view>
+				</view>
+				<view class='{{item.score}}>0?right_part:right'>{{item.score}}</view>
+			</view>
+		</view>
+		<!-- <view class='tabcontent' wx:for="{{list}}" wx:index="index">
 
       <view class='ordernum'>
         <view class='parto'>订单号:{{item.num}}</view>
@@ -54,6 +62,6 @@
       </view>
     </view> -->
 
-  </view>
+	</view>
 
 </view>

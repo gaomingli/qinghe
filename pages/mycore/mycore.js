@@ -1,4 +1,7 @@
 // pages/mycore/mycore.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
@@ -6,6 +9,7 @@ Page({
    */
   data: {
     current: '1',
+    totalCore: 0,
     type:[{
       typename:"积分明细",
     }, {
@@ -35,7 +39,8 @@ Page({
         score: "-150",
         time: "2020 - 02 - 22  05: 30"
       }
-    ]
+    ],
+    list_shop: []
   },
   // tab切换
   handleChange({ detail }) {
@@ -62,7 +67,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    urlApi("/user/Profile/my_coin","post",{}).then((res)=>{
+      if(res.data.code){
+        this.setData({
+          totalCore: res.data.data.coin,
+          list: res.data.data.articles
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }            
+    })
 
+    urlApi("/user/Profile/my_shop","post",{}).then((res)=>{
+      if(res.data.code){
+        this.setData({
+          list_shop: res.data.data.articles
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }            
+    })
   },
 
   /**

@@ -1,7 +1,10 @@
 /* pages/generalinformation/generalinformation.wxss */
 @import "../index/index.wxss";
+page{
+  background: #eee;
+}
 .generalinformation{
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 .generalinformation .hot_submit{
   width: 80%;
@@ -18,4 +21,59 @@ margin:60rpx auto;
 .hot_submit image{
   width: 36rpx;
   height: 36rpx
+}
+
+.address{
+  padding: 10px 20px 0px;
+  background: #fff;
+  margin-bottom: 10px;  
+}
+
+.tel{
+  margin-left: 20px;
+}
+
+.name{
+  margin-bottom: 10px;
+}
+.map_img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.img{
+  width: 9%;
+  display: inline-block;
+  height: 45px;
+  vertical-align: top;  
+  padding-top: 10px;
+}
+
+.address_detail{
+  display: inline-block;
+  height: 45px;
+  width: 91%;  
+}
+
+.btnLeft, .btnRight{
+  width: 50%;
+  padding: 15px 0;
+  display: inline-block;
+}
+.editor, .delete{
+  display: inline-block;
+}
+.delete{
+  margin-left: 10px;
+}
+
+.btnRight{
+  text-align: right;
+}
+
+.edi_img, .del_img{
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: top;
 }
