@@ -42,5 +42,6 @@ margin-top:22px;
 margin-bottom:10rpx;}
 .styleAuth{display: flex;justify-content: space-between;margin-left: 10%;margin-right: 10%;}
 .styleAuth button{
-  width:100px;
+  width: 100px!important;
+  padding: 5px 16px;  
 }

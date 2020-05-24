@@ -1,6 +1,7 @@
 var app = getApp();
 var host = 'https://qnsg.yiyuncloud.com/';
-var urlApi = (url, method, data) => {
+
+var urlApi = (url, method, data={}) => {
   let tokenn = wx.getStorageSync("tokenn")||'';
   if ((method === 'post' || method === "POST") && tokenn){
     data.token = tokenn
