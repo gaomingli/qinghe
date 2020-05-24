@@ -13,3 +13,9 @@ line-height:54rpx;
 .sign_bottom .sign_bottom_left{
   width: 315rpx;
 }
+.address image {
+  width: 25rpx;
+  height: 25rpx;
+  
+  }
+  

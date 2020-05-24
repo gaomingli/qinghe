@@ -68,7 +68,7 @@ right:0;
 
 .orderImg{
   width: 70rpx;
-  height: 70rpx;
+  height: 60rpx;
 }
 
 

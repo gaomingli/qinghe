@@ -42,7 +42,7 @@
   <view class='part'>
     <i-cell-group>
       <i-cell title="我的测评" is-link url="/pages/mytest/mytest">
-        <i-icon slot="icon" size="28" />
+        <i-icon size="28" custom="/icon/add.png" />
       </i-cell>
       <i-cell title="我的活动" is-link url="/pages/myexercise/myexercise">
         <i-icon slot="icon" size="28" />
