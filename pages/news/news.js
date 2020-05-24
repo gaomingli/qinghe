@@ -1,6 +1,11 @@
 var {
   urlApi
 } = require("../../utils/request.js");
+var {
+  timestampToTime
+} = require("../../utils/util.js");
+
+
 Page({
 
   /**
@@ -35,10 +40,17 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+  
+
   onShow: function () {
     var that = this;
     urlApi('portal/list/index/id/1', "post").then((res) => {
       var that = this;
+      res.data.data.length > 0 && res.data.data.map((item,index)=>{
+        item.last_news && item.last_news.length > 0 && item.last_news.map((_item,_index)=>{
+          _item.published_time = timestampToTime(_item.published_time)
+        })
+      })
       that.setData({
         list: res.data.data
       })

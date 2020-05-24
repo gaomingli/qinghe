@@ -9,8 +9,8 @@
   height: 362rpx;
 }
 .index_menu navigator image{
-  width: 48rpx;
-  height: 40rpx
+  width: 60rpx;
+  height: 50rpx
 }
 .index_menu .menu_text{
   color: #333;
@@ -61,8 +61,9 @@ right:0;
   justify-content: space-between;
 }
 .one image{
-  width: 111rpx;
-  height: 111rpx;
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: middle;
 } 
 .two{
   margin-left: 27rpx;
@@ -93,4 +94,7 @@ font-size: 32rpx;
 .right_part image{
   width: 14rpx;
   height: 26rpx;
+}
+.index_menu{
+  justify-content: space-around;
 }

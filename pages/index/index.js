@@ -41,10 +41,11 @@ Page({
     shopData: []
   },
   more: function () {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/exercise/exercise'
     })
   },
+
   gotoPage: function (e) {
     const {
       type,
@@ -68,37 +69,6 @@ Page({
   },
   onLoad: function () {
 
-
-    //  验证登录
-    this.setLogin();
-  },
-  setLogin: function () {
-    // debugger;
-    wx.login({
-      success(res) {
-        console.log(res);
-        if (res.code) {
-          urlApi("user/Login/wechatLogin", "post", {
-            code: res.code
-          }).then((res) => {
-            // debugger;
-
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    })
-
-
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   },
   onShow: function () {
     this.getTabBar().setData({

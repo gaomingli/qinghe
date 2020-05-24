@@ -1,4 +1,8 @@
 // pages/my/my.js
+var {
+  jsEvent
+} = require("../../utils/util.js");
+
 Page({
 
   /**
@@ -6,8 +10,10 @@ Page({
    */
   data: {
     name:"一叶知秋",
+    flag:false,
     num:6005,
     blong:"组织",
+    userInfo:null,
     menuList: [
       { id: 1, menu_img: "/icon/my/pay1.png", menu_name: "待付款", url: "/pages/psychometrics/psychometrics" },
       { id: 2, menu_img: "/icon/my/pay2.png", menu_name: "待发货", url: "/pages/news/news" },
@@ -21,7 +27,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let userInfo = wx.getStorageInfoSync("userInfo");
+    if (!userInfo) {
+      this.setData({ flag: true })
+    } else {
+      this.setData({ userInfo: userInfo })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -59,18 +70,19 @@ Page({
   onPullDownRefresh: function () {
 
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
+  },
+  onJsEvent:function(e){
+    jsEvent(e);
   }
 })

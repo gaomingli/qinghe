@@ -1,14 +1,16 @@
 var app = getApp();
-var host = 'http://qnsg.yiyuncloud.com/';
+var host = 'https://qnsg.yiyuncloud.com/';
 var urlApi = (url, method, data) => {
+  let tokenn = wx.getStorageSync("tokenn")||'';
+  if ((method === 'post' || method === "POST") && tokenn){
+    data.token = tokenn
+  }
   return new Promise((res, rej) => {
     wx.request({
       url: host + url,
       header: {},
       data: data,
       method: method,
-      dataType: 'json',
-      responseType: 'text',
       success: ret => {
         res(ret);
       },

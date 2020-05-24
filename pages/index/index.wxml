@@ -156,6 +156,7 @@
             <view class="price">市场价：{{item.old_coin}}元</view>
           </view>
         </navigator>
+        <view class='clearfix'></view>
       </view>
 
     </view>

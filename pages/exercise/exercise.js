@@ -9,12 +9,16 @@ Page({
    */
   data: {
     current: 0,
-    list:[]
+    objData:null,
+    list:[
+     {name:"进行中",id:0},{name:"过期活动",id:1} 
+    ]
   },
   // tab切换
   handleChange({ detail }) {
+    // debugger;
     this.setData({
-      current: detail.key
+      current: Number(detail.key)
     });
   },
   /**
@@ -35,14 +39,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    urlApi('portal/list/index/id/2', "post").then((res) => {
-      var that = this;
-      that.setData({
-        list: res.data
-      })
-    })
+   this.getData();
   },
 
+getData:function(){
+  urlApi('portal/list/index/id/2', "post").then((res) => {
+    var that = this;
+    that.setData({
+      objData: res.data.data
+    })
+  })
+},
   /**
    * 生命周期函数--监听页面隐藏
    */

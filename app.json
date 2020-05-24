@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/index/index",  
     "pages/login/login", 
-    "pages/my/my",
     "pages/feedback/feedback",
     "pages/mycore/mycore",
     "pages/redeemnow/redeemnow",
@@ -34,7 +34,8 @@
     "pages/newsdetail/newsdetail",   
     "pages/editaddress/editaddress",   
     "pages/connect/connect",
-    "pages/evaluation/evaluation"
+    "pages/evaluation/evaluation",
+    "pages/boots/boots"
   ],
   "window": {
     "backgroundTextStyle": "light",

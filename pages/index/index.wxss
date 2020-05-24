@@ -133,3 +133,4 @@ page{padding-bottom: 110rpx;}
   color: #999999;
   font-size: 24rpx;
 }
+.clearfix{clear: both}
