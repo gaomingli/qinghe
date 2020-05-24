@@ -36,11 +36,11 @@ const jsEvent = (e)=>{
     success: function (respon) {
       if (respon.authSetting['scope.userInfo'] && userInfo) {
         if (type == 2) {
-          wx.navigateTo({
-            url: e.currentTarget.dataset.url
-          })
-        } else {
           wx.switchTab({
+            url: e.currentTarget.dataset.url
+          })    
+        } else {
+          wx.navigateTo({
             url: e.currentTarget.dataset.url
           })
         }
@@ -52,7 +52,7 @@ const jsEvent = (e)=>{
     },
     fail: function () {
       wx.navigateTo({
-        url: `/pages/boots/boots?path=${e.currentTarget.dataset.url}`,
+        url: `/pages/boots/boots?path=${e.currentTarget.dataset.url}&type=${type}`,
       })
     }
   })

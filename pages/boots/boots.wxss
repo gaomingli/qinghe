@@ -41,3 +41,6 @@ margin-top:22px;
 .taoli2{font-size:16rpx;
 margin-bottom:10rpx;}
 .styleAuth{display: flex;justify-content: space-between;margin-left: 10%;margin-right: 10%;}
+.styleAuth button{
+  width:100px;
+}

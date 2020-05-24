@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    path: ''
+    path: '',
+    type:1
   },
 
   /**
@@ -17,7 +18,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      path: options.path
+      path: options.path,
+      type:options.type
     })
   },
 
@@ -26,7 +28,6 @@ Page({
     if (e.detail.errMsg ==='getUserInfo:ok'){
       wx.login({
         success: function (a) {
-            debugger;
           wx.getUserInfo({
             success: function (e) {
             
@@ -37,8 +38,23 @@ Page({
               params['encrypted_data'] = e.encryptedData;
               params['code'] = a.code;
               urlApi("/user/Login/wechatLogin","post",params).then((res)=>{
-                debugger;
-                wx.setStorageSync("userInfo", t);
+                if(res.data.code){
+                  wx.setStorageSync("userInfo", t);
+                  wx.setStorageSync("token",res.data.data.token);
+                  if(that.data.type==1){
+                    wx.navigateTo({
+                      url: that.data.path,
+                    })
+                  }else{
+                   wx.switchTab({
+                     url: that.data.path
+                   }) 
+                  }
+                }else{
+                  wx.showToast({
+                    title: res.data.msg
+                  })
+                }            
               })
             }
           })

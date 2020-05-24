@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/management/management",
     "pages/my/my",
-    "pages/index/index",  
     "pages/login/login", 
     "pages/feedback/feedback",
     "pages/mycore/mycore",
@@ -15,7 +16,7 @@
     "pages/registerinformation/registerinformation",
     "pages/choicerole/choicerole",
     "pages/forgetpassword/forgetpassword",
-    "pages/management/management",
+
     "pages/exercisedetail/exercisedetail",
     "pages/news/news",
     "pages/successful/successful",

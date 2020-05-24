@@ -25,7 +25,7 @@
     <view class='personalinfo'>
       <view class='left_part'>
         <view class='one' bindtap='onJsEvent' data-url="/pages/my/my" data-type="2">
-          <image src="/icon/head2.png" style="width:100px;height:100px"></image>
+          <image src="/icon/head2.png" style="width:60px;height:60px"></image>
           <text style="color:#fff;margin-left:12px;">点击获取头像昵称</text>
         </view>
       </view>
@@ -35,7 +35,7 @@
   <view class='my_order'>
     <view class='order'>我的订单</view>
     <view class="index_menu">
-        <view class='one' bindtap='onJsEvent' data-url="/pages/my/my" data-type="1" wx:for="{{menuList}}" url="/pages/management/management" >  
+        <view class='one' bindtap='onJsEvent' data-url="/pages/management/management?type={{index}}" wx:for-index="index" data-type="1" wx:for="{{menuList}}">  
         <image src='{{item.menu_img}}'></image>  
         <view class="menu_text">{{item.menu_name}}</view>
       </view>
