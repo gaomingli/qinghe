@@ -1,21 +1,15 @@
 // pages/circle/circle.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    dataSource:[],
     animation: {},
-    dataSource:[1,1],
-    icon:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589449153170&di=d2d08a51b31365973a2ab77fb105fc95&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F815b3d0fd49987d4765d433eb2c351a2455a63ad405a6-vEV26l_fw658',
-    content: '我大学毕业到一家集团公司的办公室当文员。办公室主任有一特长，即文章写得好，很有思想，公司董事长很器重他，董事长的讲话稿和企业的年终总结等一系列重大文章都是出自他的手笔。',
-
-    resource: ['http://img2.imgtn.bdimg.com/it/u=2118739199,3378602431&fm=27&gp=0.jpg',
-      'http://img0.imgtn.bdimg.com/it/u=2277942808,1417432970&fm=27&gp=0.jpg',
-      'http://img5.imgtn.bdimg.com/it/u=1504812505,3480403568&fm=27&gp=0.jpg',
-      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2967285042,1480064469&fm=26&gp=0.jpg',
-      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2424996191,2842922329&fm=26&gp=0.jpg'
-    ],
 
     contnet: [{
       'firstname': '张三',
@@ -154,6 +148,22 @@ Page({
   onShow: function () {
     this.getTabBar().setData({
       tabbarIndex: 1
+    })
+    this.getData();
+  },
+  getData:function(){
+    var that = this;
+    urlApi('portal/list/circle', "post",{}).then((res) => {
+      if(res.data.code){
+        that.setData({
+          dataSource: res.data.data
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+      
     })
   },
 

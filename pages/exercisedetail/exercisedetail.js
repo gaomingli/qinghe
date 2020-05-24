@@ -21,6 +21,7 @@ Page({
     post_content:"",
     activity_book_join_num:"",
     activity_book_people:null,
+    activity_btn_name:"",
     getID:{
       id:'',
       category_id:''
@@ -62,7 +63,8 @@ Page({
           tel:res.data.data.tel,
           coin:res.data.data.coin,
           activity_book_join_num:res.data.data.activity_book_join_num,
-          activity_book_people:res.data.data.activity_book_people
+          activity_book_people:res.data.data.activity_book_people,
+          activity_btn_name:res.data.data.activity_btn_name
         })
       }else{
         wx.showToast({

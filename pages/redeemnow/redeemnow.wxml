@@ -33,7 +33,7 @@
 <view class='content_integral'>
 <view class='total'>合计:<text>{{totalCore}}积分</text></view>
 
-<view class='hot_submit' bind:click="handleOpen1">
+<view class='hot_submit' bind:click="handleOpen1" bindtap="nowChange">
 立即兑换
 </view>
 <i-modal title="标题" visible="{{ visible1 }}" bind:ok="handleClose1" bind:cancel="handleClose1">

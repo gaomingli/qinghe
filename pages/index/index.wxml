@@ -121,7 +121,7 @@
           <view class="sign_bottom_left">
             <image src="{{i.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
           </view>
-          <navigator url='/pages/exercisedetail/exercisedetail' hover-class="none">
+          <navigator url='/pages/exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
             <view class="sign_bottom_right">立即报名</view>
           </navigator>
         </view>

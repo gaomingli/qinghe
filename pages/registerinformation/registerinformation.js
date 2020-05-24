@@ -5,15 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-value1:"",
-    value2:""
+    value1:"",
+    value2:"",
+    id:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({'id':options.id})
   },
 
   /**
@@ -29,12 +30,25 @@ value1:"",
   onShow: function () {
 
   },
+  submit:function(){
+  
+wx.navigateTo({
+  url:`/pages/successful/successful?id=${this.data.id}&fullName=${this.data.value1}&tel=${this.data.value2}`
+})
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
 
+  },
+  bindTap:function(e){
+    this.setData({value1:e.detail.detail.value})
+  },
+
+  bindTapPhone:function(e){
+    this.setData({value2:e.detail.detail.value})
   },
 
   /**

@@ -1,4 +1,7 @@
 // pages/release/release.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
@@ -131,7 +134,8 @@ Page({
     wx.showLoading({
       title: '上传中',
     })
-    that.img_upload()
+    that.img_upload();
+    this.getData();
   },
 
   //预览图片方法
@@ -159,7 +163,21 @@ Page({
       tabbarIndex: 2
     })
   },
-
+  getData:function(){
+    var that = this;
+    urlApi('portal/article/circle_publish', "post",{categories:"",post_content:""}).then((res) => {
+      if(res.data.code){
+        wx.showToast({
+          title: res.data.msg
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

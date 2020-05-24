@@ -38,7 +38,7 @@
 </view>
 
 <view class='sign_bottom'>
-<navigator url='../successful/successful'>
+<navigator url='../registerinformation/registerinformation?id={{getID.id}}'>
 <view class='sign_bottom_right'>{{activity_btn_name}}</view>
 </navigator>
 </view>
