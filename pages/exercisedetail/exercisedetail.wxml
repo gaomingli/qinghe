@@ -1,23 +1,23 @@
 <!--pages/exercisedetail/exercisedetail.wxml-->
 <view class='exercisedetail'>
 <view class='exercise_bg'>
-<image src='../../icon/football.png'></image>
+<image src='{{thumbnail}}'></image>
 </view>
 <view class='exercise_cont'>
  <view class="common_title" style="background:#ffffff;padding:20rpx 30rpx;">
       <view class="title_left">
         <image src="../../icon/common.png"></image>
-        <view class="txt">{{projectName}}</view>
+        <view class="txt">{{post_title}}</view>
       </view>
     </view>
 <i-cell-group>
-    <i-cell title="活动项目" label="{{project}}"></i-cell>
-    <i-cell title="发起人" label="{{name}}"></i-cell>
-     <i-cell title="活动时间" label="{{time}}"></i-cell>
-      <i-cell title="活动人数" label="{{sum}}人"></i-cell>
-       <i-cell title="活动地点" label="{{place}}" is-link url=""></i-cell>
-         <i-cell title="联系电话" label="{{num}}" is-link url=""></i-cell>
-         <i-cell title="参加活动可获得积分" label="赠送{{score}}"></i-cell>
+    <i-cell title="活动项目" label="{{post_excerpt}}"></i-cell>
+    <i-cell title="发起人" label="{{user_nickname}}"></i-cell>
+     <i-cell title="活动时间" label="{{activity_start}}"></i-cell>
+      <i-cell title="活动人数" label="{{num}}人"></i-cell>
+       <i-cell title="活动地点" label="{{address}}" is-link url=""></i-cell>
+         <i-cell title="联系电话" label="{{tel}}" is-link url=""></i-cell>
+         <i-cell title="参加活动可获得积分" label="赠送{{coin}}积分"></i-cell>
 </i-cell-group>
 
 
@@ -25,21 +25,22 @@
 
 <view class='introduce'>
 <i-card title="活动说明" class="viewCard">
-    <view slot="content" class='content'>{{content}}</view>
+   <template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
 </i-card>
 </view>
 
 <view class='numTotal'>
-<i-card title="已报名人员（{{numTotal}}）" class="viewCard">
+<i-card title="已报名人员（{{activity_book_join_num}}）" class="viewCard">
     <view slot="content" class='numimg'>
-    <image src='{{item.url}}' wx:for="{{numimg}}" wx:key="id"></image>
+    <image src='{{item.avatar}}' wx:for="{{activity_book_people}}" wx:key="index" wx:for-index="index"></image>
     </view>
 </i-card>
 </view>
 
 <view class='sign_bottom'>
 <navigator url='../successful/successful'>
-<view class='sign_bottom_right'>立即报名</view>
+<view class='sign_bottom_right'>{{activity_btn_name}}</view>
 </navigator>
 </view>
 </view>
+<import src="/library/wxParse/wxParse.wxml"></import>
