@@ -5,11 +5,11 @@
     <i-tab title="{{item.name}}" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:key="index"></i-tab>
 </i-tabs>
 <!-- 内容 -->
-<navigator url='../exercisedetail/exercisedetail?id={{item.id}}'  wx:for="{{current===0?objData.activity_ing.articles:objData.activity_ing.activity_history}}" wx:key="index" wx:for-key="index">
+<navigator url='../exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}'  wx:for="{{current===0?objData.activity_ing.articles:objData.activity_ing.activity_history}}" wx:key="index" wx:for-key="index">
 <view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
       <view class="sign_up">
         <view class="sign_top">
-          <image src="../../icon/sign_up.png"></image>
+          <image src="{{item.thumbnail}}"></image>
           <view class="sign_top_right">
             <view class="title">{{item.post_title}}</view>
             <view class="clock"><image src="../../icon/clock.png"></image> <span>{{item.activity_start}}</span></view>
@@ -20,9 +20,9 @@
         <view class="sign_bottom">
           <view class="sign_bottom_left">
             <image src="{{item.avatar}}" wx:for="{{item.activity_book_people}}"></image>
-            <span>等20人已报名</span>
+            <span>等{{item.activity_book_join_num}}</span>
           </view>
-          <view class="sign_bottom_right"  wx:if="{{current===0}}">立即报名</view>
+          <view class="sign_bottom_right">{{item.activity_btn_name}}</view>
         </view>
 
       </view>

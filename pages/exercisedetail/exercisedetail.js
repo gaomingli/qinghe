@@ -1,31 +1,36 @@
 // pages/exercisedetail/exercisedetail.js
+var {
+  urlApi
+} = require("../../utils/request.js");
+var e = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    projectName:"羽你同行.羽毛球友谊联赛",
-project:"羽毛球",
-    name: "张三",
-    time: "2019-08-15  09：00-18：00",
-    sum: "20",
-    place: "北京体育馆",
-    num: "15552523636",
-    score: "300积分",
-    content:"活动内容活动内容活动内容活动内容",
-    numTotal:"3/20",
-    numimg:[
-      { "id": 1, "url":"/icon/head1.png"},
-      { "id": 2, "url": "/icon/head2.png" },
-       { "id": 3, "url": "/icon/head3.png" }
-    ]
+    thumbnail:"",
+    post_title:"",
+    post_excerpt:"",
+    user_nickname:"",
+    activity_start:"",
+    num:"",
+    address:"",
+    tel:"",
+    coin:"",
+    post_content:"",
+    activity_book_join_num:"",
+    activity_book_people:null,
+    getID:{
+      id:'',
+      category_id:''
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      debugger;
+    this.setData({'getID.id':options.id,'getID.category_id':options.category_id})
   },
 
   /**
@@ -39,9 +44,27 @@ project:"羽毛球",
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData();
   },
-
+  getData:function(){
+    urlApi('portal/article/index', "post",{id:this.data.getID.id,category_id :this.data.getID.category_id}).then((res) => {
+      e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5); 
+      var that = this;
+      that.setData({
+        thumbnail:res.data.data.thumbnail,
+        post_title:res.data.data.post_title,
+        post_excerpt:res.data.data.post_excerpt,
+        user_nickname:res.data.data.user_nickname,
+        activity_start:res.data.data.activity_start,
+        num:res.data.data.num,
+        address:res.data.data.address,
+        tel:res.data.data.tel,
+        coin:res.data.data.coin,
+        activity_book_join_num:res.data.data.activity_book_join_num,
+        activity_book_people:res.data.data.activity_book_people
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -12,13 +12,13 @@
       </view>
     </view>
   <view>
-  <template is="hotrecommed" data=""></template>
+
 </view>
   </view>
   <!-- 分类 -->
     <view class="index_menu">
-      <navigator wx:key="index" wx:for="{{menuList}}" hover-class="none">
-        <image mode="widthFix" src="{{item.icon}}"></image>
+      <navigator wx:key="index" wx:for-index="index" wx:for="{{menuList}}" hover-class="none">
+        <image src="{{item.icon}}"></image>
         <view class="menu_text">{{item.name}}</view>
       </navigator>
     </view>
