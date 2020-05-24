@@ -48,9 +48,9 @@
             </view>
             <!--时间、删除按钮、点赞评论按钮-->
             <view class="TDD-view">
-              <label>4天前</label>
+              <label></label>
               <!-- <button bindtap='delete'>删除</button> -->
-              <image data-isShow='{{isShow}}' bindtap='TouchDiscuss' src='../../icon/circle1/comment.png'></image>
+              <image data-isShow='{{isShow}}' bindtap='TouchDiscuss' src=''></image>
                <!-- 评论按钮弹出框 -->
               <!-- <view animation="{{animation}}" class='pop-up-box' style='top:{{popTop}}px;width: {{popWidth}}px;'></view> -->
                <view animation="{{animation}}" class='pop-up-box' style='width: {{popWidth}}px;'></view>
