@@ -13,50 +13,40 @@ Page({
    */
   data: {
     current: 0,
-    list:[]
+    page:1,
+    id:1,
+    dataObject:null
+
   },
 // tab切换
   handleChange({ detail }) {
+    const {dataObject}=this.data;
     this.setData({
-      current: detail.key
+      current: Number(detail.key),
+      id:dataObject.child_category[Number(detail.key)].id,
+      page:1,
+      'dataObject.articles':[]
     });
+    // debugger;
+    this.getData()
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-      var that=this;
-      that.setData({
-        id: options.id
-      })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  
 
   onShow: function () {
     this.getData();
   },
   getData:function(){
     var that = this;
-    urlApi('portal/list/index/id/1', "post").then((res) => {
-      if(res.data.code){
-        res.data.data.length > 0 && res.data.data.map((item,index)=>{
-          item.last_news && item.last_news.length > 0 && item.last_news.map((_item,_index)=>{
-            _item.published_time = timestampToTime(_item.published_time)
-          })
+    urlApi('portal/list/index', "post",{page:this.data.page,id:this.data.id}).then((res) => {
+      if(res.data.code){     
+        res.data.data.child_category.unshift({id:1,name:'推荐'});
+        res.data.data.articles.length>0&&res.data.data.articles.map((item,index)=>{
+          item.published_time = timestampToTime(item.published_time)
         })
-        that.setData({
-          list: res.data.data
-        })
+        // 此时应对数组拼接
+        if(that.data.dataObject&&that.data.dataObject.articles){
+          res.data.data.articles=that.data.dataObject.articles.concat(res.data.data.articles)
+        }
+        this.setData({dataObject:res.data.data})
       }else{
         wx.showToast({
           title: res.data.msg
@@ -71,26 +61,10 @@ Page({
   onHide: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-
+    let {page} =this.data;
+    this.setData({page:page+1})
+    this.getData();
   },
 
   /**

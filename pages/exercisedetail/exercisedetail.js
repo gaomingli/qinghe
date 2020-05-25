@@ -59,8 +59,10 @@ Page({
     var data = {};
     data.id = that.data.id;
     data.category_id = that.data.category_id;
+    wx.showLoading({
+      title: '加载中'
+    })
     urlApi('portal/article/index', "post",data).then((res) => {
-      console.log(res);
       if(res.data.code){
         that.setData({
           thumbnail:res.data.data.thumbnail,
@@ -83,7 +85,7 @@ Page({
           title: res.data.msg
         })
       }
-    
+     wx.hideLoading();
     })
   },
 

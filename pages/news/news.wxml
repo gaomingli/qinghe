@@ -11,15 +11,15 @@
   <!-- tab切换 -->
   <view class='tabChange'>
       <i-tabs current="{{ current }}" color="#333333" bindchange="handleChange">
-          <i-tab title="{{item.name}}" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:key="index"></i-tab>
+          <i-tab title="{{item.name}}" key="{{index}}" wx:for="{{dataObject.child_category}}" wx:for-index="index" wx:key="index"></i-tab>
       </i-tabs>
 </view>
 <!-- 图片 -->
 <view class='review_img'>
-<image src='{{list[current].banner}}'></image>
+<image src='{{dataObject.banner}}'></image>
 </view>
   <!-- 内容 -->
-   <view class="common_box" wx:for="{{list[current].last_news}}" wx:key="index">
+   <view class="common_box" wx:for="{{dataObject.articles}}" wx:key="index">
     <view class="common_content">
       <navigator class="article_box" hover-class="none" url='/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}'>
         <view class="article_left">

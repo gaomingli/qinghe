@@ -1,49 +1,49 @@
 <!--pages/exercisedetail/exercisedetail.wxml-->
 <import src="/library/wxParse/wxParse.wxml"></import>
 <view class='exercisedetail'>
-<view class='exercise_bg'>
-<image src='{{thumbnail}}'></image>
-</view>
-<view class='exercise_cont'>
- <view class="common_title" style="background:#ffffff;padding:20rpx 30rpx;">
-      <view class="title_left">
-        <image src="../../icon/common.png"></image>
-        <view class="txt">{{post_title}}</view>
-      </view>
-    </view>
-<i-cell-group>
-    <i-cell title="活动项目" label="{{post_excerpt}}"></i-cell>
-    <i-cell title="发起人" label="{{user_nickname}}"></i-cell>
-     <i-cell title="活动时间" label="{{activity_start}}"></i-cell>
-      <i-cell title="活动人数" label="{{num}}人"></i-cell>
-       <i-cell title="活动地点" label="{{address}}" is-link url=""></i-cell>
-         <i-cell title="联系电话" label="{{tel}}" is-link url=""></i-cell>
-         <i-cell title="参加活动可获得积分" label="赠送{{coin}}积分"></i-cell>
-</i-cell-group>
+	<view class='exercise_bg'>
+		<image src='{{thumbnail}}'></image>
+	</view>
+	<view class='exercise_cont'>
+		<view class="common_title" style="background:#ffffff;padding:20rpx 30rpx;">
+			<view class="title_left">
+				<image src="../../icon/common.png"></image>
+				<view class="txt">{{post_title}}</view>
+			</view>
+		</view>
+		<i-cell-group>
+			<i-cell title="活动项目" label="{{post_excerpt}}"></i-cell>
+			<i-cell title="发起人" label="{{user_nickname}}"></i-cell>
+			<i-cell title="活动时间" label="{{activity_start}}"></i-cell>
+			<i-cell title="活动人数" label="{{num}}人"></i-cell>
+			<i-cell title="活动地点" label="{{address}}"></i-cell>
+			<i-cell title="联系电话" label="{{tel}}"></i-cell>
+			<i-cell title="参加活动可获得积分" label="赠送{{coin}}积分"></i-cell>
+		</i-cell-group>
 
 
-</view>
+	</view>
 
-<view class='introduce'>
-<view  class="viewCard">
-   <view>活动说明</view>
-   <template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
-</view>
+	<view class='introduce'>
+		<view class="viewCard" style="margin-top:10px">
+			<view style="font-size: 14px;line-height: 24px;margin-left: 15px;">活动说明</view>
+			<view style="padding:12px 15px;padding-top:0px;font-size:12px;color:#80848f"> <template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
+			</view>
+		</view>
+	</view>
 
-</view>
-
-<view class='numTotal'>
-<i-card title="已报名人员（{{activity_book_join_num}}）" class="viewCard">
-    <view slot="content" class='numimg'>
-    <image src='{{item.avatar}}' wx:for="{{activity_book_people}}" wx:key="index" wx:for-index="index"></image>
-    </view>
-</i-card>
-</view>
+	<view class='introduce'>
+		<view class="viewCard"  style="margin-top:10px">
+			<view style="font-size: 14px;line-height: 24px;margin-left: 15px;">已报名人员（{{activity_book_join_num}}）</view>
+			<view slot="content" class='numimg'>
+				<image src='{{item.avatar}}' wx:for="{{activity_book_people}}" wx:key="index" wx:for-index="index"></image>
+			</view>
+		</view>
+	</view>
 
 <view class='sign_bottom'>
-<navigator url='../registerinformation/registerinformation?id={{getID.id}}' wx:if="{{activity_status===1}}">
-<view class='sign_bottom_right'>{{activity_btn_name}}</view>
-</navigator>
+	<navigator url='../registerinformation/registerinformation?id={{getID.id}}' wx:if="{{activity_status===1}}">
+		<view class='sign_bottom_right'>{{activity_btn_name}}</view>
+	</navigator>
 </view>
 </view>
-
