@@ -9,7 +9,7 @@
 
   <view class="index_swiper">
     <swiper autoplay indicator-dots circular>
-      <swiper-item wx:for="{{swiperList}}" wx:key="index" wx:for-index="index">
+      <swiper-item wx:for="{{dataList.banner}}" wx:key="index" wx:for-index="index">
         <navigator hover-class="none" url='item.url'>
           <image mode="widthFix" src="{{item.image}}"></image>
         </navigator>
@@ -27,7 +27,7 @@
   <view class="board">
     <view class="swiper_notice">公告</view>
     <swiper class="swiper_container" autoplay="{{true}}" vertical="{{true}}" circular="{{true}}" interval="2000">
-      <block wx:for='{{boardList}}' wx:key="index" wx:for-index="index">
+      <block wx:for='{{dataList.announcement}}' wx:key="index" wx:for-index="index">
         <swiper-item>
           <view class="board_name">{{item.post_title}}</view>
         </swiper-item>
@@ -45,7 +45,25 @@
       </view>
     </view>
     <view>
-      <template is="hotrecommed" data="{{psychological}}"></template>
+      <!-- <template is="hotrecommed" data="{{dataList.psychological}}"></template> -->
+      <view class='hot_content'>
+<view class="common_content">
+     <scroll-view class="" scroll-x>
+        <view class="scroll_box">
+          <view class="hot_box" wx:for="{{dataList.psychological}}" wx:key="index" wx:for-index="index">
+            <image src="{{item.thumbnail}}"></image>
+            <view class="hot_right">
+              <view class="hot_title">{{item.post_title}}</view>
+              <view class="hot_num">{{item.num}}人测过</view>
+               <navigator url="/pages/evaluation/evaluation" hover-class="none">
+              <view class="hot_submit">立即测评</view></navigator>
+            </view>
+          </view>        
+        </view>
+     </scroll-view>
+    </view>
+</view>
+      <!--  -->
     </view>
   </view>
 
@@ -64,13 +82,13 @@
     </view>
 
     <view class="common_content">
-      <navigator class="article_box" wx:for="{{articleData}}" wx:key="index" url="/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}" hover-class="none" wx:for-index="index">
+      <navigator class="article_box" wx:for="{{dataList.last_news}}" wx:key="index" url="/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}" hover-class="none" wx:for-index="index">
         <view class="article_left">
           <view class="article_title">
             {{item.post_title}}
           </view>
           <view class="article_des">
-            <span class="time">{{item.time}}前</span>
+            <span class="time">发布时间:{{item.published_time}}</span>
             <span>{{item.post_hits}}人浏览</span>
           </view>
         </view>
@@ -95,8 +113,8 @@
       </navigator>
     </view>
 
-    <view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
-      <view class="sign_up" wx:for="{{activity}}" wx:key="index" wx:for-index="index">
+    <view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;"  wx:for="{{dataList.activity}}" wx:key="index" wx:for-index="index">
+      <view class="sign_up">
         <view class="sign_top">
           <image src="{{item.thumbnail}}"></image>
           <view class="sign_top_right">
@@ -106,7 +124,7 @@
               <span>{{item.activity_start}}</span>
             </view>
             <view class="address">
-              <image src="/icon/address.png"></image>
+              <image src="/icon/address.png" style="width:25rpx;height:25rpx"></image>
               <span>{{item.address}}</span>
             </view>
             <view class="people">
@@ -120,9 +138,14 @@
           <view class="sign_bottom_left">
             <image src="{{i.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
           </view>
-          <navigator url='/pages/exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
-            <view class="sign_bottom_right">立即报名</view>
-          </navigator>
+          <!-- <navigator url='/pages/exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
+            <view class="sign_bottom_right" style="width:199rpx">{{item.activity_btn_name}}</view>
+          </navigator> -->
+          <!-- <view class="sign_bottom_right" style="width:199rpx;background-color:#C6C6C6" wx:if="{{item.activity_status==0}}">{{item.activity_btn_name}}</view>
+          <view class="sign_bottom_right" style="width:199rpx" wx:if="{{item.activity_status==1}}">{{item.activity_btn_name}}</view>
+        <view class="sign_bottom_right" style="width:199rpx;background-color:#C6C6C6" wx:if="{{item.activity_status==2}}">{{item.activity_btn_name}}</view>
+         <view class="sign_bottom_right" style="width:199rpx;background-color:#C6C6C6" wx:if="{{item.activity_status==4}}">{{item.activity_btn_name}}</view>
+         -->
         </view>
       </view>
     </view>
@@ -146,7 +169,7 @@
     <view class="common_content">
 
       <view class="shop_box">
-        <navigator url='/pages/productlist/productlist?id={{item.id}}' hover-class="none" wx:for="{{shopData}}" wx:key="index" wx:for-index="index">
+        <navigator url='/pages/productlist/productlist?id={{item.id}}' hover-class="none" wx:for="{{dataList.product}}" wx:key="index" wx:for-index="index">
           <view class="shop_item">
             <image src="{{item.thumbnail}}"></image>
             <view class="title">{{item.post_title}}</view>

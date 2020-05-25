@@ -5,7 +5,7 @@ var {
 const app = getApp()
 Page({
   data: {
-    swiperList: [],
+    dataList:{},
     menuList: [{
         id: 1,
         menu_img: "/icon/menuHeart.png",
@@ -34,11 +34,7 @@ Page({
         url: "/pages/shopping/shopping",
         type: 1
       },
-    ],
-    boardList: [],
-    psychological: [],
-    articleData: [],
-    shopData: []
+    ]
   },
   more: function () {
     wx.switchTab({
@@ -79,22 +75,20 @@ Page({
   },
   getData:function(){
     var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
     urlApi('', "post",{}).then((res) => {
     if(res.data.code){
       that.setData({
-        swiperList: res.data.data.banner,
-        boardList: res.data.data.announcement,
-        psychological: res.data.data.psychological,
-        articleData: res.data.data.last_news,
-        activity: res.data.data.activity,
-        shopData: res.data.data.product
+        dataList:res.data.data
       })
     }else{
       wx.showToast({
         title: res.data.msg
       })
-    }
-      
+    }  
+    wx.hideLoading(); 
     })
   }
 })

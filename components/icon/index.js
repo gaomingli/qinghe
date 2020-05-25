@@ -10,6 +10,10 @@ Component({
             type: String,
             value: ''
         },
+        myIcon: {
+            type: String,
+            value: ''
+        },
         size: {
             type: Number,
             value: 14

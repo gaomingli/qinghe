@@ -14,7 +14,7 @@
 </view>
 </view>
 
-<navigator url='/pages/mycore/mycore'>
+<navigator url='/pages/mycore/mycore' hover-class="none">
 <view class='right_info'>
 <view class='available'>可用积分</view>
 <view class='information'>25820</view>

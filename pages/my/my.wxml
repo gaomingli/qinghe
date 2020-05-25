@@ -1,70 +1,71 @@
 <!--pages/my/my.wxml-->
 <view class='my'>
-  <view class='my_bg'>
-    <image src='../../icon/my/orderbg.png'></image>
-  </view>
-  <view class='personalinfo'  wx:if="{{flag}}">
-    <view class='left_part'>
-      <view class='one'>
-        <image src="/icon/head2.png"></image>
-      </view>
-      <view class='two'>
-        <view class='name'>{{name}}</view>
-        <view class='num'>
-          <text>{{num}}</text>积分</view>
-      </view>
-      <view class='three'>{{blong}}</view>
-    </view>
-    <navigator url='/pages/personalinfo/personalinfo'>
-      <view class='right_part'>
-        <i-icon type="enter" color="#ffffff" />
-      </view>
-    </navigator>
-  </view>
-    <view class='personalinfo'  wx:else>
-      <view class='left_part'>
-        <view class='one' bindtap='onJsEvent' data-url="/pages/my/my" data-type="2">
-          <image src="/icon/head2.png" style="width:60px;height:60px"></image>
-          <text style="color:#fff;margin-left:12px;">点击获取头像昵称</text>
-        </view>
-      </view>
-    </view>
+	<view class='my_bg'>
+		<image src='../../icon/my/orderbg.png'></image>
+	</view>
+	<view class='personalinfo' wx:if="{{flag}}">
+		<view class='left_part'>
+			<view class='one'>
+				<image src="{{userInfo.avatar}}"></image>
+			</view>
+			<view class='two'>
+				<view class='name'>{{userInfo.user_nickname}}</view>
+				<view class='num'>
+					<text>{{userInfo.coin}}</text>积分</view>
+			</view>
+			<view class='three'>{{userInfo.company_name}}</view>
+		</view>
+		<navigator url='/pages/personalinfo/personalinfo'>
+			<view class='right_part'>
+				<i-icon type="enter" color="#ffffff" />
+			</view>
+		</navigator>
+	</view>
+	<view class='personalinfo' wx:else>
+		<view class='left_part'>
+			<view class='one' bindtap='onJsEvent' data-url="/pages/my/my" data-type="2">
+				<image src="/icon/head2.png" style="width:60px;height:60px"></image>
+				<text style="color:#fff;margin-left:12px;">点击获取头像昵称</text>
+			</view>
+		</view>
+	</view>
 
-  <view class='my_order'>
-    <view class='order'>我的订单</view>
-    <view class="index_menu">
-        <view bindtap='onJsEvent' data-url="/pages/management/management?type={{index}}" wx:for-index="index" data-type="1" wx:for="{{menuList}}">  
-          <image src='{{item.menu_img}}' class="orderImg"></image>  
-        <view class="menu_text">{{item.menu_name}}</view>
-      </view>
-    </view>
-  </view>
-  <view class='part'>
-    <i-cell-group>
-      <i-cell title="我的测评" is-link url="/pages/mytest/mytest">
-        <i-icon size="28" custom="/icon/add.png" />
-      </i-cell>
-      <i-cell title="我的活动" is-link url="/pages/myexercise/myexercise">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-      <i-cell title="我的评论" is-link url="/pages/comment/comment">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-      <i-cell title="我的积分" is-link url="/pages/mycore/mycore">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-      <i-cell title="收货地址" is-link url="/pages/generalinformation/generalinformation">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-      <i-cell title="联系客服" is-link url="/pages/connect/connect">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-      <i-cell title="意见反馈" is-link url="/pages/feedback/feedback">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-      <i-cell title="切换角色" is-link url="/pages/choicerole/choicerole">
-        <i-icon slot="icon" size="28" />
-      </i-cell>
-    </i-cell-group>
-  </view>
+	<!-- <view class='my_order'>
+		<view class='order'>我的订单</view>
+		<view class="index_menu">
+			<view bindtap='onJsEvent' data-url="/pages/management/management?type={{index}}" wx:for-index="index" data-type="1" wx:for="{{menuList}}">
+				<image src='{{item.menu_img}}' class="orderImg"></image>
+				<view class="menu_text">{{item.menu_name}}</view>
+			</view>
+		</view>
+	</view> -->
+
+	<view class='part'>
+		<i-cell-group>
+			<i-cell title="我的测评" is-link url="/pages/mytest/mytest">
+				<i-icon slot="icon" myIcon="/icon/my/part1.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="我的活动" is-link url="/pages/myexercise/myexercise">
+				<i-icon slot="icon" myIcon="/icon/my/part2.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="我的评论" is-link url="/pages/comment/comment">
+				<i-icon slot="icon" myIcon="/icon/my/part3.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="我的积分" is-link url="/pages/mycore/mycore">
+				<i-icon slot="icon" myIcon="/icon/my/part4.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="收货地址" is-link url="/pages/generalinformation/generalinformation">
+				<i-icon slot="icon" myIcon="/icon/my/part5.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="联系客服" is-link url="/pages/connect/connect">
+				<i-icon slot="icon" myIcon="/icon/my/part6.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="意见反馈" is-link url="/pages/feedback/feedback">
+				<i-icon slot="icon" myIcon="/icon/my/part7.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+			<i-cell title="切换角色" is-link url="/pages/choicerole/choicerole">
+				<i-icon slot="icon" myIcon="/icon/my/part8.png" size="28" style="margin-right:20rpx" />
+			</i-cell>
+		</i-cell-group>
+	</view>
 </view>

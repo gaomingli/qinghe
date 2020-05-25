@@ -83,7 +83,7 @@ page{padding-bottom: 110rpx;}
 
 .sign_up{width: 690rpx;height:300rpx;background: #ffffff;border-radius: 8rpx;padding:20rpx;}
 .sign_up image{width: 180rpx;height: 183rpx;}
-.sign_top{display: flex;height: 183rpx;}
+.sign_top{display: flex;height: 183rpx;border-bottom: 1rpx dashed #E7E7E7;padding-bottom: 20rpx;}
 
 .sign_top_right{margin-left: 30rpx;height: 183rpx;display: flex;flex-direction: column; justify-content: space-between;}
 .sign_up_right .title{font-size:30rpx;font-weight:bold;color:rgba(51,51,51,1);line-height:48rpx;}
@@ -91,13 +91,13 @@ page{padding-bottom: 110rpx;}
 .address image{width:42rpx;height: 42rpx; }
 .people image{width:21rpx;height: 25rpx; }
 .sign_top_right span{font-size:24rpx;color: #999999; margin-left: 20rpx;}
-.clock,.address,.people{display: flex;align-items: center;}
+.clock,.address,.people{display: flex;align-items: center;height: 20rpx;}
 
-.sign_bottom{display: flex;justify-content: space-between;align-items: center;margin-top: 40rpx;}
+.sign_bottom{display: flex;justify-content: space-between;align-items: center;margin-top: 20rpx;}
 .sign_bottom .sign_bottom_left{width: 250rpx;display: flex;overflow: hidden;}
 .sign_bottom_left image{width: 50rpx;height: 50rpx;flex-shrink: 0;}
 .sign_bottom .sign_bottom_right{
-  width: 199rpx;
+ /* flex: 1; */
   height: 64rpx;
   background:#53B2AA;
   border-radius: 32rpx;
@@ -133,3 +133,51 @@ page{padding-bottom: 110rpx;}
   font-size: 24rpx;
 }
 .clearfix{clear: both}
+/* 热门推荐 */
+/**热门推荐*/
+.common_box{padding: 20rpx 30rpx;margin: 20rpx 0rpx;line-height: 60rpx;background: #ffffff;}
+.common_title{display: flex;justify-content: space-between;align-items: center;}
+.common_title .title_left{display: flex;align-items: center;}
+.title_left image{width: 8rpx;height: 33rpx;}
+.title_left .txt{font-size: 32rpx;font-weight: bold;color: #333333;padding-left:16rpx;}
+.common_box{
+  margin-top: 10rpx;
+  margin-bottom: 0rpx;
+}
+.common_content .scroll_box{display: flex;}
+.hot_box{
+  flex-shrink: 0;
+  width: 421rpx;
+  height: 193rpx;
+  background:#ffffff;
+  box-shadow:0px 2rpx 18rpx 0px rgba(159,159,159,0.2);
+  border-radius:10rpx;
+  padding: 21rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30rpx;
+}
+.hot_box image{width: 169rpx;height: 152rpx;flex-shrink: 0;}
+.hot_box .hot_right{
+  display: flex;flex-direction: column;justify-content: space-between;width: 190rpx;margin-left: 
+  20rpx
+ }
+.hot_box .hot_title{
+  font-size: 28rpx;color: #333333;line-height: 36rpx;
+  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 2rpx;
+}
+.hot_box .hot_num{font-size: 24rpx;color: #999999;line-height: 36rpx;}
+.hot_box .hot_submit{
+  width:143rpx;
+  height:56rpx;
+  background-color:#53B2AA;
+  border-radius:28rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  text-align: center;
+}
+.gery{
+  background: #C6C6C6;
+}

@@ -4,7 +4,7 @@
 <view class="common_content">
      <scroll-view class="" scroll-x>
         <view class="scroll_box">
-          <view class="hot_box" wx:for="{{psychological}}" wx:key="index">
+          <view class="hot_box" wx:for="{{dataList.psychological}}" wx:key="index" wx:for-index="index">
             <image src="{{item.thumbnail}}"></image>
             <view class="hot_right">
               <view class="hot_title">{{item.post_title}}</view>

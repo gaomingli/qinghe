@@ -1,27 +1,28 @@
 <!--pages/choicerole/choicerole.wxml-->
 <view class='choicerole'>
-<view wx:for="{{list}}" wx:key="index" class='role'>
-<view class='part'>
+	<view wx:for="{{list}}" wx:key="index" class='role'  wx:for-index="index">
+		<view class='part'>
 
-<view class='roleimg'>
-<image src='{{item.src}}'></image></view>
+			<view class='roleimg'>
+				<image src='{{item.src}}'></image>
+			</view>
 
-<view class='userinfo'>
-<view class='myname'>我是{{item.name}}</view>
-<view class='goto'>点击进入{{item.name}}</view>
-</view>
+			<view class='userinfo'>
+				<view class='myname'>我是{{item.name}}</view>
+				<view class='goto'>点击进入{{item.name}}</view>
+			</view>
 
-</view>
+		</view>
 
-<view class='choice'>
-<i-panel>
-    <i-radio-group bindchange="handleListChange">
-        <i-radio  position="{{position}}">
-        </i-radio>
-    </i-radio-group>
-</i-panel>
-</view>
-</view>
+		<view class='choice'>
+			<i-panel>
+				<i-radio-group bindchange="handleListChange">
+					<i-radio position="{{position}}" wx:key="{{item.id}}" value="{{index}}">
+					</i-radio>
+				</i-radio-group>
+			</i-panel>
+		</view>
+	</view>
 
-<view class='gotobtn' bindtap='goto'>进入</view>
+	<view class='gotobtn' bindtap='goto'>进入</view>
 </view>

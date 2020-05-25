@@ -8,9 +8,9 @@ Page({
         current: '1',
         position: 'right',
 list:[
-  { id: 1, src:"/icon/num.png",name:"普通用户"},
-  { id: 2, src: "/icon/num.png",name: "社工" },
-  { id: 3, src: "/icon/num.png",name: "组织" }
+  { id: 1, src:"/icon/num.png",name:"普通用户",checked:false},
+  { id: 2, src: "/icon/num.png",name: "社工",checked:false },
+  { id: 3, src: "/icon/num.png",name: "组织",checked:false }
 ]
   },
 

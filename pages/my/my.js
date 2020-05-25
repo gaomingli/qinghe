@@ -9,10 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:"一叶知秋",
     flag:false,
-    num:6005,
-    blong:"组织",
     userInfo:null,
     menuList: [
       { id: 1, menu_img: "/icon/my/pay1.png", menu_name: "待付款", url: "/pages/psychometrics/psychometrics" },
@@ -27,12 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userInfo = wx.getStorageInfoSync("userInfo");
-    if (!userInfo) {
-      this.setData({ flag: true })
-    } else {
-      this.setData({ userInfo: userInfo })
-    }
+ 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -48,6 +40,13 @@ Page({
     this.getTabBar().setData({
       tabbarIndex:4
     })
+    let userInfo = wx.getStorageSync("userInfo");
+    console.log(userInfo)
+    if (!userInfo) {
+      this.setData({ flag: false })
+    } else {
+      this.setData({ userInfo: userInfo,flag: true})
+    }
   },
 
   /**

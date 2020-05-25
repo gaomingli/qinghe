@@ -31,7 +31,7 @@ Component({
         }
     },
     data: {
-        checked: true,
+        checked: false,
         positionCls: `${prefixCls}-radio-left`,
     },
     attached() {

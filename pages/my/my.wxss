@@ -6,7 +6,7 @@
 }
 .my .my_bg{
   background: #fff;
-  height: 362rpx;
+  height: 298rpx;
 }
 .index_menu navigator image{
   width: 60rpx;

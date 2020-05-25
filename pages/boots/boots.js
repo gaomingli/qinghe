@@ -24,6 +24,7 @@ Page({
   },
 
   onGotUserInfo(e) {
+   
     var that = this
     if (e.detail.errMsg ==='getUserInfo:ok'){
       wx.login({
@@ -39,7 +40,8 @@ Page({
               params['code'] = a.code;
               urlApi("/user/Login/wechatLogin","post",params).then((res)=>{
                 if(res.data.code){
-                  wx.setStorageSync("userInfo", t);
+                  console.log(res.data.data)
+                  wx.setStorageSync("userInfo", res.data.data);
                   wx.setStorageSync("tokenn",res.data.data.token);
                   if(that.data.type==1){
                     wx.navigateTo({

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/choicerole/choicerole",
     "pages/management/management",
     "pages/my/my",
     "pages/login/login", 
@@ -14,9 +15,7 @@
     "pages/myexercise/myexercise",
     "pages/exercise/exercise",
     "pages/registerinformation/registerinformation",
-    "pages/choicerole/choicerole",
     "pages/forgetpassword/forgetpassword",
-
     "pages/exercisedetail/exercisedetail",
     "pages/news/news",
     "pages/successful/successful",
