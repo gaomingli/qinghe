@@ -1,10 +1,10 @@
 <!--pages/editaddress/editaddress.wxml-->
 <view class='editaddress'>
 	<view class='editinfo'>
-			<i-input value="{{name}}" type="text" bindblur="getName" title="收货人" placeholder="收货人姓名" maxlength="50" />
-			<i-input value="{{phone}}" type="number" bindblur="getPhone" title="联系电话" placeholder="手机号码" maxlength="50" />
-			<i-input value="{{address_city}}" disabled bindtap="chooseAddress" title="地址" placeholder="请选择所在地址"  />
-			<i-input value="{{address}}" type="textarea" bindblur="getAddress" title="详细地址" placeholder="请输入详细地址" maxlength="50" />
+			<i-input value="{{name}}" type="text" bindblur="getName" bindinput="getName" title="收货人" placeholder="收货人姓名" maxlength="50" />
+			<i-input value="{{phone}}" type="number" bindblur="getPhone" bindinput="getPhone" title="联系电话" placeholder="手机号码" maxlength="50" />
+			<i-input value="{{area}}" disabled bindtap="chooseAddress" title="地址" placeholder="请选择所在地址"  />
+			<i-input value="{{address}}" type="textarea" bindblur="getAddress" bindinput="getAddress" title="详细地址" placeholder="请输入详细地址" maxlength="50" />
 	</view>
 
 	<view class='hot_submit' bindtap='submit' style="background-color:{{score}};" wx:if="{{style==0}}">确认</view>

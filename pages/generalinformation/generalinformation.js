@@ -8,11 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[
-      { id: 1,city: "合肥市",district: "蜀山区" ,province: "安徽省", full_name: "李华", tel: "15552635454", address:"习友路与玉兰大道交叉口"},
-      { id: 2,city: "合肥市",district: "蜀山区" ,province: "安徽省", full_name: "李华", tel: "15552635454", address:"习友路与玉兰大道交叉口"},
-      { id: 3,city: "合肥市",district: "蜀山区" ,province: "安徽省", full_name: "李华", tel: "15552635454", address:"习友路与玉兰大道交叉口"}
-    ]
+    list:[]
   },
 
   /**
@@ -76,7 +72,8 @@ Page({
         })
       }else{
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }            
     })

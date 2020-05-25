@@ -5,7 +5,9 @@
 		<i-tab key="1" title="未完成"></i-tab>
 		<i-tab key="2" title="已完成"></i-tab>
 	</i-tabs>
-	<view wx:if="{{current == 1}}" class='part' wx:for="{{list_done}}" wx:key="index">
+ 
+ <view class="list-wapper" wx:if="{{testList && testList.length > 0}}">
+	<view class='part' wx:for="{{testList}}" wx:key="index">
 		<view class='partimg'>
 			<image src="{{item.thumbnail}}"></image>
 		</view>
@@ -18,8 +20,11 @@
 			</navigator>
 		</view>
 	</view>
+ </view>
+ 
+  <view class="show-icon" wx:else><image src="/icon/nodata.png" class="zanwushuju"></image></view>
 
-    <view wx:if="{{current == 2}}" class='part' wx:for="{{list_undone}}" wx:key="index">
+  <!-- <view wx:if="{{current == 2}}" class='part' wx:for="{{list_undone}}" wx:key="index">
 		<view class='partimg'>
 			<image src="{{item.thumbnail}}"></image>
 		</view>
@@ -31,5 +36,5 @@
 				<view class='look'>查看报告</view>
 			</navigator>
 		</view>
-	</view>
+	</view> -->
 </view>

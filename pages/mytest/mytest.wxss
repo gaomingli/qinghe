@@ -33,3 +33,10 @@
 .look{
   font-size: 24rpx;
 }
+.show-icon{
+  margin-top: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
