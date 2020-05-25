@@ -22,16 +22,22 @@ Page({
     activity_book_join_num:"",
     activity_book_people:null,
     activity_btn_name:"",
+    activity_status:'',
     getID:{
       id:'',
       category_id:''
-    }
+    },
+    id:'',
+    category_id:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({'getID.id':options.id,'getID.category_id':options.category_id})
+    this.setData({ 
+      'id': options.id,
+      'category_id': options.category_id
+      })
   },
 
   /**
@@ -49,8 +55,11 @@ Page({
   },
   getData:function(){
     var that = this;
-    urlApi('portal/article/index', "post",{id:this.data.getID.id,category_id :this.data.getID.category_id}).then((res) => {
-    
+    var data = {};
+    data.id = that.data.id;
+    data.category_id = that.data.category_id;
+    urlApi('portal/article/index', "post",data).then((res) => {
+      console.log(res);
       if(res.data.code){
         that.setData({
           thumbnail:res.data.data.thumbnail,
@@ -64,9 +73,9 @@ Page({
           coin:res.data.data.coin,
           activity_book_join_num:res.data.data.activity_book_join_num,
           activity_book_people:res.data.data.activity_book_people,
-          activity_btn_name:res.data.data.activity_btn_name
+          activity_btn_name:res.data.data.activity_btn_name,
+          activity_status: res.data.data.activity_status
         })
-        debugger;
         e.WxParse.wxParse("agreement", "html",res.data.data.post_content, that, 5); 
       }else{
         wx.showToast({
@@ -76,6 +85,15 @@ Page({
     
     })
   },
+
+  //跳转报名页面
+  jumpSignUpClick:function(e){
+    console.log("id=================" + this.data.id);
+    wx.navigateTo({
+      url: '../registerinformation/registerinformation?id='+this.data.id
+    })
+  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
