@@ -138,15 +138,10 @@
           <view class="sign_bottom_left">
             <image src="{{i.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
           </view>
-          <!-- <navigator url='/pages/exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
-            <view class="sign_bottom_right" style="width:199rpx">{{item.activity_btn_name}}</view>
-          </navigator> -->
-          <!-- <view class="sign_bottom_right" style="width:199rpx;background-color:#C6C6C6" wx:if="{{item.activity_status==0}}">{{item.activity_btn_name}}</view>
-          <view class="sign_bottom_right" style="width:199rpx" wx:if="{{item.activity_status==1}}">{{item.activity_btn_name}}</view>
-        <view class="sign_bottom_right" style="width:199rpx;background-color:#C6C6C6" wx:if="{{item.activity_status==2}}">{{item.activity_btn_name}}</view>
-         <view class="sign_bottom_right" style="width:199rpx;background-color:#C6C6C6" wx:if="{{item.activity_status==4}}">{{item.activity_btn_name}}</view>
-         -->
-        </view>
+          <view class="sign_bottom_right grayAct"    bindtap="goActivity"   data-id="{{item.id}}" data-categoryid="{{item.category_id}}" wx:if="{{item.activity_status==0}}">{{item.activity_btn_name}}</view>
+            <view class="sign_bottom_right  Activityactive" bindtap="goActivity" data-id="{{item.id}}" data-categoryid="{{item.category_id}}"    wx:if="{{item.activity_status==1}}">{{item.activity_btn_name}}</view>
+            <view class="sign_bottom_right grayAct"  bindtap="goActivity"  data-id="{{item.id}}" data-categoryid="{{item.category_id}}"  wx:if="{{item.activity_status==2||item.activity_status==4}}">{{item.activity_btn_name}}</view>
+          </view>
       </view>
     </view>
 

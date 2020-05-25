@@ -6,6 +6,7 @@ const app = getApp()
 Page({
   data: {
     dataList:{},
+    searchValue:'',
     menuList: [{
         id: 1,
         menu_img: "/icon/menuHeart.png",
@@ -90,5 +91,32 @@ Page({
     }  
     wx.hideLoading(); 
     })
-  }
+  },
+  getSearch:function(){
+    this.getSearchValue();
+  },
+  getintsearch:function(e){
+    this.setData({searchValue:e.detail.value})
+  },
+  getSearchValue:function(){
+    var that = this;
+    urlApi('portal/Search/index', "post",{keyword:this.data.searchValue,page_type:1}).then((res) => {
+    if(res.data.code){
+      // that.setData({
+      //   dataList:res.data.data
+      // })
+    }else{
+      wx.showToast({
+        title: res.data.msg
+      })
+    }  
+    })
+  },
+// 活动判断
+goActivity:function(e){
+   const {categoryid,id}=e.currentTarget.dataset;
+ wx.navigateTo({
+   url:`/pages/exercisedetail/exercisedetail?category_id=${categoryid}&id=${id}`,
+ })
+}
 })

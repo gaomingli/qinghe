@@ -21,6 +21,7 @@ Page({
     post_content:"",
     activity_book_join_num:"",
     activity_book_people:null,
+    activity_status:0,
     activity_btn_name:"",
     getID:{
       id:'',
@@ -64,7 +65,8 @@ Page({
           coin:res.data.data.coin,
           activity_book_join_num:res.data.data.activity_book_join_num,
           activity_book_people:res.data.data.activity_book_people,
-          activity_btn_name:res.data.data.activity_btn_name
+          activity_btn_name:res.data.data.activity_btn_name,
+          activity_status:res.data.data.activity_status
         })
         debugger;
         e.WxParse.wxParse("agreement", "html",res.data.data.post_content, that, 5); 

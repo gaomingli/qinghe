@@ -181,3 +181,13 @@ page{padding-bottom: 110rpx;}
 .gery{
   background: #C6C6C6;
 }
+
+.Activityactive{
+  background-color: seagreen;
+  padding:2px 10px;
+}
+
+.grayAct{
+  background: #C6C6C6!important;
+  padding:2px 10px;
+}
