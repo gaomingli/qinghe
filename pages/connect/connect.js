@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    dictList: [{ name: '客服一', description: '18912312121' }, { name: '客服二', description: '18912311324' }]
   },
 
   /**

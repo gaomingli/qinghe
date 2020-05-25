@@ -1,2 +1,9 @@
-<!--pages/connect/connect.wxml-->
-<text>pages/connect/connect.wxml</text>
+<view class="service-box">
+  <view class="service-view1">公共服务</view>
+
+  <view class="service-view2" wx:for="{{dictList}}" data-phone="{{item.description}}" catchtap="dictPhoneClick">
+    <view class="service-view3">{{item.name}}</view>
+    <view class="service-view3">{{item.description}}<image src="/icon/phone.png"></image></view>
+  </view>
+  
+</view>

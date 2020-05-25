@@ -1,4 +1,8 @@
 // pages/editaddress/editaddress.js
+const app = getApp()
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
@@ -15,7 +19,7 @@ Page({
     name: '',
     phone: '',
     address: '',
-    address_city: ''
+    area: ''
   },
 
   getName: function(e) {
@@ -34,6 +38,7 @@ Page({
 
   getAddress: function(e) {
     let address = e.detail.detail.value
+    console.log(address);
     this.setData({
       address: address
     })
@@ -45,7 +50,7 @@ Page({
       success: function(res) {
         console.log(res)
         that.setData({
-          address_city: res.address
+          area: res.address
         })
       }
     })
@@ -66,39 +71,46 @@ Page({
     }
     console.log('地址填写完毕，确认', form);
     let obj = {}
-    obj.province = ''
-    obj.city = ''
-    obj.district = ''
-    obj.address = ''
-    obj.full_name = ''
-    obj.tel = ''
+    obj.area = that.data.area;
+    // obj.city = ''
+    // obj.district = ''
+    obj.address = that.data.address;
+    obj.full_name = that.data.phone;
+    obj.tel = that.data.name;
+    console.log(obj);
     urlApi("/user/Profile/address_post","post",obj).then((res)=>{
+      console.log(res);
       if(res.data.code){
-        let data = res.data.data.map(v => {
-          if (v.default == 1) {
-            v.checked = true
-          } else {
-            v.checked = false
-          }
-          return v
-        })
+        // let data = res.data.data.map(v => {
+        //   if (v.default == 1) {
+        //     v.checked = true
+        //   } else {
+        //     v.checked = false
+        //   }
+        //   return v
+        // })
 
-        this.setData({
-          list: data
+        // that.setData({
+        //   list: data
+        // })
+        that.setData({
+          style: 1,
+          score: '#53B2AA'
+        });
+        wx.navigateBack({
+          delta: 1,
         })
       }else{
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }            
     })
-    that.setData({
-      style: 1,
-      score: '#53B2AA'
-    });
-    wx.navigateTo({
-      url: '/pages/generalinformation/generalinformation',
-    })
+    
+    // wx.navigateTo({
+    //   url: '/pages/generalinformation/generalinformation',
+    // })
     /**
     * 此处省略表单提交过程
     */
