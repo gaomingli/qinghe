@@ -76,7 +76,7 @@ page{padding-bottom: 110rpx;}
   -webkit-line-clamp:3; 
   }
 .article_des span{font-size:24rpx; font-weight:500;color:#9594A4;}
-.article_des .time{margin-right: 70rpx;}
+.article_des .time{margin-right: 22rpx;}
 .article_right image{width: 234rpx;height: 153rpx;}
 
 /*活动报名**/

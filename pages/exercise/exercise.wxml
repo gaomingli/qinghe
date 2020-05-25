@@ -2,30 +2,37 @@
 <view class='exercise'>
 <!-- tab切换 -->
 <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
-    <i-tab title="{{item.name}}" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:key="index"></i-tab>
+    <i-tab title="{{item.name}}" key="{{item.id}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{item.id}}"></i-tab>
 </i-tabs>
 <!-- 内容 -->
-<navigator url='../exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}'  wx:for="{{current===0?objData.activity_ing.articles:objData.activity_ing.activity_history}}" wx:key="index" wx:for-key="index">
+<view  wx:if="{{activityList && activityList.length > 0}}">
+<navigator url='../exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}'  wx:for="{{activityList}}" wx:key="index" wx:for-key="index">
 <view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
       <view class="sign_up">
         <view class="sign_top">
           <image src="{{item.thumbnail}}"></image>
           <view class="sign_top_right">
             <view class="title">{{item.post_title}}</view>
-            <view class="clock"><image src="../../icon/clock.png"></image> <span>{{item.activity_start}}</span></view>
+            <view class="clock"><image src="../../icon/clock.png"></image> <span>{{item.activity_start}}~{{item.activity_end}}</span></view>
             <view class="address"><image src="../../icon/address.png"></image> <span>{{item.address}}</span></view>
             <view class="people"><image src="../../icon/people.png"></image> <span>{{item.user_nickname}}</span></view>        
           </view>
         </view>
         <view class="sign_bottom">
-          <view class="sign_bottom_left">
+          <view class="sign_bottom_left" wx:if="{{item.activity_book_join_num > 0}}">
             <image src="{{item.avatar}}" wx:for="{{item.activity_book_people}}"></image>
-            <span>等{{item.activity_book_join_num}}</span>
+            <span>等{{item.activity_book_join_num}}人报名活动</span>
           </view>
-          <view class="sign_bottom_right">{{item.activity_btn_name}}</view>
+          <view class="sign_bottom_right" style="background:#999999" wx:if="{{item.activity_status == 0 || item.activity_status == 2 || item.activity_status == 4}}">{{item.activity_btn_name}}</view>
+
+          <view class="sign_bottom_right"  wx:if="{{item.activity_status == 1}}">{{item.activity_btn_name}}</view>
         </view>
 
       </view>
     </view>
     </navigator>
+    </view>
+
+   <view class="show-icon" wx:else><image src="/icon/nodata.png" class="zanwushuju"></image></view>
+
 </view>
