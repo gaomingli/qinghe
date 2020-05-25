@@ -75,11 +75,7 @@ Page({
           activity_book_join_num:res.data.data.activity_book_join_num,
           activity_book_people:res.data.data.activity_book_people,
           activity_btn_name:res.data.data.activity_btn_name,
-<<<<<<< HEAD
           activity_status:res.data.data.activity_status
-=======
-          activity_status: res.data.data.activity_status
->>>>>>> 5573235b08c09c407ca4eda1246bb72da6afbcf2
         })
         e.WxParse.wxParse("agreement", "html",res.data.data.post_content, that, 5); 
       }else{
