@@ -7,7 +7,7 @@
 			<view class='parth'>{{userDetail.coin}}</view>
 			<view class='parts'>可以在积分商城兑换商品</view>
 		</view>
-		<navigator url='/pages/shopping/shopping'>
+		<navigator url='/pages/shopping/shopping' hover-class="none">
 			<view class='exchange'>去兑换
 				<image src='/icon/more.png'></image>
 			</view>

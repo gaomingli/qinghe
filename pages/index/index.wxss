@@ -100,7 +100,7 @@ page{padding-bottom: 110rpx;}
  /* flex: 1; */
   height: 64rpx;
   background:#53B2AA;
-  border-radius: 32rpx;
+  border-radius: 42rpx;
   font-size: 28rpx;
   color: #ffffff;
   text-align: center;

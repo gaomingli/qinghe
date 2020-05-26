@@ -7,7 +7,7 @@
       </view>
 </view>
 
-<view class='baseinfo userinfo'>
+<view class='baseinfo'>
 <i-panel>
     <i-input value="{{ value1 }}" title="姓名" maxlength="100" autofocus placeholder="请输入姓名" bind:change="bindTap"/>
 </i-panel>
