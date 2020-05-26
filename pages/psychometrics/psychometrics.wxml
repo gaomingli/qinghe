@@ -34,7 +34,7 @@
   <!-- 分类 -->
     <view class="index_menu">
       <view wx:key="index" wx:for-index="index" wx:for="{{menuList.child_category}}" bindtap="getCurrent" data-type="{{index}}" class="{{current===index?'active':''}}">
-        <image src="{{item.icon}}" class="grantImage"></image>
+        <image src="{{item.more.icon}}" class="grantImage"></image>
         <view class="menu_text">{{item.name}}</view>
       </view>
     </view>

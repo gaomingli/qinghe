@@ -1,6 +1,6 @@
 <view class="tabbar_box">
   <view class="tabbar_item" data-index="0" bind:tap="switchTab">
-    <image src="{{tabbarIndex==0?'../icon/home.png':'../icon/home_hover.png'}}"></image>
+    <image src="{{tabbarIndex==0?'../icon/home_hover.png':'../icon/home.png'}}"></image>
     <text>首页</text>
   </view>
    <view class="tabbar_item" data-index="1" bind:tap="switchTab">

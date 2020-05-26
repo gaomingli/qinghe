@@ -24,10 +24,11 @@ width: 100%;
   border-top-left-radius: 20rpx;
   border-top-right-radius:20rpx;
 }
-.numTotal .numimg{
+.numimg{
 display:flex;
+margin-left: 30rpx;
 }
-.numTotal .numimg image{
+.numimg image{
 width:58rpx;
 height:58rpx;
 flex-shrink:0;
@@ -52,12 +53,16 @@ flex-shrink:0;
 .sign_bottom{
   display: block
 }
+.sign_bottom navigator{
+  width: 80%;
+  margin-left: auto;
+margin-right: auto;
+
+}
 .sign_bottom navigator .sign_bottom_right
 {
-width:80%;
 height:88rpx;
 border-radius:44rpx;
 font-size:32rpx;
 line-height:88rpx;
-margin:auto;
 }

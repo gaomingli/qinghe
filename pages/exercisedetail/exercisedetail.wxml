@@ -42,7 +42,7 @@
 	</view>
 
 <view class='sign_bottom'>
-	<navigator url='../registerinformation/registerinformation?id={{getID.id}}' wx:if="{{activity_status===1}}">
+	<navigator url='../registerinformation/registerinformation?id={{getID.id}}' wx:if="{{activity_status===1}}" hover-class="none">
 		<view class='sign_bottom_right'>{{activity_btn_name}}</view>
 	</navigator>
 </view>
