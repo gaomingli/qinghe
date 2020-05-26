@@ -30,7 +30,6 @@ Page({
     const { type } = e.currentTarget.dataset;
     this.setData({current:type})
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

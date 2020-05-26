@@ -1,18 +1,23 @@
 // pages/evaluation/evaluation.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+id:"",
+category_id:"",
+list:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({id:options.id,category_id:options.category_id})
   },
 
   /**
@@ -26,9 +31,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+this.getData();
   },
 
+  getData:function(){
+    var that = this;
+    urlApi('portal/article/index', "post",{id:this.data.id,category_id :this.data.category_id}).then((res) => {
+    if(res.data.code){
+      that.setData({
+        list:res.data.data
+      })
+    }else{
+      wx.showToast({
+        title: res.data.msg
+      })
+    }  
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

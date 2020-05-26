@@ -1,1 +1,62 @@
 /* pages/evaluation/evaluation.wxss */
+.partone{
+  background-color: #FFFFFF;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+}
+.do_problem_people .user_img{
+  width: 282rpx;
+  height: 281rpx;
+  margin-top: -100rpx;
+}
+.title{
+  color: #333333;
+  font-size: 42rpx;
+  margin-top: 79rpx;
+}
+.module{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 46rpx;
+}
+.moduleone{
+  display: flex;
+  justify-content: start;
+}
+.num{
+  margin-left: 22rpx;
+}
+navigator{
+  width: 90%;
+  margin-top: 96rpx;
+  margin-left: auto;
+  margin-right: auto;
+  color: #FFFFFF;
+  height: 83rpx;
+  line-height: 83rpx;
+  text-align: center;
+  border-radius: 41rpx;
+  background-color: #53B2AA;
+  font-size: 30rpx;
+}
+.parttwo{
+  margin-top: 75rpx;
+  padding: 56rpx 40rpx;
+  background-color: #FFFFFF;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  text-align: center;
+}
+.testtitle{
+  color: #14AEA5;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.testcontent{
+margin-top: 62rpx;
+color: #666666;
+font-size: 28rpx;
+}
+.parthree,.partfour,.partfive{
+  text-align: center;
+}

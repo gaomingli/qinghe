@@ -1,4 +1,48 @@
 <!--pages/evaluation/evaluation.wxml-->
 <view class='evaluation'>
-<navigator url='/pages/starttest/starttest'>立即测试</navigator>
+<view class="partone">
+
+<view class="do_problem_people">
+<image class="user_img" src=""></image>
+</view>
+
+<view class="title">{{list.title}}</view>
+
+<view class="module">
+<view class="moduleone">
+<view class="doneimg"><image src="{{item.avatar}}" wx:for="{{list.do_problem_people}}"></image></view>
+<view class="num">{{list.do_problem_num}}人已测试</view>
+</view>
+<view class="total">共{{list.problem_count}}道题</view>
+</view>
+
+<navigator url="/pages/starttest/starttest" hover-class="none">
+<view class="nowTest">立即测试</view>
+</navigator>
+</view>
+
+<view class="parttwo">
+<view class="testtitle">测试背景</view>
+<view class="testcontent">{{list.post_excerpt}}</view>
+</view>
+
+<view class="parthree">
+<view class="testtitle">测评内容</view>
+<view class="testcontent">{{list.post_content}}</view>
+</view>
+
+<view class="partfour">
+<view class="testtitle">专业参数</view>
+<view>技术范式</view>
+<view>自评问卷</view>
+<view>测评时长</view>
+<view>约{{list.duration}}分钟</view>
+<view>测评题数</view>
+<view>{{list.problem_count}}题</view>
+</view>
+
+<view class="partfive">
+<view class="testtitle">使用指南</view>
+</view>
+
 </view>
