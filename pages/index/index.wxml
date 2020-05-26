@@ -88,7 +88,7 @@
             {{item.post_title}}
           </view>
           <view class="article_des">
-            <span class="time">发布时间:{{item.published_time}}</span>
+            <span class="time">{{item.published_time}}发布</span>
             <span>{{item.post_hits}}人浏览</span>
           </view>
         </view>

@@ -67,6 +67,13 @@ font-size: 30rpx;
   color: #FE3730;
   font-size: 36rpx;
 }
+.show-icon{
+  margin-top: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* .tabcontent{
   margin-top: 20rpx;
   background-color: #fff;

@@ -4,6 +4,7 @@
   color: #999999;
   padding:0rpx;
 }
+
 .userinfo .i-input{
   padding-left: 0rpx;
   padding-top: 75rpx;
