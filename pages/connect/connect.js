@@ -1,11 +1,14 @@
 // pages/connect/connect.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dictList: [{ name: '客服一', description: '18912312121' }, { name: '客服二', description: '18912311324' }]
+    phoneList: []
   },
 
   /**
@@ -26,7 +29,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.queryPhoneList();
+  },
 
+  //查询用户详情
+  queryPhoneList: function () {
+    var that = this;
+    var data = {};
+    urlApi('user/Profile/service', "post", data).then((res) => {
+      console.log(res);
+      if (res.data.code == 1) {
+        that.setData({
+          phoneList: res.data.data
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+    })
+  },
+
+  //拨打电话 
+  dictPhoneClick: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone
+    })
   },
 
   /**

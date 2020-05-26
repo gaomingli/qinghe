@@ -2,8 +2,8 @@
 <view class='personalinfo'>
 <i-cell-group>
     <i-cell title="头像" is-link url="">
-    <image src='../../icon/head1.png'></image>
+    <image src='{{userDetail.avatar}}'></image>
     </i-cell>
-    <i-cell title="昵称" value="一叶知秋"></i-cell>
+    <i-cell title="昵称" value="{{userDetail.user_nickname}}"></i-cell>
 </i-cell-group>
 </view>

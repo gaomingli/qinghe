@@ -4,7 +4,7 @@
 	<view class='usecore'>
 		<view class='core'>
 			<view class='parto'>可用积分</view>
-			<view class='parth'>6005</view>
+			<view class='parth'>{{userDetail.coin}}</view>
 			<view class='parts'>可以在积分商城兑换商品</view>
 		</view>
 		<navigator url='/pages/shopping/shopping'>
@@ -22,21 +22,38 @@
 			</i-tab>
 		</i-tabs>
 		<view class='module'>
-			<view wx:if="{{current == '1'}}" class='tabcontents' wx:for="{{list}}">
-				<view class='left_part'>
-					<view class='done'>{{item.action}}</view>
-					<view class='time'>{{item.time}}</view>
-				</view>
-				<view class='{{item.score}}>0?right_part:right'>{{item.score}}</view>
-			</view>
 
-      <view wx:if="{{current == '2'}}" class='tabcontents' wx:for="{{list_shop}}">
+      <view wx:if="{{current == '1'}}">
+      <view wx:if="{{myCoinList && myCoinList.length > 0}}">
+			 <view class='tabcontents' wx:for="{{myCoinList}}">
 				<view class='left_part'>
 					<view class='done'>{{item.action}}</view>
-					<view class='time'>{{item.time}}</view>
+					<view class='time'>{{item.create_time}}</view>
 				</view>
-				<view class='{{item.score}}>0?right_part:right'>{{item.score}}</view>
-			</view>
+				<view class='{{item.coin}}>0?right_part:right'>{{item.coin}}</view>
+			 </view>
+       </view>
+
+       <view class="show-icon" wx:else><image src="/icon/nodata.png" class="zanwushuju"></image></view>
+
+      </view>
+
+
+      <view wx:if="{{current == '2'}}">
+        <view wx:if="{{myShopList && myShopList.length > 0}}">
+          <view class='tabcontents' wx:for="{{myShopList}}">
+            <view class='left_part'>
+              <view class='done'>{{item.post_title}}</view>
+              <view class='time'>{{item.add_time}}</view>
+            </view>
+            <view class='{{item.price}}>0?right_part:right'>{{item.price}}</view>
+          </view>
+        </view>
+
+        <view class="show-icon" wx:else><image src="/icon/nodata.png" class="zanwushuju"></image></view>
+
+
+      </view>
 		</view>
 		<!-- <view class='tabcontent' wx:for="{{list}}" wx:index="index">
 

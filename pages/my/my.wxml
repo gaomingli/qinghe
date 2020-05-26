@@ -1,7 +1,7 @@
 <!--pages/my/my.wxml-->
 <view class='my'>
 	<view class='my_bg'>
-		<image src='../../icon/my/orderbg.png'></image>
+		<image src='/icon/orderbg.png'></image>
 	</view>
 	<view class='personalinfo' wx:if="{{flag}}">
 		<view class='left_part'>
@@ -30,41 +30,31 @@
 		</view>
 	</view>
 
-	<!-- <view class='my_order'>
-		<view class='order'>我的订单</view>
-		<view class="index_menu">
-			<view bindtap='onJsEvent' data-url="/pages/management/management?type={{index}}" wx:for-index="index" data-type="1" wx:for="{{menuList}}">
-				<image src='{{item.menu_img}}' class="orderImg"></image>
-				<view class="menu_text">{{item.menu_name}}</view>
-			</view>
-		</view>
-	</view> -->
-
 	<view class='part'>
 		<i-cell-group>
 			<i-cell title="我的测评" is-link url="/pages/mytest/mytest">
-				<i-icon slot="icon" myIcon="/icon/my/part1.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part1.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="我的活动" is-link url="/pages/myexercise/myexercise">
-				<i-icon slot="icon" myIcon="/icon/my/part2.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part2.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="我的评论" is-link url="/pages/comment/comment">
-				<i-icon slot="icon" myIcon="/icon/my/part3.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part3.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="我的积分" is-link url="/pages/mycore/mycore">
-				<i-icon slot="icon" myIcon="/icon/my/part4.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part4.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="收货地址" is-link url="/pages/generalinformation/generalinformation">
-				<i-icon slot="icon" myIcon="/icon/my/part5.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part5.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="联系客服" is-link url="/pages/connect/connect">
-				<i-icon slot="icon" myIcon="/icon/my/part6.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part6.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="意见反馈" is-link url="/pages/feedback/feedback">
-				<i-icon slot="icon" myIcon="/icon/my/part7.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part7.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="切换角色" is-link url="/pages/choicerole/choicerole">
-				<i-icon slot="icon" myIcon="/icon/my/part8.png" size="28" style="margin-right:20rpx" />
+				<i-icon slot="icon" myIcon="/icon/part8.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 		</i-cell-group>
 	</view>

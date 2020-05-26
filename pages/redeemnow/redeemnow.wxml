@@ -14,10 +14,10 @@
 
 <view class='order'>
 <view class="hot_box" >
-            <image src="/icon/pillow.png"></image>
+            <image src="{{list.thumbnail}}"></image>
             <view class="hot_right">
-              <view class="hot_title">易小豹办公室沙发抱枕靠垫</view>
-              <view class="hot_num">{{core}}积分<text>*{{num}}</text></view>
+              <view class="hot_title">{{list.post_title}}</view>
+              <view class="hot_num">{{list.coin}}积分<text>*{{num}}</text></view>
             </view>
           </view>
 </view>
@@ -31,13 +31,13 @@
 
 <view class='content'>
 <view class='content_integral'>
-<view class='total'>合计:<text>{{totalCore}}积分</text></view>
+<view class='total'>合计:<text>{{list.coin*num}}积分</text></view>
 
-<view class='hot_submit' bind:click="handleOpen1" bindtap="nowChange">
+<view class='hot_submit' bindtap="handleOpen1">
 立即兑换
 </view>
-<i-modal title="标题" visible="{{ visible1 }}" bind:ok="handleClose1" bind:cancel="handleClose1">
-    <view>本次兑换需支付<text>{{score}}</text>积分</view>
+<i-modal title="标题" visible="{{ visible1 }}" bind:ok="handleClose1" bind:cancel="handleClose2">
+    <view>本次兑换需支付<text>{{list.coin*num}}</text>积分</view>
     <view>是否确认?</view>
 </i-modal>
 </view>

@@ -1,79 +1,176 @@
-/* pages/generalinformation/generalinformation.wxss */
-@import "../index/index.wxss";
-page{
-  background: #eee;
+/* pages/address/address.wxss */
+page{background:#f8f8f8;}
+.address_add {
+  width: 100%;
+  height: 100rpx;
+  background: #f30;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
 }
-.generalinformation{
-  /* background-color: #f8f8f8; */
-}
-.generalinformation .hot_submit{
-  width: 80%;
-height:88rpx;
-background:#53B2AA;
-border-radius:44rpx;
-color:#ffffff;
-font-size:30rpx;
-line-height:88rpx;
-text-align:center;
-margin:60rpx auto;
 
+.no_address {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #999;
 }
-.hot_submit image{
+
+.edit_img image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.name_tel {
+  font-size: 28rpx;
+  color: #333;
+}
+.name_tel text{
+  padding-right: 30rpx;
+}
+.adddress_list {
+  background:#ffff; margin-bottom:20rpx;
+  padding-top: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.eduit_del image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.input_view_sp {
+  display: flex!important;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  height: 110rpx;
+}
+
+.eduit_del {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.eduit_del view {
+  height: 80rpx;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+
+.eduit_del image {
+  margin: 0 10rpx;
+}
+
+.address_img_view image {
+  width: 38rpx;
+  height: 43rpx;
+}
+
+.address_img_view text {
+  width: 650rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 40rpx;
+  margin: 0;
+}
+
+.address_img_view {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e2e2e2;
+  line-height: 40rpx;
+  padding-bottom: 35rpx;
+  padding-top: 30rpx;
+}
+
+/* radio未选中时样式 */
+
+/* radio选中时样式 */
+.check_box{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  height: 80rpx;
+}
+.mrdz{
+  margin-left: 5rpx;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 40rpx;
+  display: block;
+}
+
+radio .wx-radio-input {
+  border-radius: 50%;
   width: 36rpx;
-  height: 36rpx
+  height: 36rpx;
+  
+}
+button image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+.adddress_item{
+  padding-bottom: 100rpx;
+}
+.btn_view{
+  position: fixed!important;
+  bottom:30rpx; padding-left:30rpx; padding-right:30rpx;
+}
+.btn_view button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  font-size: 30rpx;
+  color: #ffffff;
+  width: 690rpx!important;
+  border-radius: 32rpx;
+  background: #53B2AA;
+  height: 90rpx;
+  z-index: 999;
 }
 
-.address{
-  padding: 10px 20px 0px;
-  background: #fff;
-  margin-bottom: 10px;  
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked {
+   border-color: #5aa0ff!important;
+    
 }
 
-.tel{
-  margin-left: 20px;
-}
-
-.name{
-  margin-bottom: 10px;
-}
-.map_img{
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.img{
-  width: 9%;
-  display: inline-block;
-  height: 45px;
-  vertical-align: top;  
-  padding-top: 10px;
-}
-
-.address_detail{
-  display: inline-block;
-  height: 45px;
-  width: 91%;  
-}
-
-.btnLeft, .btnRight{
-  width: 50%;
-  padding: 15px 0;
-  display: inline-block;
-}
-.editor, .delete{
-  display: inline-block;
-}
-.delete{
-  margin-left: 10px;
-}
-
-.btnRight{
-  text-align: right;
-}
-
-.edi_img, .del_img{
-  width: 42rpx;
-  height: 42rpx;
-  vertical-align: top;
+/* radio选中时样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  /* 去除对号 */
+  content: ''; 
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: #5aa0ff;
 }

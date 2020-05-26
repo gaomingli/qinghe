@@ -44,7 +44,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "custom": true,
+    "custom": false,
     "color": "#2B2B2B",
     "selectedColor": "#53B2AA",
     "backgroundColor": "#ffffff",
@@ -54,31 +54,31 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "icon/home.png",
-        "selectedIconPath": "icon/home.png"
+        "selectedIconPath": "icon/home_hover.png"
       },
       {
         "pagePath": "pages/circle/circle",
         "text": "社交圈",
         "iconPath": "icon/circle.png",
-        "selectedIconPath": "icon/circle.png"
+        "selectedIconPath": "icon/circle_hover.png"
       },
       {
         "pagePath": "pages/release/release",
         "text": "发布",
         "iconPath": "icon/release.png",
-        "selectedIconPath": "icon/release.png"
+        "selectedIconPath": "icon/release_hover.png"
       },
       {
         "pagePath": "pages/exercise/exercise",
         "text": "活动",
         "iconPath": "icon/activity.png",
-        "selectedIconPath": "icon/activity.png"
+        "selectedIconPath": "icon/activity_hover.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "icon/my.png",
-        "selectedIconPath": "icon/my.png"
+        "selectedIconPath": "icon/my_hover.png"
       }
     ]
   },

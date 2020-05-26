@@ -1,4 +1,7 @@
 // pages/successful/successful.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**

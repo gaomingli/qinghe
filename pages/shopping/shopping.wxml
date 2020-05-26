@@ -37,8 +37,8 @@
 <view class='recommend'>为你推荐</view>
 </view>
     <view class="common_content">
-      <view class="shop_box"  wx:for="{{list}}" wx:key="index" wx:for-index="index">
-       <navigator url='/pages/productlist/productlist?id={{item.id}}' >
+      <view class="shop_box"  wx:for="{{shoppingList}}" wx:key="index" wx:for-index="index">
+       <navigator url='/pages/productlist/productlist?id={{item.id}}' hover-class="none">
         <view class="shop_item">
             <image src="{{item.thumbnail}}"></image>
             <view class="title">{{item.post_title}}</view>

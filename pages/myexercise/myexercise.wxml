@@ -2,7 +2,7 @@
 <!--pages/exercise/exercise.wxml-->
 <view class='exercise'  wx:if="{{myActivityList && myActivityList.length > 0}}">
 <!-- 内容 -->
-<navigator wx:for="{{myActivityList}}" url='../exercisedetail/exercisedetail?id={{item.id}}' hover-class="none">
+<navigator wx:for="{{myActivityList}}" url='/pages/my_exercisedetail/my_exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
 <view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
       <view class="sign_up">
 
@@ -18,12 +18,17 @@
 
         <view class="sign_bottom">
           <view class="sign_bottom_left" wx:if="{{item.activity_book_join_num > 0}}">
-            <image wx:for="{{item.activity_book_people}}">{{item.avatar}}</image>
+            <image wx:for="{{item.activity_book_people}}" wx:for-item="activityBookPeople" src="{{activityBookPeople.avatar}}"></image>
             <span>等{{item.activity_book_join_num}}人已报名</span>
           </view>
-
+<!-- 
           <view class="sign_bottom_right" >进行中</view>
-           <view class="sign_bottom_right" >已结束</view>
+           <view class="sign_bottom_right" >已结束</view> -->
+
+           <!-- <view class="sign_bottom_right" style="background:#999999" wx:if="{{item.activity_status == 0 || item.activity_status == 2 || item.activity_status == 4}}">{{item.activity_btn_name}}</view>
+
+          <view class="sign_bottom_right"  wx:if="{{item.activity_status == 1}}">{{item.activity_btn_name}}</view> -->
+
         </view>
 
       </view>

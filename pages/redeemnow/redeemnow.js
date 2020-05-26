@@ -1,19 +1,23 @@
 // pages/redeemnow/redeemnow.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    leavemessage:"留言留言留言留言",
-    totalCore:5300,
-    core:300,
-    num:1,
-    score:150,
-    visible1:false
+    list:null,
+    visible1:false,
+    num:"",
+    id:"",
+    list:null,
+    address_id:"",
+    leavemessage:""
+
   },
   handleOpen1() {
-    debugger;
     this.setData({
       visible1: true
     });
@@ -22,7 +26,29 @@ Page({
     this.setData({
       visible1: false
     });
+    this.getData()
   },
+  getData:function(){
+    var that = this;
+    var params = {};
+    params.num = that.data.num;
+    params.address_id= that,data.address_id;
+    params.id = that.data.id;
+    console.log(data);
+     urlApi('portal/article/shop_book', "post",params).then((res) => {
+       if (res.data.code) {
+         debugger;        
+        wx.showToast({
+          title: "兑换成功"
+        })
+       }else{
+         wx.showToast({
+           title: res.data.msg
+         })
+       } 
+
+     })
+   },
   handleClose2() {
     this.setData({
       visible1: false
@@ -34,8 +60,12 @@ Page({
   onLoad: function (options) {
     var that=this;
     that.setData({
-      id: options.id
+      id: options.id,
+      num: options.num,
+      address_id: options.address_id,
+      list:JSON.parse(options.list)
     })
+    console.log(JSON.parse(that.data.list));
   },
 
   /**
@@ -45,20 +75,6 @@ Page({
 
   },
 
-  // nowChange:function(){
-  //   var that = this;
-  //   urlApi('portal/article/shop_book', "post",{id:this.data.id}).then((res) => {
-  //     if (res.code) {
-  //       that.setData({
-  //       })
-  //     }else{
-  //       wx.showToast({
-  //         title: res.data.msg
-  //       })
-  //     } 
-
-  //   })
-  // }
   /**
    * 生命周期函数--监听页面显示
    */

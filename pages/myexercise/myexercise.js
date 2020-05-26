@@ -43,8 +43,8 @@ Page({
     var page = that.data.page;
     data.page = page;
     console.log(data);
-    urlApi("/user/Profile/my_activity", "post", data).then((res) => {
-      console.log(res);
+    urlApi("user/Profile/my_activity", "post", data).then((res) => {
+      console.log("11=================",res);
       if (page == 1) {
         myActivityAllList = [];
       }

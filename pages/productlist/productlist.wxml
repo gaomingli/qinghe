@@ -2,15 +2,15 @@
 <view class='productlist'>
   <view class="shop_item">
     <swiper autoplay indicator-dots circular>
-      <swiper-item wx:for="{{swiperList}}" wx:key="index" wx:for-index="index">
-          <image mode="widthFix" src="{{item.photos}}"></image>
+      <swiper-item wx:for="{{list.photos}}" wx:key="index" wx:for-index="index">
+          <image mode="widthFix" src="{{item.url}}"></image>
       </swiper-item>
     </swiper>
-    <view class="title">{{post_title}}</view>
+    <view class="title">{{list.post_title}}</view>
     <view class='pointsandprice'>
       <view class="points">
-        <span>{{coin}}</span>积分</view>
-      <view class="price">市场价：{{old_coin}}元</view>
+        <span>{{list.coin}}</span>积分</view>
+      <view class="price">市场价：{{list.old_coin}}元</view>
     </view>
   </view>
 
@@ -30,17 +30,17 @@
   <view class='content'>
     <view class='content_title'>图文详情</view>
     <view class='content_img'>
-      <image src="/icon/books.png"></image>
+      <image src="{{list.thumbnail}}"></image>
     </view>
     <view class='content_integral'>
       <view class='total'>合计:
-        <text>{{totalCore}}积分</text>
+        <text>{{list.coin*value1}}积分</text>
       </view>
-      <navigator url='/pages/redeemnow/redeemnow?id={{id}}' hover-class="none">
-        <view class='hot_submit'>
+      <!-- <navigator url='/pages/redeemnow/redeemnow?id={{list.id}}&num={{value1}}&address_id={{item.id}}&list={{}}JSON.stringify({{list}})' wx:for="{{list.address}}" hover-class="none"> -->
+        <view class='hot_submit' bindtap="nowChange">
           立即兑换
         </view>
-      </navigator>
+      <!-- </navigator> -->
     </view>
   </view>
 

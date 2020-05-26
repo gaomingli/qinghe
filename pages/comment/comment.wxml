@@ -1,11 +1,11 @@
 <!--pages/comment/comment.wxml-->
-<view class='comment'>
-<view class='record' wx:for="{{list}}" wx:key="index">
-<view class='photo'><image src="{{item.url1}}"></image></view>
+<view class='comment'  wx:if="{{commentList && commentList.length > 0}}">
+<view class='record' wx:for="{{commentList}}" wx:key="index">
+<view class='photo'><image src="{{item.avatar}}"></image></view>
 
 <view class='detail'>
 <view class='info'>
-<view class="title">{{item.title}}</view>
+<view class="title">{{item.user_nickname}}</view>
 <view class='return'>回复<text>{{item.num}}</text>:{{item.cont}}</view>
 <view class='time'>{{item.time}}</view>
 </view>
@@ -14,3 +14,5 @@
 
 </view>
 </view>
+
+ <view class="show-icon" wx:else><image src="/icon/nodata.png" class="zanwushuju"></image></view>

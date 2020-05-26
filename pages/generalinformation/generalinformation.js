@@ -18,6 +18,15 @@ Page({
 
   },
 
+  // 链接添加
+  eduit_address: function (e) {
+    console.log(e);
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/editaddress/editaddress?id=' + id
+    })
+  },
+
   delete: function(e) {
     let that = this
     let id = e.currentTarget.dataset.id
@@ -34,14 +43,39 @@ Page({
     })
   },
 
-  deleteSure: function(id) {
-    let obj={}
-    obj.id=id
-    urlApi("/user/Profile/address_delete","post", obj).then((res)=>{
-      wx.showToast({
-        title: res.data.msg,
-        icon:"none"
-      })         
+  // deleteSure: function(id) {
+  //   let obj={}
+  //   obj.id=id
+  //   urlApi("/user/Profile/address_delete","post", obj).then((res)=>{
+  //     wx.showToast({
+  //       title: res.data.msg,
+  //       icon:"none"
+  //     })         
+  //   })
+  // },
+
+
+  textHide: function (e) {
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    wx.showModal({
+      // title: '提示',
+      content: '确定删除此地址?',
+      success(res) {
+        if (res.confirm) {
+          var data = {};
+          data.id = id;
+          urlApi("/user/Profile/address_delete", "post", data).then((res) => {
+            wx.showToast({
+              title: res.data.msg,
+              icon: "none"
+            })
+            that.queryAddressList();
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
   },
 
@@ -56,8 +90,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    urlApi("/user/Profile/address","post",{}).then((res)=>{
-      if(res.data.code){
+    this.queryAddressList();
+  },
+
+ //查询地址集合
+  queryAddressList: function(){
+    urlApi("/user/Profile/address", "post", {}).then((res) => {
+      if (res.data.code) {
         let data = res.data.data.map(v => {
           if (v.default == 1) {
             v.checked = true
@@ -70,12 +109,12 @@ Page({
         this.setData({
           list: data
         })
-      }else{
+      } else {
         wx.showToast({
           title: res.data.msg,
-          icon:'none'
+          icon: 'none'
         })
-      }            
+      }
     })
   },
 

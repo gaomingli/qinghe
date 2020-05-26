@@ -1,2 +1,9 @@
 /* pages/myexercise/myexercise.wxss */
-@import "../exercise/exercise.wxss"
+@import "../exercise/exercise.wxss";
+.show-icon{
+  margin-top: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
