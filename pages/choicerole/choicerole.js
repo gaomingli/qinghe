@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-        current: '',
+        current: 0,
         position: 'right',
 list:[
   { id: 2, src:"/icon/ptuser.png",name:"普通用户",checked:false},
@@ -19,12 +19,22 @@ list:[
     this.setData({
       current: detail.value
     });
+    let  listCopy=JSON.parse(JSON.stringify(this.data.list));
+    listCopy.map(item=>{
+      item.checked=false
+    })
+    listCopy.map((item,index)=>{
+        if(item.id===Number(detail.value)){
+           item.checked=true
+        }
+    })
+     this.setData({list:listCopy});
   },
   //进入按钮
   goto:function(){
     var that = this;
     var current = that.data.current;
-    if (!current){
+    if (!Number(current)){
       wx.showToast({
         title: '请选择角色',
         icon: "none"
@@ -32,20 +42,20 @@ list:[
       return false;
     }
     //普通用户
-    if (current == 2){
+    if (Number(current) == 2){
       wx.switchTab({
         url: '/pages/index/index'
       })
     }
     //社工
-    if (current == 3) {
+    if (Number(current) == 3) {
       wx.navigateTo({
-        url: '/pages/uploadqualification/uploadqualification?userType=' + current
+        url: '/pages/uploadqualification/uploadqualification?userType=' + Number(current)
       })
     }
     //组织
-    if (current == 4) {
-      wx.navigateTo({
+    if (Number(current) == 4) {
+      wx.switchTab({
         url: '/pages/index/index'
       })
     }
@@ -54,7 +64,16 @@ list:[
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 初始化角色
+     this.setData({current:wx.getStorageSync('userInfo').user_type||2 })
+     let {list}=this.data;
+      let listCopy=JSON.parse(JSON.stringify(list));
+      listCopy.map((item)=>{
+         if(this.data.current==item.id){
+           item.checked=true;
+         }
+      })
+      this.setData({list:listCopy})
   },
 
   /**

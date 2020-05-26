@@ -5,25 +5,32 @@
 <view class='total_info'>
 <view class='total_user'>
 <view class='user_info'>
-<image src='../../icon/num.png'></image>
+<image src='{{userInfo.avatar}}'></image>
 </view>
 
 <view class='user_info'>
 <view class='available'>用户名</view>
-<view class='information'>普通用户</view>
+<view class='information'>{{arr[userInfo.user_type-2] }}</view>
 </view>
 </view>
 
 <navigator url='/pages/mycore/mycore' hover-class="none">
 <view class='right_info'>
 <view class='available'>可用积分</view>
-<view class='information'>25820</view>
+<view class='information'>{{userInfo.coin}}</view>
 </view>
 </navigator>
 
 </view>
 <!--  -->
-<view class='change_goods'><image src='{{banner}}'></image></view>
+  <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{banner}}" wx:key="index" wx:for-index="index">
+        <navigator hover-class="none" url='item.url'>
+          <image mode="widthFix" src="{{item.image}}"></image>
+        </navigator>
+      </swiper-item>
+  </swiper>
+
 
 <view class='warning'><image src='/icon/hot.png'></image><text>积分换商品，公益商城隆重上线！</text>
 </view>

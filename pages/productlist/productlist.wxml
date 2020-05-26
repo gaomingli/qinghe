@@ -21,7 +21,7 @@
     <view>
       <i-panel title="基础用法">
         <view style="padding: 16px">
-          <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange" />
+          <i-input-number value="{{value1 }}" min="0" max="100" bindchange="handleChange" />
         </view>
       </i-panel>
     </view>

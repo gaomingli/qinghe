@@ -10,14 +10,16 @@ Page({
   data: {
     banner:"",
     page: 1,
-    shoppingList:[]
+    shoppingList:[],
+    userInfo:null,
+    arr:['普通会员','社工','组织']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
+    
   },
 
   /**
@@ -36,10 +38,12 @@ Page({
       loading: false,
       shoppingAllList: [],
       shoppingList: [],
-      banner:null,
+      banner:[],
       page: 1
     })
     this.queryShoppingList();
+// 个人中心资料接口
+   this.getUserData();
   },
   queryShoppingList: function () {
     var that = this;
@@ -53,11 +57,10 @@ Page({
         shoppingAllList = [];
       }
       if (res.data.code == 1) {
-
+        that.setData({banner:res.data.data.banner})
         if (res.data.data.articles.length > 0) {
           for (var i = 0; i < res.data.data.articles.length; i++) {
             shoppingAllList.push(res.data.data.articles[i]);
-            banner:res.data.data.banner
           }
           if (res.data.data.articles.length * page >= res.data.data.page_total && page > 1) {
             wx.showToast({
@@ -93,6 +96,15 @@ Page({
       that.setData({
         shoppingList: shoppingAllList
       })
+    })
+  },
+  getUserData:function(){
+    const that =this;
+    urlApi("user/Profile/index", "post",{}).then((res) => {
+       if(res.data.code){
+            that.setData({userInfo:res.data.data})
+            wx.setStorageSync("userInfo", res.data.data);
+       }
     })
   },
   /**

@@ -132,6 +132,9 @@ Page({
     this.setData({
       list
     })
+    wx.navigateTo({
+      url: '/pages/redeemnow/redeemnow'
+    })
   },
 
   /**

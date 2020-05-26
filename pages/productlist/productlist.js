@@ -1,10 +1,10 @@
-// pages/productlist/productlist.js
-// const {
-//   $Toast
-// } = require('../../components/base/index');
+
+
+
 var {
   urlApi
 } = require("../../utils/request.js");
+let  e=getApp();
 Page({
   data: {
     value1: 1,
@@ -24,26 +24,16 @@ Page({
         address_id:options.address_id
       })
     },
-    handleChange({ detail }) {
+    handleChange({ detail }) {  
       this.setData({
-          value1:this.data.value1+1
-      })
+          value1:detail.value
+      }) 
   },
   nowChange:function(){
     var that=this;
     wx.navigateTo({ url: '/pages/redeemnow/redeemnow?list=' 
     + JSON.stringify(that.data.list) + '&num=' + that.data.value1 +'&id=' + that.data.id });
   },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow: function() {
       this.getData();
     },
@@ -54,6 +44,7 @@ Page({
           that.setData({
             list:res.data.data
           })
+       e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5); 
         }else{
           wx.showToast({
             title: res.data.msg
