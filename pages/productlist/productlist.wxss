@@ -16,16 +16,22 @@
 }
 .content .content_img{
   width: 100%;
-  height: 416rpx
+  /* height: 416rpx */
 }
 .content .content_img image{
   width: 100%;
-  height: 100%
+  height:400px;
 }
 .content .content_integral{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content:space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding-top: 14px;
+  padding-bottom: 10px;
 }
 .content_integral .total{
   color: #333;

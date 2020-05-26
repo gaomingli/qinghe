@@ -19,10 +19,12 @@ align-items: stretch;
 }
 
 .redeemnow .address image{
-  height:40rpx;
-width:40rpx;
-
-}
+  height: 36rpx;
+  width: 36rpx;
+  vertical-align: middle;
+  margin-right: 4px;
+  
+  }  
 .redeemnow .line image{
   height: 10rpx;
   width: 100%;
@@ -66,7 +68,8 @@ width:auto;
 }
 .hot_box .hot_num text{
   color: #999;
-  font-size: 24rpx
+  font-size: 30rpx;
+  margin-left: 26px;  
 }
 .hot_box image{
   width:140rpx;

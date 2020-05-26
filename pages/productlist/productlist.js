@@ -10,7 +10,7 @@ Page({
     value1: 1,
     list:null,
     totalCore: "",
-    id: "",
+    id:0,
     address_id:""
   },
     // 数量计算
@@ -31,8 +31,9 @@ Page({
   },
   nowChange:function(){
     var that=this;
-    wx.navigateTo({ url: '/pages/redeemnow/redeemnow?list=' 
-    + JSON.stringify(that.data.list) + '&num=' + that.data.value1 +'&id=' + that.data.id });
+   wx.navigateTo({
+     url:`/pages/redeemnow/redeemnow?num=${that.data.value1}&id=${that.data.id}`
+   })
   },
     onShow: function() {
       this.getData();

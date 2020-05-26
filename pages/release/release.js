@@ -1,6 +1,6 @@
 // pages/release/release.js
 var {
-  urlApi
+  urlApi,host
 } = require("../../utils/request.js");
 Page({
 
@@ -36,9 +36,7 @@ Page({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有  
       success: function (res) {
-
         if (res.tempFilePaths.length > 0) {
-
           //图如果满了9张，不显示加图
           if (res.tempFilePaths.length == 9) {
             that.setData({
@@ -72,47 +70,43 @@ Page({
     let img_url_ok = [];
     //由于图片只能一张一张地上传，所以用循环
     for (let i = 0; i < img_url.length; i++) {
+      debugger;
       wx.uploadFile({
         //路径填你上传图片方法的地址
-        url: 'http://wechat.homedoctor.com/Moments/upload_do',
+        url: host+'user/Profile/photoUpload',
         filePath: img_url[i],
         name: 'file',
         formData: {
-          'user': 'test'
+          token:wx.getStorageSync("tokenn")||''
         },
         success: function (res) {
           console.log('上传成功');
           //把上传成功的图片的地址放入数组中
           img_url_ok.push(res.data)
           //如果全部传完，则可以将图片路径保存到数据库
-          if (img_url_ok.length == img_url.length) {
-            var userid = wx.getStorageSync('userid');
-            var content = that.data.content;
-            wx.request({
-              url: 'http://wechat.homedoctor.com/Moments/adds',
-              data: {
-                user_id: userid,
-                images: img_url_ok,
-                content: content,
-              },
-              success: function (res) {
-                if (res.data.status == 1) {
-                  wx.hideLoading()
-                  wx.showModal({
-                    title: '发布成功',
-                    showCancel: false,
-                    success: function (res) {
-                      // if (res.confirm) {
-                      //   wx.navigateTo({
-                      //     url: '/pages/my_moments/my_moments',
-                      //   })
-                      // }
-                    }
-                  })
-                }
-              }
-            })
-          }
+          // if (img_url_ok.length == img_url.length) {
+          //   var userid = wx.getStorageSync('userid');
+          //   var content = that.data.content;
+          //   wx.request({
+          //     url: 'http://wechat.homedoctor.com/Moments/adds',
+          //     data: {
+          //       user_id: userid,
+          //       images: img_url_ok,
+          //       content: content,
+          //     },
+          //     success: function (res) {
+          //       if (res.data.status == 1) {
+          //         wx.hideLoading()
+          //         wx.showModal({
+          //           title: '发布成功',
+          //           showCancel: false,
+          //           success: function (res) {                 
+          //           }
+          //         })
+          //       }
+          //     }
+          //   })
+          // }
         },
         fail: function (res) {
           console.log('上传失败');
@@ -135,7 +129,6 @@ Page({
       title: '上传中',
     })
     that.img_upload();
-    this.getData();
   },
 
   //预览图片方法

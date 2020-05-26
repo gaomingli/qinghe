@@ -10,7 +10,8 @@ Page({
   data: {
     dataSource:[],
     animation: {},
-
+    id:13,
+    page:1,
     contnet: [{
       'firstname': '张三',
       'content': '你好漂亮呀！！'
@@ -153,7 +154,11 @@ Page({
   },
   getData:function(){
     var that = this;
-    urlApi('portal/list/circle', "post",{}).then((res) => {
+    let params={};
+    params['id']=this.data.id;
+    params['page']=this.data.page;
+
+    urlApi('portal/list/index', "post",params).then((res) => {
       if(res.data.code){
         that.setData({
           dataSource: res.data.data

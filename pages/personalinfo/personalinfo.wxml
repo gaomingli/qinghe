@@ -1,9 +1,12 @@
 <!--pages/personalinfo/personalinfo.wxml-->
 <view class='personalinfo'>
-<i-cell-group>
-    <i-cell title="头像" is-link url="">
-    <image src='{{userDetail.avatar}}'></image>
-    </i-cell>
-    <i-cell title="昵称" value="{{userDetail.user_nickname}}"></i-cell>
-</i-cell-group>
+   <view class="userInfoPri">
+    <view>头像</view>
+     <image src='{{userDetail.avatar}}' class="headAvau"></image>
+   </view>  
+   <view  class="userInfoPri">
+    <view>昵称</view>
+    <view>{{userDetail.user_nickname}}</view>
+   
+   </view>
 </view>

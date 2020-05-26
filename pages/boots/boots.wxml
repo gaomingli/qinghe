@@ -1,6 +1,6 @@
 <!--pages/boots/boots.wxml-->
 <view style='margin-top:20%;'>
-  <view class="haha-center"><image src="http://wxappqiniu.gzjuhuo.com/logo.jpg"  style="width:132rpx;height:132rpx"/>
+  <view class="haha-center"><image src="/icon/logo.jpg"  style="width:200rpx;height:200rpx"/>
     <view class="taoli">安徽省青少年事务社工</view>
   </view>
   <view class="caozuo">申请获得以下授权</view>

@@ -17,8 +17,8 @@
     <scroll-view class="scrollWrap" scroll-y="true" style='height:{{winHeight}}px;'> 
     </scroll-view>
   </swiper-item> -->
-  <swiper-item>111111111111</swiper-item>
-  <swiper-item>22222222222222222</swiper-item>
+  <swiper-item>1</swiper-item>
+  <swiper-item>2</swiper-item>
   <!--动态-->
   <swiper-item>
      <scroll-view class="page" scroll-y="true" style='height:{{winHeight}}px;'>
@@ -72,7 +72,7 @@
   </swiper-item>
   <!--动态end-->
   
-  <swiper-item>444444444444444</swiper-item>
-  <swiper-item>5555555555555555555555</swiper-item>
+  <swiper-item>3</swiper-item>
+  <swiper-item>4</swiper-item>
 </swiper>
 

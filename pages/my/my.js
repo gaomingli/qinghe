@@ -10,8 +10,12 @@ Page({
    */
   data: {
     flag:false,
-    userInfo:null
-    
+    userInfo:null,
+    list:[
+      { id: 2,name:"普通用户"},
+      { id: 3,name: "社工"},
+      { id: 4,name: "组织"}
+    ]
   },
 
   /**

@@ -3,7 +3,7 @@
 <view class='top'>
   <textarea class='textarea' bindinput="input" placeholder="这一刻的想法" name="textarea"
    placeholder-class="placeholder" maxlength="{{maxlength}}" 
-   auto-height value="{{content}}" focus="{{focus}}"/>
+   value="{{content}}" focus="{{focus}}" style="height:200rpx"/>
 </view>
 <!-- bottom--> 
 <view class="bottom">

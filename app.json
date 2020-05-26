@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/circle/circle",
+    "pages/release/release",
     "pages/index/index",
     "pages/news/news",
     "pages/choicerole/choicerole",
@@ -26,10 +28,9 @@
     "pages/auditfailure/auditfailure",
     "pages/underreview/underreview",
     "pages/productlist/productlist", 
-    "pages/release/release",
     "pages/shopping/shopping",
     "pages/personalinfo/personalinfo",
-    "pages/circle/circle",
+  
     "pages/logs/logs",
     "pages/newsdetail/newsdetail",   
     "pages/editaddress/editaddress",   

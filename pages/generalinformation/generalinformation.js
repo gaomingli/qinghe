@@ -20,10 +20,13 @@ Page({
 
   // 链接添加
   eduit_address: function (e) {
-    console.log(e);
     var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/editaddress/editaddress?id=' + id
+    this.data.list.map((item,index)=>{
+        if(item.id==id){
+          wx.navigateTo({
+            url: `/pages/editaddress/editaddress?item=${item}`
+          })
+        }
     })
   },
 

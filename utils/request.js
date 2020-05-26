@@ -21,5 +21,6 @@ var urlApi = (url, method, data={}) => {
 }
 
 module.exports = {
-  urlApi:urlApi
+  urlApi:urlApi,
+  host
 }

@@ -21,7 +21,7 @@
           </radio>
         </view>
         <view class='eduit_del'>
-          <view bindtap='eduit_address' data-id="{{item.id}}">
+          <view bindtap='eduit_address' data-id="{{item.id}}" >
             <image src="/icon/editor.png"></image>
             <text>编辑</text>
           </view>
@@ -37,9 +37,9 @@
 </view>
 <!-- <view class='no_address'>暂无收货地址</view> -->
 <view class='btn_view'>
-  <navigator url="../addaddress/addaddress" hover-class='none'>
-    <button hover-class='none'>
+  <navigator url="/pages/addaddress/addaddress" hover-class='none'>
+    <view >
       <image src='/icon/addIcon.png'></image>新增收货地址
-    </button>
+    </view>
   </navigator>
 </view>

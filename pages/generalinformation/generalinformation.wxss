@@ -142,7 +142,7 @@ button image{
   position: fixed!important;
   bottom:30rpx; padding-left:30rpx; padding-right:30rpx;
 }
-.btn_view button{
+.btn_view view{
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -13,7 +13,7 @@
 				<view class='num'>
 					<text>{{userInfo.coin}}</text>积分</view>
 			</view>
-			<view class='three'>{{userInfo.company_name}}</view>
+			<view class='three'>{{list[userInfo.user_type-2].name}}</view>
 		</view>
 		<navigator url='/pages/personalinfo/personalinfo'>
 			<view class='right_part'>
