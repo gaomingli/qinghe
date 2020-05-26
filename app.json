@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/circle/circle",
     "pages/release/release",
-    "pages/index/index",
     "pages/news/news",
     "pages/choicerole/choicerole",
     "pages/management/management",
