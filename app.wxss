@@ -31,3 +31,6 @@ font-size:32rpx;
 .userinfo   .i-input-placeholder{
   font-size: 32rpx;
 }
+.clearfix{
+  clear: both;
+}

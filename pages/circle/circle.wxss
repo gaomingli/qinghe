@@ -1,93 +1,114 @@
-page{background: #ffffff;}
+page {
+  background: #ffffff;
+}
+
 /*搜索部分*/
-.searchBox{
+.searchBox {
   margin: 25rpx 30rpx 25rpx 30rpx;
   height: 90rpx;
   display: flex;
   align-items: center;
 }
-.searchBox_input{
+
+.searchBox_input {
   display: flex;
-  width:690rpx;
-  height:65rpx;
-  background:rgba(248,248,248,1);
-  border-radius:33px;
+  width: 690rpx;
+  height: 65rpx;
+  background: rgba(248, 248, 248, 1);
+  border-radius: 33px;
   align-items: center;
   padding-left: 46rpx;
 }
+
 .searchBox_input image {
   width: 27rpx;
   height: 29rpx;
-  margin-right:20rpx;
+  margin-right: 20rpx;
 }
-.searchBox_input input{
-  font-size:28rpx;
-  font-family:Microsoft YaHei;
-  font-weight:400;
-  color:rgba(153,153,153,1);
+
+.searchBox_input input {
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
 }
 
 /*5个tab模块*/
-.swiper-tab{  
-    width: 100%;  
-    border-bottom: 2rpx solid #e7e7e7;  
-    text-align: center;  
-    line-height: 88rpx;
-    background: #fff;  
-    /* position: fixed;
-    top: 138rpx;   */
-    z-index: 999;
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #e7e7e7;
+  text-align: center;
+  line-height: 88rpx;
+  background: #fff;
+  z-index: 999;
+  position: sticky;
+  top: 0px;
 }
-.swiper-tab-list{  
-  font-size:32rpx;  
-  display: inline-block;  
-  width: 20%;  
-  color: #666666; 
+
+.swiper-tab-list {
+  font-size: 32rpx;
+  display: inline-block;
+  width: 20%;
+  color: #666666;
   font-weight: 800;
 }
-.on_pdd{
+
+.on_pdd {
   position: relative;
   font-size: 40rpx;
   color: #333333;
-}  
-.on_pdd::after{
-  position: absolute; 
+}
+
+.on_pdd::after {
+  position: absolute;
   left: 50%;
   top: 88rpx;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  width:120rpx;
-  height:6rpx;
+  width: 120rpx;
+  height: 6rpx;
   content: '';
   background: rgba(60, 201, 169);
   /* background:linear-gradient(262deg,rgba(255,94,81,0.88),rgba(226,46,31,0.88)); */
-  border-radius:3rpx;
-} 
-.swiper-box{ 
-  display: block; 
-  height: 100%; 
-  width: 100%; 
-  overflow: hidden; 
+  border-radius: 3rpx;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   background-color: #F8F8F8;
-}  
+}
+
 /*5个end*/
 
 /*动态*/
-.circleList{
+.circleList {
   background: white;
   border-bottom: 1px solid whitesmoke;
   border-top: 1px solid whitesmoke;
   padding-bottom: 30rpx;
 }
-.circleList:nth-last-child(1){
+
+.circleList:nth-last-child(1) {
   padding-bottom: 150rpx;
 }
-.body-view{display: flex;}
-.left-view{width: 150rpx;}
-.right-view{padding-right: 50rpx;}
+
+.body-view {
+  display: flex;
+}
+
+.left-view {
+  width: 20%;
+}
+
+.right-view {
+  width: 80%;
+}
 
 /*头像*/
-.user-icon{
+.user-icon {
   width: 75rpx;
   height: 75rpx;
   margin-left: 30rpx;
@@ -96,9 +117,8 @@ page{background: #ffffff;}
 }
 
 /*昵称*/
-.user-name{
+.user-name {
   display: flex;
-  height: 30rpx;
   line-height: 30rpx;
   font-size: 30rpx;
   color: #384463;
@@ -108,72 +128,123 @@ page{background: #ffffff;}
 }
 
 /*内容*/
-.user-content{
-  display: flex;
+.user-content {
   font-size: 30rpx;
   color: #333333;
   margin-left: 10rpx;
-  line-height: 40rpx;
-  justify-content: space-between;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
-/* 图片 */
-.photo-view{
 
+/* 图片 */
+.photo-view {
   margin-left: 10rpx;
-  margin-bottom: 20rpx;
 }
-.photo{
+
+.photo {
   /* background: rgb(255, 166, 0);   */
   float: left;
   margin-right: 39rpx;
   margin-top: 10rpx;
 }
- /* <!--时间、删除按钮、点赞评论按钮--> */
- .TDD-view{
-    width: 100%;
-    height: 60rpx;
-    display: flex;
-    align-items: center;
-    background: white;
-    justify-content: space-between;
-    position: relative;
- }
- .TDD-view label{
-  font-size: 20rpx;
-  margin-left: 10rpx;
+
+/* <!--时间、删除按钮、点赞评论按钮--> */
+.TDD-view {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  background: white;
+  justify-content: space-between;
+  position: relative;
 }
-.TDD-view button{
+
+.TDD-view label {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #666666
+}
+
+.TDD-view button {
   font-size: 13px;
   margin-left: 20rpx;
   color: black;
   background: white;
 }
-.TDD-view button::after{
+
+.TDD-view button::after {
   border: white;
 }
-.TDD-view image{
+
+.TDD-view image {
   width: 27rpx;
   height: 24rpx;
-  margin-right: 20rpx;
+  margin-right: 33rpx;
 }
+
 /*评论*/
-.discuss-view{
+.discuss-view {
   background: #f8f8f8;
-  padding: 20rpx 16rpx;
+
+  margin-right: 30rpx;
 }
-.discuss{
-  line-height: 40rpx;
+
+.discuss {
+  line-height: 30rpx;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10rpx;
+  padding-bottom: 6px;
 }
-.discuss label{font-size: 26rpx;color: #384463;}
-.discuss .content{font-size: 26rpx;color: #333333;}
+
+.discuss label {
+  font-size: 26rpx;
+  color: #384463;
+}
+
+.discuss .content {
+  font-size: 26rpx;
+  color: #333333;
+}
+
 /*动态end*/
 
 /* 弹出框 */
-.pop-up-box{
+.pop-up-box {
   position: absolute;
   height: 60rpx;
   border-radius: 10rpx;
   right: 70rpx;
   background: rgba(0, 0, 0, 0.4)
+}
+
+.banner {
+  width: 100%;
+  height: 300rpx;
+}
+
+.imgIcon {
+  width: 32%;
+  margin-right: 1%;
+  float: left;
+}
+
+.imgIcon image {
+  width: 100%;
+  height: 80px;
+}
+
+.photo-view .imgIcon:nth-child(3n) {
+  margin-right: 0;
+}
+
+.commentIcon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.commentStyle {
+  border: 1px solid #eee;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  padding: 2px;
 }

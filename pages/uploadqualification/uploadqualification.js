@@ -1,8 +1,5 @@
 var {
-  urlApi
-} = require("../../utils/request.js");
-var {
-  host
+  urlApi,host
 } = require("../../utils/request.js");
 Page({
 

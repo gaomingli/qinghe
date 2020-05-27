@@ -22,12 +22,6 @@ form .form-item .wapper-30 .form-title > text{
 form .form-item .form-flex{
   display: flex;
 }
-form .form-item .name  input{
-  padding-left: 94rpx;
-}
-form .form-item .id-card input, form .form-item .tel input{
-  padding-left: 63rpx;
-}
 form .form-item .site image{
   width: 13rpx;
   height: 22rpx;
@@ -37,7 +31,6 @@ form .form-item .site{
   width: 100%;
 }
 form .form-item .site .form-title{
-  margin-right: 92rpx;
 }
 .form-item-detailed-address{
   display: flex;
@@ -56,13 +49,14 @@ form .form-item .site .form-title{
   margin-right: 8rpx;
 }
 .form-item-detailed-address textarea{
-  width: 550rpx;
-  height: 91rpx;
+  height: 100rpx;
   font-size: 24rpx;
   padding-top: 16rpx;
   padding-left: 9rpx;
-  border:1rpx solid rgba(231,231,231,1);
-  border-radius:4rpx;  
+  border: 1rpx solid rgba(231,231,231,1);
+  border-radius: 4rpx;
+  margin-right: 20px;
+  padding: 10px;  
 }
 form .upload-box{
   background: #fff;
@@ -182,7 +176,8 @@ form .form-post text{
 }
 .takephoto image{
   margin-top: 32rpx;
-  height: 515rpx;
+  height: 630rpx;
+  margin-bottom: 16px;  
 }
 
 .title_leftImage {
@@ -213,3 +208,5 @@ padding-left:15rpx;
   padding: 0 30rpx;
   box-sizing: border-box;
 }
+
+.form-title{width:100px}
