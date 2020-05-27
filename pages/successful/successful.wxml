@@ -4,30 +4,30 @@
 <view class='warning'>
 <image src='../../icon/ok.png'></image>
 <view class='signok'>报名成功</view>
-<view class='getcore'>获得{{core}}积分</view>
+<view class='getcore'>获得{{signUpDetail.coin}}积分</view>
 </view>
 
 <view class="common_title" style="background:#ffffff;padding:20rpx 30rpx;">
       <view class="title_left">
         <image src="../../icon/common.png"></image>
-        <view class="txt">{{projectName}}</view>
+        <view class="txt">{{signUpDetail.post_title}}</view>
       </view>
     </view>
 
 
 <view class='sign'>
-<view class='signtotal'>已报名人员{{num}}</view>
-<view class='img'><image src="{{item.url}}" wx:for="{{numimg}}" wx:key="id"></image></view>
+<view class='signtotal'>已报名人员<text style="color:red">{{signUpDetail.activity_book_join_num}}</text>/{{signUpDetail.num}}</view>
+<view class='img'><image wx:for="{{signUpDetail.activity_book_people}}" src="{{item.avatar}}"  wx:key="id"></image></view>
 </view>
 
 <view class='sign'>
 <text class='title'>活动时间</text>
-<text class='infor'>{{time}}</text>
+<text class='infor'>{{signUpDetail.activity_start}}~{{signUpDetail.activity_end}}</text>
 </view>
 
 <view class='sign'>
 <text class='title'>活动地址</text>
-<text class='infor'>{{address}}</text>
+<text class='infor'>{{signUpDetail.address}}</text>
 </view>
 
 <view class='sign'>

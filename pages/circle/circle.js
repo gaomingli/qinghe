@@ -159,6 +159,7 @@ Page({
     params['page']=this.data.page;
 
     urlApi('portal/list/index', "post",params).then((res) => {
+      console.log("index============",res);
       if(res.data.code){
         that.setData({
           dataSource: res.data.data

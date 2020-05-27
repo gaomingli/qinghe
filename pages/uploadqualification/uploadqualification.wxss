@@ -1,37 +1,177 @@
-/* pages/uploadqualification/uploadqualification.wxss */
-@import "../index/index.wxss";
-.uploadqualification{
-  background-color: #f8f8f8;
+/* pages/store-entry/store-entry.wxss */
+page{
+  background: #f8f8f8;
 }
-.common_title{
-  margin-left: 30rpx;
-  padding-top:32rpx;
-padding-bottom:32rpx;
+.title{
+  background: #ebf9eb;
+  padding: 30rpx 0;
+  color: #00B402;
+  font-size: 28rpx;
+}
+form .form-item {
+  display: flex;
+  padding: 34rpx 0;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  background: #fff;
+}
+form .form-item .wapper-30 .form-title > text{
+  color: #FE3A3B;
+  margin-right: 8rpx;
+}
+form .form-item .form-flex{
+  display: flex;
+}
+form .form-item .name  input{
+  padding-left: 94rpx;
+}
+form .form-item .id-card input, form .form-item .tel input{
+  padding-left: 63rpx;
+}
+form .form-item .site image{
+  width: 13rpx;
+  height: 22rpx;
+  margin-left: auto;
+}
+form .form-item .site{
+  width: 100%;
+}
+form .form-item .site .form-title{
+  margin-right: 92rpx;
+}
+.form-item-detailed-address{
+  display: flex;
+  align-items: center;
+  background: #fff;
+  font-size: 28rpx;
+}
+.form-item-detailed-address .form-title{
+  padding-top: 62rpx;
+  padding-left: 30rpx;
+  padding-right: 25rpx;
+  padding-bottom: 61rpx;
+}
+.form-item-detailed-address .form-title > text{
+  color: #FE3A3B;
+  margin-right: 8rpx;
+}
+.form-item-detailed-address textarea{
+  width: 550rpx;
+  height: 91rpx;
+  font-size: 24rpx;
+  padding-top: 16rpx;
+  padding-left: 9rpx;
+  border:1rpx solid rgba(231,231,231,1);
+  border-radius:4rpx;  
+}
+form .upload-box{
+  background: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+form .upload-box .images-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx 0;
+}
+form .upload-box .images-box .id-card{
+  width:332rpx;
+  height:208rpx;
+  background:rgba(248,248,248,1);
+  border-radius:10rpx;
+  overflow: hidden;
+}
+.ico21pic{width:30rpx; height:30rpx; position:absolute; top:1rpx; right:5rpx;z-index: 999}
+form .upload-box .images-box .id-card image{
+  width: 100%;
+  height: 100%;
+}
+form .upload-box .id-card-title{
+  display: flex;
+  text-align: center;
+  font-size: 24rpx;
+  padding-bottom: 43rpx;
+}
+form .upload-box .id-card-title view{
+  width: 50%;
+}
+form .form-post{
+  background: #fff;
+  padding-bottom: 62rpx;
+}
+form .form-post .agreement{
+  display: flex;
+  padding: 35rpx 0;
+  font-size: 24rpx;
+  font-weight:bold;
+  color: #333333;
+  background: #fff;
+}
+form .form-post .agreement radio .wx-radio-input{
+  width: 25rpx;
+  height: 25rpx;
+  padding: 0;
+  margin-right: 8rpx;
+  margin-top: -5rpx;
+  background: #fff;
+  border: 1rpx solid #ccc;
+  border-radius:3rpx;
+}
+form .form-post .agreement radio .wx-radio-input.wx-radio-input-checked::before{
+  background: #00B402;
+  color: #fff;
+  border: 0;
+  border-radius:3rpx;
+}
+form .form-post text{
+  color: #599cff;
+}
+/* form button{
+  min-width: 100%;
+  display: inherit;
+  padding: 30rpx 274rpx;
+  background: #00B402;
+  box-shadow:0rpx 4rpx 27rpx 0rpx rgba(0,180,2,0.44);
+  border-radius:44rpx;  
+  color: #fff;
+  font-weight:500;
+  font-size: 32rpx;
+} */
 
-}
-.title_left .txt{
-font-size: 28rpx;
-color: #333;
-font-weight: normal;
-padding-left:15rpx;
-
-}
-.sure{
-  background-color: #fff;
-  margin-top: 20rpx;
-}
 .ok{
   color: #fff;
-  height: 88rpx;
-  line-height: 88rpx;
+  height: 88rpx!important;
+  line-height: 88rpx!important;
   text-align: center;
   border-radius: 44rpx;
   background-color: #53B2AA;
-  width: 610rpx;
+  width: 610rpx!important;
   margin-top: 65rpx;
   margin-left:auto;
-margin-right:auto;
+  margin-right:auto;
+  font-size: 30rpx;
+  padding: 0;
 
+}
+
+.address-picker{
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.picker-view{
+  width: 525rpx;
+  height: 55rpx;
+  display: flex;
+  position: relative;
+}
+.picker-view image{
+  position: absolute;
+  right: 0;
+  top: 16.5rpx;
 }
 .takephoto{
   background-color: #fff;
@@ -44,9 +184,32 @@ margin-right:auto;
   margin-top: 32rpx;
   height: 515rpx;
 }
-.upload{
-  color: #000000;
-  font-size: 30rpx;
-  margin-top: 41rpx;
-  margin-bottom: 67rpx;
+
+.title_leftImage {
+width: 8rpx;
+height: 33rpx;
+}
+
+.common_title{
+  margin-left: 30rpx;
+  padding-top:32rpx;
+padding-bottom:32rpx;
+
+}
+.common_title{display: flex;justify-content: space-between;align-items: center;}
+.common_title .title_left{display: flex;align-items: center;}
+.title_left .txt{
+font-size: 28rpx;
+color: #333;
+font-weight: normal;
+padding-left:15rpx;
+
+}
+
+.title_left image{width: 8rpx;height: 33rpx;}
+
+/* 布局容器，左右边距30rpx */
+.wapper-30{
+  padding: 0 30rpx;
+  box-sizing: border-box;
 }

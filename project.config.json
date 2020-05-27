@@ -25,7 +25,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.1",
+	"libVersion": "2.11.0",
 	"appid": "wx5d0cefb0bde5da0d",
 	"projectname": "cyan_worker",
 	"debugOptions": {
@@ -43,13 +43,42 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/uploadqualification/uploadqualification",
+					"pathName": "pages/uploadqualification/uploadqualification",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/underreview/underreview",
+					"pathName": "pages/underreview/underreview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/examine_success/examine_success",
+					"pathName": "pages/examine_success/examine_success",
+					"scene": null
+				}
+			]
 		}
 	}
 }

@@ -18,15 +18,11 @@ Page({
 
   },
 
-  // 链接添加
+  // 编辑地址
   eduit_address: function (e) {
     var id = e.currentTarget.dataset.id;
-    this.data.list.map((item,index)=>{
-        if(item.id==id){
-          wx.navigateTo({
-            url: `/pages/editaddress/editaddress?item=${item}`
-          })
-        }
+    wx.navigateTo({
+      url: '/pages/editaddress/editaddress?id=' + id
     })
   },
 
@@ -45,17 +41,6 @@ Page({
       }
     })
   },
-
-  // deleteSure: function(id) {
-  //   let obj={}
-  //   obj.id=id
-  //   urlApi("/user/Profile/address_delete","post", obj).then((res)=>{
-  //     wx.showToast({
-  //       title: res.data.msg,
-  //       icon:"none"
-  //     })         
-  //   })
-  // },
 
 
   textHide: function (e) {

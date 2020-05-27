@@ -3,17 +3,21 @@
 	<view class='my_bg'>
 		<image src='/icon/orderbg.png'></image>
 	</view>
-	<view class='personalinfo' wx:if="{{flag}}">
+	<view class='personalinfo' wx:if="{{tokenn}}">
 		<view class='left_part'>
 			<view class='one'>
-				<image src="{{userInfo.avatar}}"></image>
+				<image src="{{userDetail.avatar}}"></image>
 			</view>
 			<view class='two'>
-				<view class='name'>{{userInfo.user_nickname}}</view>
+				<view class='name'>{{userDetail.user_nickname}}</view>
 				<view class='num'>
-					<text>{{userInfo.coin}}</text>积分</view>
+					<text>{{userDetail.coin}}</text>积分</view>
 			</view>
-			<view class='three'>{{list[userInfo.user_type-2].name}}</view>
+			<view class='three'>
+      {{userDetail.user_type_name}}
+      <text wx:if="{{userDetail.user_status == 2}}">(待审核)</text>
+      <text wx:if="{{userDetail.user_status == 3}}">(审核不通过)</text>
+      </view>
 		</view>
 		<navigator url='/pages/personalinfo/personalinfo'>
 			<view class='right_part'>
@@ -25,7 +29,7 @@
 		<view class='left_part'>
 			<view class='one' bindtap='onJsEvent' data-url="/pages/my/my" data-type="2">
 				<image src="/icon/head2.png" style="width:60px;height:60px"></image>
-				<text style="color:#fff;margin-left:12px;">点击获取头像昵称</text>
+				<text style="color:#fff;margin-left:12px;">点击登录</text>
 			</view>
 		</view>
 	</view>

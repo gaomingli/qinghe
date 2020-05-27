@@ -1,4 +1,3 @@
-// pages/editaddress/editaddress.js
 const app = getApp()
 var {
   urlApi
@@ -9,36 +8,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    style:0,
-    score:"#C6C6C6",
-    name: '',
-    phone: '',
-    address: '',
-    area: '',
-    id:'',
-    addressDetail:''
-  },
-
-  chooseAddress: function() {
-    let that = this
-    wx.chooseLocation({
-      success: function(res) {
-        console.log(res)
-        that.setData({
-          area: res.address
-        })
-      }
-    })
+    region: ['安徽省', '合肥市', '蜀山区'],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      id: options.id
-    })
-    this.queryAddressDetail();
+
   },
 
   /**
@@ -52,22 +29,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+
   },
-  
-  //查询地址详情
-  queryAddressDetail:function(){
-    var that = this;
-    var id = that.data.id;
-    var data = {};
-    data.id = id;
-    urlApi("user/Profile/address_edit", "post", data).then((res) => {
-      console.log(res);
-      if (res.data.code == 1){
+
+  bindRegionChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  },
+
+  chooseAddress: function () {
+    console.log("asdsadsa");
+    let that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        console.log(res)
         that.setData({
-          addressDetail: res.data.data,
-          area: res.data.data.area
-        }) 
+          area: res.address
+        })
       }
     })
   },
@@ -75,13 +55,13 @@ Page({
   /**
    * 确认提交
    */
-  formSubmit: function (e) {
+  formSubmit:function(e){
     console.log(e);
-    var data = e.detail.value;
-    var tel = data.tel;
-    var full_name = data.full_name;
-    var address = data.address;
-    var area = data.area;
+     var data = e.detail.value;
+    var tel = data.tel; 
+    var full_name = data.full_name; 
+    var address = data.address; 
+    var area = data.area; 
     if (!full_name) {
       wx.showToast({
         title: '收货人不能为空',
@@ -121,7 +101,6 @@ Page({
       })
       return false;
     }
-    data.id = this.data.id;
     urlApi("user/Profile/address_post", "post", data).then((res) => {
       if (res.data.code == 1) {
         var pages = getCurrentPages();
@@ -168,4 +147,5 @@ Page({
   onShareAppMessage: function () {
 
   }
+  
 })

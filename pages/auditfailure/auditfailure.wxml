@@ -2,6 +2,8 @@
 <view class='underreview'>
 <view class='bg'><image src="../../icon/fail.png"></image></view>
 <view class='checking'>审核失败</view>
+<view class='wait'>审核不通过原因：<text style="color:red">{{userDetail.user_reason}}</text></view>
 <view class='wait'>请重新填写资料上传相关证件</view>
+<view class='backIndex' catchtap="backIndexClick">重新填写</view>
 </view>
 

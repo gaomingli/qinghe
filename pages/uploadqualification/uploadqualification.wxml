@@ -1,42 +1,87 @@
-<!--pages/uploadqualification/uploadqualification.wxml-->
-<view class='uploadqualification'>
 <view class='common_title'>
-<view class="title_left">
+      <view class="title_left">
         <image src="../../icon/common.png"></image>
         <view class="txt">基本信息</view>
       </view>
 </view>
 
-<view class='baseinfo'>
-<i-panel title="基础用法">
-    <i-input wx:if="{{show==true}}" value="{{ value1 }}" title="组织名称" autofocus mode="wrapped" placeholder="请输入组织名称" />
-    <i-input value="{{ value2 }}" title="姓名" autofocus mode="wrapped" placeholder="请输入姓名" />
-    <i-input value="{{ value3 }}" title="手机号" autofocus mode="wrapped" placeholder="请输入手机号" />
-    <i-input value="{{ value4 }}" title="身份证" autofocus mode="wrapped" placeholder="请输入您的身份证号码" />
-    <i-input value="{{ value5 }}" title="地址" autofocus mode="wrapped" placeholder="请选择" />
-    <i-input value="{{ value6 }}" title="详细地址" autofocus mode="wrapped" placeholder="请输入详细地址" />
-</i-panel>
-</view>
+<form bindsubmit="formSubmit">
+  <view class="form-item">
+    <view class="form-flex wapper-30 name">
+      <view class="form-title"><text>*</text>组织名称</view>
+      <input type="text" value="{{userDetail.company_name}}" name="company_name" maxlength="200" placeholder="请输入组织名称"></input>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <view class="form-flex wapper-30 name">
+      <view class="form-title"><text>*</text>姓名</view>
+      <input type="text" value="{{userDetail.user_login}}" name="user_login" placeholder="请输入姓名" maxlength="20"></input>
+    </view>
+  </view>
+  
+
+  <view class="form-item">
+    <view class="form-flex wapper-30 tel">
+      <view class="form-title"><text>*</text>手机号</view>
+      <input type="tel" value="{{userDetail.mobile}}" name="mobile" placeholder="请输入手机号" maxlength="11"></input>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <view class="form-flex wapper-30 id-card">
+      <view class="form-title"><text>*</text>身份证号</view>
+      <input type="idcard" value="{{userDetail.id_number}}" name="id_number" placeholder="请输入身份证号" maxlength="18"></input>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <view class="form-flex flex-center wapper-30 site">
+      <view class="form-title"><text>*</text>地址</view>
+      <view class="picker-view">
+        <picker class="address-picker" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="shoutext1">
+            {{regionText}}
+          </view>
+        </picker>
+        <image src="/icon/icon_right.png"></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="form-item-detailed-address">
+    <view class="form-title"><text>*</text>详细地址</view>
+    <textarea name="address" value="{{userDetail.address}}" placeholder="请输入详细地址" maxlength="200"/>
+  </view>
 
 <view class='common_title'>
-<view class="title_left">
+      <view class="title_left">
         <image src="../../icon/common.png"></image>
-        <view class="txt">上传证件照</view>
+        <view class="txt">上传资质</view>
       </view>
 </view>
 
-<view class="takephoto">
-<image src='../../icon/takephoto.png'></image>
-<view class='upload' wx:if="{{status==true}}">上传资格证书</view>
-<view class='upload' wx:if="{{status==false}}">上传营业执照</view>
+<view class="takephoto" bindtap="uploadPositiveClick">
+  <image wx:if="{{photoPath}}" src='{{photoPath}}'></image>
+  <image wx:else src='../../icon/uploadImg.png'></image>
+  <view class='upload' wx:if="{{user_type==3}}">上传资格证书</view>
+  <view class='upload' wx:if="{{user_type==4}}">上传营业执照</view>
 </view>
 
-<view class='sure'>
-<i-panel>
-    <i-radio value="{{read}}" checked="{{checked}}" bindchange="handleReadChange">
-    </i-radio>
-</i-panel>
-<view class='ok'>确认</view>
+<view class="form-post">
+  <view class="wapper-30">
+
+    <view class="agreement flex-center">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio class="radio" value="{{isChecked}}" checked=""></radio>
+    </radio-group>
+      我已经阅读并解了<text bindtap="seeMerchantAgreementClick">【相关申请协议】</text>
+    </view>
+
+    <button form-type="submit" class="ok">确认</button>
+
+  </view>
 </view>
 
-</view>
+</form>

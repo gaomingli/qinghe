@@ -1,0 +1,12 @@
+<!--pages/underreview/underreview.wxml-->
+<view class='underreview'>
+<view class='bg'><image src="../../icon/check.png"></image></view>
+<view class='checking'>资料审核成功</view>
+<!-- <view class='wait'>请耐心等待</view> -->
+
+<view class="btnContainer">
+  <view class='backIndex' catchtap="backIndexClick">返回首页</view>
+  <view class='backIndex' catchtap="againIndexClick">重新填写</view>
+</view>
+
+</view>

@@ -1,0 +1,4 @@
+<import src="/library/wxParse/wxParse.wxml"></import>
+<view class="text-box">
+<template is="wxParse" data="{{wxParseData:agreement.nodes}}"/>
+</view>

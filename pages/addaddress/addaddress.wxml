@@ -3,12 +3,12 @@
 <view class="white">
 <view class="ediwrap">
   <text class="ediadtext">收货人</text>
-   <input name="full_name" placeholder="收货人姓名" maxlength="50" class="shoutext1" placeholder-class="placeholderStyle" value="{{addressDetail.full_name}}"/>
+   <input name="full_name" placeholder="收货人姓名" maxlength="50" class="shoutext1" placeholder-class="placeholderStyle" />
 </view>
 
 <view class="ediwrap">
   <text class="ediadtext">联系电话</text>
-   <input name="tel" placeholder="手机号码" maxlength="11" class="shoutext1" placeholder-class="placeholderStyle" value="{{addressDetail.tel}}"/>
+   <input name="tel" placeholder="手机号码" maxlength="11" class="shoutext1" placeholder-class="placeholderStyle" />
 </view>
 
 <view class="ediwrap">
@@ -16,10 +16,10 @@
     <view class="info-box-right1">
       <radio-group bindchange="radiochange" name="default">
         <view class="radio-box">
-          <radio class="wx-radio-input" value="1" checked="{{addressDetail.default == 1?true:false}}" ></radio>是
+          <radio class="wx-radio-input" value="1" ></radio>是
         </view> 
         <view class="radio-box">
-          <radio class="wx-radio-input" value="0" checked="{{addressDetail.default == 0?true:false}}"></radio>否
+          <radio class="wx-radio-input" value="0" checked="checked"></radio>否
         </view>
       </radio-group>
     </view>
@@ -40,7 +40,7 @@
 
 <view class="ediwrap">
   <text class="ediadtext">详细地址</text>
-   <input name="address" placeholder="请填写详细地址" value="{{addressDetail.address}}" class="shoutext1" placeholder-class="placeholderStyle" />
+   <input name="address" placeholder="请填写详细地址" class="shoutext1" placeholder-class="placeholderStyle" />
 </view>
 </view>
 

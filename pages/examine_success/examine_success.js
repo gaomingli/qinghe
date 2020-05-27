@@ -1,7 +1,4 @@
-// pages/auditfailure/auditfailure.js
-var {
-  urlApi
-} = require("../../utils/request.js");
+// pages/underreview/underreview.js
 Page({
 
   /**
@@ -31,29 +28,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.queryUserDetail();
-  },
 
-  //查询用户详情
-  queryUserDetail: function () {
-    var that = this;
-    var data = {};
-    data.user_type = that.data.userType;
-    //验证当前角色是否提交信息或是否审核通过
-    urlApi('user/Profile/edit', "post", data).then((res) => {
-      console.log(res);
-      if (res.data.code == 1) {
-        that.setData({
-          userDetail: res.data.data,
-        })
-      }
+  },
+  
+  //返回首页
+  backIndexClick:function(){
+    wx.switchTab({
+      url: '/pages/index/index'
     })
   },
-
-  //返回首页
-  backIndexClick: function () {
-    wx.redirectTo({
-      url: '/pages/uploadqualification/uploadqualification?userType=' + Number(this.data.userType)
+  
+  //重新填写
+  againIndexClick:function(){
+    wx.navigateTo({
+      url: '/pages/uploadqualification/uploadqualification?userType=' + this.data.userType
     })
   },
 

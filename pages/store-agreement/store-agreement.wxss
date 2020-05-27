@@ -1,0 +1,9 @@
+/* pages/complete_list/index.wxss */
+.text-box{
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color: #707070;
+}
+.h2{
+  margin: 73rpx 0 0 0;
+}

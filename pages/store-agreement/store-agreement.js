@@ -1,25 +1,38 @@
-// pages/auditfailure/auditfailure.js
 var {
   urlApi
 } = require("../../utils/request.js");
+var e = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userType:''
+    user_type: '',//类型
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userType: options.userType
-    })
+    var that = this;
+    that.setData({
+      user_type: options.user_type
+    });
+    that.getJaqdClick();
   },
-
+  //相关申请协议
+  getJaqdClick: function () {
+    var that = this;
+    var data = {};
+    data.user_type = that.data.user_type;
+    urlApi("user/Profile/edit", "post", data).then((res) => {
+      console.log(res);
+      if (res.data.code == 1) {
+        e.WxParse.wxParse("agreement", "html", res.data.data.post_content, this, 5);
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -31,30 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.queryUserDetail();
-  },
 
-  //查询用户详情
-  queryUserDetail: function () {
-    var that = this;
-    var data = {};
-    data.user_type = that.data.userType;
-    //验证当前角色是否提交信息或是否审核通过
-    urlApi('user/Profile/edit', "post", data).then((res) => {
-      console.log(res);
-      if (res.data.code == 1) {
-        that.setData({
-          userDetail: res.data.data,
-        })
-      }
-    })
-  },
-
-  //返回首页
-  backIndexClick: function () {
-    wx.redirectTo({
-      url: '/pages/uploadqualification/uploadqualification?userType=' + Number(this.data.userType)
-    })
   },
 
   /**

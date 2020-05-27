@@ -9,7 +9,7 @@ Page({
    */
   data: {
     num:"8/20",
-time:'2019-05-21',
+    time:'2019-05-21',
     address:'安徽合肥',
     phone:"15552565252",
     projectName:"羽你同行.羽毛球友谊联赛",
@@ -21,15 +21,20 @@ time:'2019-05-21',
     ],
     id:"",
     fullName:"",
-    tel:""
+    tel:"",
+    category_id:'',
+    signUpDetail:''//详细
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    debugger;
-    this.setData({id:options.id,fullName:options.full_name,tel:options.tel})
+    this.setData({
+      id: options.id,
+      category_id: options.category_id
+    })
+    // this.setData({id:options.id,fullName:options.full_name,tel:options.tel})
   },
 
   /**
@@ -43,8 +48,32 @@ time:'2019-05-21',
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-this.getData();
+    this.querySignUpDetail();
   },
+
+
+ //查询报名详情
+  querySignUpDetail:function(){
+    let that = this;
+    let data = {};
+    data.id = that.data.id;
+    data.category_id = that.data.category_id;
+    urlApi('portal/article/index', "post", data).then((res) => {
+      console.log(res);
+      if (res.data.code == 1) {
+        that.setData({
+          signUpDetail: res.data.data
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon:'none'
+        })
+      }
+
+    })
+ },
+
   getData:function(){
     let that = this;
     let params={};
