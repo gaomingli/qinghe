@@ -1,20 +1,20 @@
 <view class='psychometrics'>
 <view class="bg_bottom">
 <view class='bg_index'><image src="../../icon/mainbg.png"></image></view>
-<view class='bg_main'><image src="{{menuList.banner}}"></image></view>
+<view class='bg_main'><image src="{{menuListObj.banner}}"></image></view>
   <!--热门推荐-->
   <view class="common_box common_boxt">
     <view class="common_title">
       <view class="title_left">
         <image src="../../icon/common.png"></image>
-        <view class="txt"  wx:if="{{menuList.hot_psychological}}">热门推荐</view>     
+        <view class="txt"  wx:if="{{menuListObj.hot_psychological}}">热门推荐</view>     
       </view>
     </view>
-        <view class='hot_content'  wx:if="{{menuList.hot_psychological}}">
+        <view class='hot_content'  wx:if="{{menuListObj.hot_psychological}}">
           <view class="common_content">
           <scroll-view class="" scroll-x>
               <view class="scroll_box">
-                <view class="hot_box" wx:for="{{menuList.hot_psychological}}" wx:key="index">
+                <view class="hot_box" wx:for="{{menuListObj.hot_psychological}}" wx:key="index">
                   <image src="{{item.thumbnail}}"></image>
                   <view class="hot_right">
                     <view class="hot_title">{{item.post_title}}</view>
@@ -33,14 +33,14 @@
   </view>
   <!-- 分类 -->
     <view class="index_menu">
-      <view wx:key="index" wx:for-index="index" wx:for="{{menuList.child_category}}" bindtap="getCurrent" data-type="{{index}}" class="{{current===index?'active':''}}">
+      <view wx:key="index" wx:for-index="index" wx:for="{{menuListObj.child_category}}" data-id="{{item.id}}" bindtap="getCurrent" data-type="{{index}}" class="{{current===index?'active':''}}">
         <image src="{{item.more.icon}}" class="grantImage"></image>
         <view class="menu_text">{{item.name}}</view>
       </view>
     </view>
   <!-- 评估列表 -->
     <view class="common_box common_boxs">
-     <view class="hot_box" wx:for="{{menuList.last_news.articles}}">
+     <view class="hot_box" wx:for="{{menuListObj.last_news.articles}}">
             <image src="{{item.thumbnail}}"></image>
             <view class="hot_right">
               <view class="hot_title">{{item.post_title}}</view>

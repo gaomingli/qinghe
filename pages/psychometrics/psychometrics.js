@@ -9,8 +9,10 @@ Page({
    */
   data: {
     //分类导航
-    menuList: [],
-    current:0
+    menuListObj:{},
+    current:0,
+    id:3,
+    page:1,
   },
 
   /**
@@ -27,8 +29,13 @@ Page({
 
   },
   getCurrent:function(e){
-    const { type } = e.currentTarget.dataset;
-    this.setData({current:type})
+    const { type,id } = e.currentTarget.dataset;
+    this.setData({current:type,id:id,
+      'menuListObj.hot_psychological':[],
+      'menuListObj.last_news.articles':[],
+      page:1
+    });
+     this.getData();
   },
   /**
    * 生命周期函数--监听页面显示
@@ -39,17 +46,23 @@ Page({
   },
   getData:function(){
     var that = this;
-    urlApi('portal/list/index/id/3', "post",{}).then((res) => {
+    let params={};
+    params['page']=this.data.page;
+    params['id']=this.data.id;
+    urlApi('portal/list/index', "post",params).then((res) => {
       if(res.data.code){
-        that.setData({
-          menuList: res.data.data
-        })
+        res.data.data.child_category.unshift({id:3,name:'推荐'});
+        // 此时应对数组拼接
+        if(that.data.menuListObj&&that.data.menuListObj.last_news&&that.data.menuListObj.last_news.articles){
+          res.data.data.last_news.articles=that.data.menuListObj.last_news.articles.concat(res.data.data.last_news.articles)
+        }
+        this.setData({menuListObj:res.data.data})
       }else{
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:"none"
         })
-      }
-    
+      }   
     })
   },
 
@@ -78,7 +91,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let {page} =this.data;
+    this.setData({page:page+1})
+    this.getData();
   },
 
   /**

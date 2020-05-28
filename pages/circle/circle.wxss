@@ -41,8 +41,6 @@ page {
   line-height: 88rpx;
   background: #fff;
   z-index: 999;
-  position: sticky;
-  top: 0px;
 }
 
 .swiper-tab-list {
@@ -176,8 +174,8 @@ page {
 }
 
 .TDD-view image {
-  width: 27rpx;
-  height: 24rpx;
+  width:38rpx;
+  height:34rpx;
   margin-right: 33rpx;
 }
 

@@ -27,7 +27,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getTabBar().setData({
+      tabbarIndex: 1
+    })
+  
   },
    //点击 这个方法会触发bindChange()方法
   switchNav(e) {
@@ -140,10 +143,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getTabBar().setData({
-      tabbarIndex: 1
+    this.setData({dataObject:null,page:1,id:13},()=>{
+      this.getData();
     })
-    this.getData();
   },
   getData:function(){
     var that = this;

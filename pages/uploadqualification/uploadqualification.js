@@ -88,7 +88,7 @@ Page({
         var filep = res.tempFilePaths[0];
         console.log("filep=========", filep);
         wx.uploadFile({
-          url: host +"user/Profile/photoUpload",
+          url: host +"portal/article/circle_upload",
           filePath: filep,
           header: {},
           name: 'file',

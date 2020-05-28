@@ -28,7 +28,7 @@
  				<text class="user-content">{{item.post_title}}</text>
  			</view>
  			<!--图片-->
- 			<view class="photo-view">
+ 			<view class="photo-view" wx:if="{{item.photos}}">
  				<view class="photo" wx:for='{{item.photos}}' wx:for-item="list" class="imgIcon" wx:for-index="{{index}}">
  					<image bindtap='LookPhoto' data-urls='{{item.photos}}' data-photUrl='{{list.url}}' src='{{list.url}}'></image>
  				</view>
@@ -48,7 +48,13 @@
  			<view class='discuss-view'>
  				<view class='discuss' wx:for='{{item.comment}}' wx:key='index' wx:for-index="index">
  				<view bindtap='TouchZanUser' data-active="{{index}}" data-userid="{{item.user_id}}" 
-          data-id="{{item.id}}"  data-postid="{{item.post_id}}" ><label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}：</label>
+          data-id="{{item.id}}"  data-postid="{{item.post_id}}"  wx:if="{{item.to_user_nickname}}">
+					<label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}&&{{item.to_user_nickname}}：</label>
+ 					<label class='content'>{{item.content}}</label>
+        </view>
+				<view bindtap='TouchZanUser' data-active="{{index}}" data-userid="{{item.user_id}}" 
+          data-id="{{item.id}}"  data-postid="{{item.post_id}}"  wx:else>
+					<label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}：</label>
  					<label class='content'>{{item.content}}</label>
         </view>
         <view wx:if="{{flag1&&current1==index}}" style="margin-top:6px">

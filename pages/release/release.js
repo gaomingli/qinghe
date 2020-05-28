@@ -1,6 +1,7 @@
 // pages/release/release.js
 var {
-  urlApi,host
+  urlApi,
+  host
 } = require("../../utils/request.js");
 Page({
 
@@ -8,18 +9,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
-    img_url: [],//存放选择的图片
-    content: '',//文本内容
-    maxlength:1000,
-    focus:true
+    content: '', //文本内容
+    maxlength: 1000,
+    child_category: [],
+    item:null,
+    photoArr:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   //键盘输入事件
@@ -30,122 +31,143 @@ Page({
   },
 
   chooseimage: function () {
-    var that = this;
-    wx.chooseImage({
-      count: 9, // 默认9  
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有  
-      success: function (res) {
-        if (res.tempFilePaths.length > 0) {
-          //图如果满了9张，不显示加图
-          if (res.tempFilePaths.length == 9) {
-            that.setData({
-              hideAdd: 1
-            })
-          } else {
-            that.setData({
-              hideAdd: 0
-            })
-          }
-
-          //把每次选择的图push进数组
-          let img_url = that.data.img_url;
-          for (let i = 0; i < res.tempFilePaths.length; i++) {
-            img_url.push(res.tempFilePaths[i])
-          }
-          that.setData({
-            img_url: img_url
-          })
-
-        }
-
-      }
-    })
-  },
-
-  //图片上传
-  img_upload: function () {
-    let that = this;
-    let img_url = that.data.img_url;
-    let img_url_ok = [];
-    //由于图片只能一张一张地上传，所以用循环
-    for (let i = 0; i < img_url.length; i++) {
-      debugger;
-      wx.uploadFile({
-        //路径填你上传图片方法的地址
-        url: host+'user/Profile/photoUpload',
-        filePath: img_url[i],
-        name: 'file',
-        formData: {
-          token:wx.getStorageSync("tokenn")||''
-        },
-        success: function (res) {
-          console.log('上传成功');
-          //把上传成功的图片的地址放入数组中
-          img_url_ok.push(res.data)
-          //如果全部传完，则可以将图片路径保存到数据库
-          // if (img_url_ok.length == img_url.length) {
-          //   var userid = wx.getStorageSync('userid');
-          //   var content = that.data.content;
-          //   wx.request({
-          //     url: 'http://wechat.homedoctor.com/Moments/adds',
-          //     data: {
-          //       user_id: userid,
-          //       images: img_url_ok,
-          //       content: content,
-          //     },
-          //     success: function (res) {
-          //       if (res.data.status == 1) {
-          //         wx.hideLoading()
-          //         wx.showModal({
-          //           title: '发布成功',
-          //           showCancel: false,
-          //           success: function (res) {                 
-          //           }
-          //         })
-          //       }
-          //     }
-          //   })
-          // }
-        },
-        fail: function (res) {
-          console.log('上传失败');
-          wx.hideLoading();
-          wx.showToast({
-            title:"发布失败!",
-            icon:'none'
+      var that = this;
+      let photoArrCopy=JSON.parse(JSON.stringify(this.data.photoArr))
+      wx.chooseImage({
+        count: 1,
+        success: (res) => {
+          var filep = res.tempFilePaths[0];
+          wx.uploadFile({
+            url: host +"user/Profile/photoUpload",
+            filePath: filep,
+            header: {},
+            name: 'file',
+            formData: {
+              'token': wx.getStorageSync("tokenn"),
+              'fileId': that.data.positiveId,
+            },
+            success: (val) => {
+              let data = JSON.parse(val.data);
+              console.log("data===========", data);
+              if (data.code == 1) {
+                photoArrCopy.push(data.data.photo_path)
+                that.setData({
+                  photoArr:photoArrCopy     
+                })
+              }else{
+                wx.showToast({
+                  title: res.data.msg
+                })
+              }
+            },
+            fail: function (err) {
+              console.log(err)
+            }
           });
-         
         }
       })
-    }
   },
-
+  getData: function () {
+    var that = this;
+    let params = {};
+    params['id'] = 13;
+    params['page'] = 1;
+    urlApi('portal/list/index', "post", params).then((res) => {
+      if (res.data.code) {
+        res.data.data.child_category.unshift({
+          id: 13,
+          name: '推荐'
+        });
+        that.setData({
+          child_category: res.data.data.child_category
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+      wx.hideLoading();
+    })
+  },
+  chooseType: function () {
+    let arr = [];
+    const that=this;
+    that.data.child_category.map(item => {
+      arr.push(item.name)
+    })
+    wx.showActionSheet({
+      itemList: arr,
+      success(res){
+        that.data.child_category.map((item,index)=>{
+           if(index==res.tapIndex){
+            that.setData({item:item})
+           }
+       })      
+      }
+    }, 
+    
+    )
+  },
   //发布按钮事件
   send: function () {
     var that = this;
-    //var user_id = wx.getStorageSync('userid')
     wx.showLoading({
-      title: '上传中',
+      title: '发布中',
     })
-    that.img_upload();
-  },
+    let params={};
+    params['categories']=this.data.item.id;
+    params['post_content']=this.data.content;
+    params['video']="";
+    params['audio']="";
+   if(!params['categories']){
+     wx.showToast({
+       title: '请选择分类'
+     })
+     return;
+   }
+    if(!params['post_content']){
+      wx.showToast({
+        title: '请填写内容'
+      })
+      return;
+    }
+   let arrcopy=JSON.parse(JSON.stringify(this.data.photoArr));
+   let arr=[];
+    arrcopy.map((item,index)=>{
+     item=item.substr(item.indexOf("upload/")+7,item.length-1);
+     arr.push(item)
+   })
+   params['photo']=arr;
+   if(!params['photo'].length){
+    wx.showToast({
+      title: '请填写图片'
+    })
+    return;
+  }
+ 
+   params['photo']=params['photo'].join('?');
 
-  //预览图片方法
-  lookImage:function(e){
-    let index=e.target.dataset.index;
-    let that=this;
-    wx.previewImage({
-      current:that.data.tempFilePaths[index],
-      urls:that.data.tempFilePaths,
+    urlApi('portal/article/circle_publish', "post", params).then((res) => {
+      if (res.data.code) {
+         that.setData({content:'',photoArr:[],item:null})  
+      } else {
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+      wx.hideLoading();
     })
   },
-  
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  deleteIcon:function(e){
+     const {url}=e.target.dataset;
+    let {photoArr}=this.data;
+    let photoArrCopy=JSON.parse(JSON.stringify(photoArr));
+    photoArrCopy.map((item,index)=>{
+       if(item==url){
+        photoArrCopy.splice(index,1)
+       }
+    })
+     this.setData({photoArr:photoArrCopy})
   },
 
   /**
@@ -156,53 +178,4 @@ Page({
       tabbarIndex: 2
     })
   },
-  getData:function(){
-    var that = this;
-    urlApi('portal/article/circle_publish', "post",{categories:"",post_content:""}).then((res) => {
-      if(res.data.code){
-        wx.showToast({
-          title: res.data.msg
-        })
-      }else{
-        wx.showToast({
-          title: res.data.msg
-        })
-      }
-      
-    })
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
