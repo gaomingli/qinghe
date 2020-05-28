@@ -55,7 +55,7 @@
             <view class="hot_right">
               <view class="hot_title">{{item.post_title}}</view>
               <view class="hot_num">{{item.num}}人测过</view>
-               <navigator url="/pages/evaluation/evaluation" hover-class="none">
+               <navigator url=""  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
               <view class="hot_submit">立即测评</view></navigator>
             </view>
           </view>        
@@ -153,7 +153,7 @@
         <image src="/icon/common.png"></image>
         <view class="txt">公益商城</view>
       </view>
-      <navigator class="more_div" url='/pages/shopping/shopping' hover-class="none">
+      <navigator class="more_div" url=''  bindtap='gotoPage'  data-url="/pages/shopping/shopping" data-type="1"     hover-class="none">
         <view style="display:flex;align-items:center;">
           <text>更多</text>
           <image src="/icon/more.png" style='margin-left:15rpx'></image>
@@ -164,7 +164,7 @@
     <view class="common_content">
 
       <view class="shop_box">
-        <navigator url='/pages/productlist/productlist?id={{item.id}}' hover-class="none" wx:for="{{dataList.product}}" wx:key="index" wx:for-index="index">
+        <navigator url=''  bindtap='gotoPage' data-url="/pages/productlist/productlist?id={{item.id}}" data-type="1"   hover-class="none" wx:for="{{dataList.product}}" wx:key="index" wx:for-index="index">
           <view class="shop_item">
             <image src="{{item.thumbnail}}"></image>
             <view class="title">{{item.post_title}}</view>

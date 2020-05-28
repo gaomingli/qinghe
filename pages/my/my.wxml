@@ -36,28 +36,28 @@
 
 	<view class='part'>
 		<i-cell-group>
-			<i-cell title="我的测评" is-link url="/pages/mytest/mytest">
+			<i-cell title="我的测评" is-link url="/pages/mytest/mytest" typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part1.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="我的活动" is-link url="/pages/myexercise/myexercise">
+			<i-cell title="我的活动" is-link url="/pages/myexercise/myexercise"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part2.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="我的评论" is-link url="/pages/comment/comment">
+			<i-cell title="我的评论" is-link url="/pages/comment/comment"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part3.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="我的积分" is-link url="/pages/mycore/mycore">
+			<i-cell title="我的积分" is-link url="/pages/mycore/mycore"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part4.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="收货地址" is-link url="/pages/generalinformation/generalinformation">
+			<i-cell title="收货地址" is-link url="/pages/generalinformation/generalinformation"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part5.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="联系客服" is-link url="/pages/connect/connect">
+			<i-cell title="联系客服" is-link url="/pages/connect/connect"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part6.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="意见反馈" is-link url="/pages/feedback/feedback">
+			<i-cell title="意见反馈" is-link url="/pages/feedback/feedback"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part7.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
-			<i-cell title="切换角色" is-link url="/pages/choicerole/choicerole">
+			<i-cell title="切换角色" is-link url="/pages/choicerole/choicerole"  typeFlag="1">
 				<i-icon slot="icon" myIcon="/icon/part8.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 		</i-cell-group>
