@@ -117,8 +117,7 @@ Page({
     let params={};
     params['categories']=this.data.item.id;
     params['post_content']=this.data.content;
-    params['video']="";
-    params['audio']="";
+   
    if(!params['categories']){
      wx.showToast({
        title: '请选择分类'
@@ -149,7 +148,11 @@ Page({
 
     urlApi('portal/article/circle_publish', "post", params).then((res) => {
       if (res.data.code) {
-         that.setData({content:'',photoArr:[],item:null})  
+         that.setData({content:'',photoArr:[],item:null});
+         wx.showToast({
+          title: res.data.msg,
+          icon:"none"
+        })
       } else {
         wx.showToast({
           title: res.data.msg

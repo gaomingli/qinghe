@@ -3,11 +3,17 @@
   background-color: #FFFFFF;
   border-top-left-radius: 40rpx;
   border-top-right-radius: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
 }
 .do_problem_people .user_img{
   width: 282rpx;
   height: 281rpx;
   margin-top: -100rpx;
+}
+.doneimg image{
+width: 40rpx;
+height: 40rpx;
 }
 .title{
   color: #333333;

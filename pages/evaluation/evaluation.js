@@ -2,6 +2,7 @@
 var {
   urlApi
 } = require("../../utils/request.js");
+var e = getApp();
 Page({
 
   /**
@@ -37,7 +38,8 @@ this.getData();
   getData:function(){
     var that = this;
     urlApi('portal/article/index', "post",{id:this.data.id,category_id :this.data.category_id}).then((res) => {
-    if(res.data.code){
+      e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5);
+      if(res.data.code){
       that.setData({
         list:res.data.data
       })

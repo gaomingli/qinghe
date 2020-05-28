@@ -1,26 +1,33 @@
 // pages/starttest/starttest.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-select:0,
-    listData:[
-      { id: 0, name:"胆汁质（冲动）"},
-      { id: 1, name: "抑郁质（内敛）" },
-      { id: 2, name: "多血质（活泼）" },
-      { id: 3, name: "粘液质（稳重）" }
-    ],
-    num:5
+    flag: false,
+    listData: null,
+    num: 5,
+    id: "",
+    category_id: "",
+    current:0
   },
 
-  choice(){},
+  choice: function (e) {
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    that.setData({
+      id: options.id,
+      category_id: options.category_id
+    })
   },
 
   /**
@@ -34,41 +41,20 @@ select:0,
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData();
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  getData: function () {
+    var that = this;
+    urlApi('portal/article/index', "post", { id: this.data.id, category_id: this.data.category_id }).then((res) => {
+      if (res.data.code) {
+        that.setData({
+          listData: res.data.data
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg
+        })
+      }
+    })
   }
 })

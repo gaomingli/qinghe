@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/report/report",
+    "pages/starttest/starttest",
+    
     "pages/index/index",
     "pages/circle/circle",
     "pages/release/release",
@@ -14,7 +17,7 @@
     "pages/uploadqualification/uploadqualification",
     "pages/mytest/mytest",
     "pages/comment/comment",  
-    "pages/starttest/starttest",
+    
     "pages/myexercise/myexercise",
     "pages/exercise/exercise",
     "pages/registerinformation/registerinformation",

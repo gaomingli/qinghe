@@ -1,12 +1,12 @@
 <!--pages/evaluation/evaluation.wxml-->
-<view class='evaluation'>
+<view class='evaluation' style="background:url('/icon/testBg.png') no-repeat;background-size:100% 100%">
 <view class="partone">
 
 <view class="do_problem_people">
 <image class="user_img" src=""></image>
 </view>
 
-<view class="title">{{list.title}}</view>
+<view class="title">{{list.post_title}}</view>
 
 <view class="module">
 <view class="moduleone">
@@ -16,7 +16,7 @@
 <view class="total">共{{list.problem_count}}道题</view>
 </view>
 
-<navigator url="/pages/starttest/starttest" hover-class="none">
+<navigator url="/pages/starttest/starttest?id={{list.id}}&category_id={{list.category_id}}" hover-class="none">
 <view class="nowTest">立即测试</view>
 </navigator>
 </view>
@@ -28,7 +28,9 @@
 
 <view class="parthree">
 <view class="testtitle">测评内容</view>
-<view class="testcontent">{{list.post_content}}</view>
+<view class="testcontent">
+<template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
+</view>
 </view>
 
 <view class="partfour">
@@ -46,3 +48,4 @@
 </view>
 
 </view>
+<import src="/library/wxParse/wxParse.wxml"></import>

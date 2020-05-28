@@ -1,0 +1,46 @@
+<!--pages/report/report.wxml-->
+<view class="report">
+
+<view class="reportBg"><image src="/icon/report.png"></image></view>
+
+<view class="personal">
+
+<view class="parttop">
+<view class="username">{{list.user_nickname}}</view>
+<view class="time">{{list.date}}</view>
+</view>
+<view class="partbot"><image src="{{list.avatar}}"></image></view>
+</view>
+
+<view class="produce">
+<view class="title">报告说明</view>
+<view class="detail">
+<view class="part" wx:for="{{list}}" wx:for-index="index" wx:key="index">{{item.cont}}</view>
+</view>
+</view>
+
+<view class="result" style="background:url('/icon/partBg.png') no-repeat;background-size:100% 100%">
+<view class="personalStatus">个人状态</view>
+<view class="module" wx:for="{{listPart}}" wx:for-index="index" wx:key="index">
+<view class="options">{{item.title}}:</view>
+<view class="listData">{{item.data}}</view>
+</view>
+</view>
+
+<view class="release" style="background:url('/icon/radius.png') no-repeat;background-size:100% 100%">适应情况分析</view>
+
+<view class="circle">
+<view class="echartTitle">适应指数</view>
+<view class="echart"></view>
+<view class="warning">注:  满分40，分数越高，说明您当前状态越良好</view>
+</view>
+
+<view class="good">
+<view class="one"><image src="/icon/circlemore.png"></image></view>
+<view class="two">适应情况:</view>
+<view class="three">适应良好</view>
+</view>
+
+<view class="goodresult">根据您的自评结果，您对疫情适应良好，希望您能 保持当前的状态，并为身边的亲友提供支持。</view>
+
+</view>

@@ -1,0 +1,137 @@
+/* pages/report/report.wxss */
+.reportBg image{
+width: 100%;
+height: 351rpx;
+}
+.personal{
+  background-color: #fff;
+padding: 62rpx 70rpx;
+display: flex;
+justify-content: space-between;
+position: absolute;
+width: 96%;
+top: 240rpx;
+box-shadow: 5px 5px 5px #e7e7e7;
+left: 50rpx;
+border-top-left-radius: 53rpx;
+border-bottom-left-radius: 53rpx;
+
+}
+.username{
+  color: #333333;
+  font-size: 38rpx;
+}
+.time{
+  margin-top: 35rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+.partbot image{
+  width: 126rpx;
+  height: 126rpx;
+}
+.produce{
+  margin-left: 42rpx;
+  margin-top: 218rpx;
+  margin-right: 42rpx;
+  background-color: #F8F8F8;
+  padding: 39rpx;
+}
+.title{
+  color: #333333;
+  font-size: 30rpx;
+}
+.detail{
+  margin-top: 50rpx;
+}
+.part{
+  margin-bottom: 41rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.result{
+  height: 567rpx;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  margin-top: 92rpx;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  padding-top: 69rpx;
+}
+.module{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.options{
+  color: #333333;
+  font-size: 30rpx;
+}
+.listData{
+  color: #333333;
+  font-size: 28rpx;
+}
+.personalStatus{
+  color: #333333;
+  font-size: 34rpx;
+  text-align: center;
+  margin-bottom: 72rpx;
+}
+.release{
+  color: #FFFFFF;
+  font-size: 42rpx;
+  height: 149rpx;
+  line-height: 149rpx;
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 89rpx;
+}
+.circle{
+  margin-top: 69rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  box-shadow: 4rpx 4rpx 4rpx #e7e7e7;
+  padding: 64rpx 86rpx 58rpx 84rpx;
+}
+.warning{
+  color: #999999;
+  font-size: 24rpx;
+}
+.echart{
+  height: 130rpx;
+}
+.echartTitle{
+text-align: center;
+color: #333333;
+font-size: 34rpx;
+}
+.good{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 82rpx;
+  padding-left: 41rpx;
+}
+.one image{
+  width: 54rpx;
+  height: 27rpx;
+}
+.two{
+  margin-left: 41rpx;
+  margin-right: 6rpx;
+  color: #333333;
+  font-size: 44rpx;
+}
+.three{
+  color: #333333;
+  font-size: 34rpx;
+}
+.goodresult{
+  margin-top: 65rpx;
+  font-size: 30rpx;
+  color: #333333;
+  padding-left: 41rpx;
+}

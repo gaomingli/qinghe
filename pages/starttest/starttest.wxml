@@ -1,11 +1,11 @@
 <!--pages/starttest/starttest.wxml-->
-<view class='starttest'>
-<view class='partwo'>2.从你的气质开始测试，请问你是？</view>
+<view class='starttest' wx:for="{{listData.all_problem}}" wx:for-index="index" wx:key="id">
+<view class='partwo'>{{index+1}}.{{item.title}}</view>
 <view class='module'>
-<view wx:for="{{listData}}" wx:key="index" class="choice {{select==0?'bg1':'bg2'}}" bindtap='choice'>{{item.name}}</view>
+<view class="choice {{flag==false?'bg1':'bg2'}}" bindtap='choice'  wx:for="{{item.content}}" wx:for-item="list" wx:for-index="_index">{{list}}({{item.options[_index]}})</view>
 </view>
 <view class='footer'>
-<view class='return'>上一题</view>
-<view class='total'><text>{{num}}</text>/10道题</view>
+<view class='return' bindtap="return">上一题</view>
+<view class='total'><text>{{current+1}}</text>/{{listData.problem_count}}道题</view>
 </view>
 </view>
