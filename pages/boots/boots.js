@@ -19,7 +19,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       path: options.path,
-      type:options.type
+      type:options.type||1
     })
   },
 

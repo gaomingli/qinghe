@@ -45,15 +45,29 @@ const jsEvent = (e)=>{
           })
         }
       } else {
-        wx.navigateTo({
-          url: `/pages/boots/boots?path=${e.currentTarget.dataset.url}`,
-        })
+        if (type == 2) {
+          wx.navigateTo({
+            url:`/pages/boots/boots?path=${e.currentTarget.dataset.url}&type=2`
+          })  
+
+        }else{
+          wx.navigateTo({
+            url: `/pages/boots/boots?path=${e.currentTarget.dataset.url}&type=1`,
+          })
+        } 
       }
     },
     fail: function () {
-      wx.navigateTo({
-        url: `/pages/boots/boots?path=${e.currentTarget.dataset.url}&type=${type}`,
-      })
+      if (type == 2) {
+        wx.navigateTo({
+          url:`/pages/boots/boots?path=${e.currentTarget.dataset.url}&type=2`
+        })  
+
+      }else{
+        wx.navigateTo({
+          url: `/pages/boots/boots?path=${e.currentTarget.dataset.url}&type=1`,
+        })
+      } 
     }
   })
 } 

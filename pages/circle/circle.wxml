@@ -16,7 +16,7 @@
  	<view class="body-view">
  		<!--头像-->
  		<view class="left-view">
- 			<image class="user-icon" src="https://wx.qlogo.cn/mmopen/vi_32/E53icp1gSWbiaib0IZdPwuoW5ibKAokCwLiaaY6x9cLTnct4KJrvOayXQ0hsm63VINgPLAnquGEYxolicYtqbyam3jgg/132"></image>
+ 			<image class="user-icon" src="{{item.thumbnail}}"></image>
  		</view>
  		<view class="right-view">
  			<!--昵称-->

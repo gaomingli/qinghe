@@ -24,12 +24,13 @@
 }
 .hot_box image{width: 169rpx;height: 152rpx;flex-shrink: 0;}
 .hot_box .hot_right{
-  display: flex;flex-direction: column;justify-content: space-between;width: 190rpx;margin-left: 
+ width: 190rpx;margin-left: 
   20rpx
  }
 .hot_box .hot_title{
   font-size: 28rpx;color: #333333;line-height: 36rpx;
-  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: 2rpx;
+  letter-spacing: 2rpx;
+  white-space: normal;
 }
 .hot_box .hot_num{font-size: 24rpx;color: #999999;line-height: 36rpx;}
 .hot_box .hot_submit{

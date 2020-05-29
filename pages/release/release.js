@@ -48,7 +48,6 @@ Page({
             },
             success: (val) => {
               let data = JSON.parse(val.data);
-              console.log("data===========", data);
               if (data.code == 1) {
                 photoArrCopy.push(data.data.photo_path)
                 that.setData({
@@ -56,7 +55,8 @@ Page({
                 })
               }else{
                 wx.showToast({
-                  title: res.data.msg
+                  title: data.msg,
+                  icon:"none"
                 })
               }
             },

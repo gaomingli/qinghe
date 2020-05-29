@@ -24,7 +24,7 @@
 
 	<view class='message'>
 		<text>给卖家留言:</text>
-    <textarea placeholder="给买家留言"></textarea>
+    <textarea style="border: 1px solid #eee;width: 100%;padding: 6px;margin-top: 18px;"></textarea>
 	</view>
 
 	<view class='content'>
