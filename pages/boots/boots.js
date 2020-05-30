@@ -19,7 +19,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       path: options.path,
-      type:options.type
+      type:options.type||1
     })
   },
 
@@ -43,7 +43,7 @@ Page({
                   console.log(res.data.data)
                   wx.setStorageSync("userInfo", res.data.data);
                   wx.setStorageSync("tokenn",res.data.data.token);
-                  if(that.data.type==1){
+                  if(that.data.type==1||!that.data.type){
                     wx.navigateTo({
                       url: that.data.path,
                     })

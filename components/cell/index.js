@@ -1,8 +1,10 @@
+const {
+    jsEvent
+  } = require("../../utils/util");
 const warn = (msg, getValue) => {
     console.warn(msg);
     console.log('接受到的值为：', getValue);
 };
-
 Component({
     externalClasses: ['i-class'],
 
@@ -46,6 +48,10 @@ Component({
         url: {
             type: String,
             value: ''
+        },
+        typeFlag: {
+            type: String,
+            value:'1'
         }
     },
 
@@ -55,11 +61,9 @@ Component({
 
     methods: {
         navigateTo () {
-            const { url } = this.data;
+            const { url,typeFlag } = this.data;
             const type = typeof this.data.isLink;
-
             this.triggerEvent('click', {});
-
             if (!this.data.isLink || !url || url === 'true' || url === 'false') return;
 
             if (type !== 'boolean' && type !== 'string') {
@@ -71,7 +75,10 @@ Component({
                 warn('linkType 属性可选值为 navigateTo，redirectTo，switchTab，reLaunch', this.data.linkType);
                 return;
             }
-            wx[this.data.linkType].call(wx, {url});
+
+            let params={currentTarget:{dataset:{url:url,type:typeFlag}}}
+            jsEvent(params);
+            // wx[this.data.linkType].call(wx, {url});
         },
         handleTap () {
             if (!this.data.onlyTapFooter) {

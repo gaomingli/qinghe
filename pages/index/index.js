@@ -1,6 +1,9 @@
 var {
   urlApi
 } = require("../../utils/request.js");
+var {
+  jsEvent
+} = require("../../utils/util");
 
 const app = getApp()
 Page({
@@ -43,21 +46,10 @@ Page({
     })
   },
 
-  gotoPage: function (e) {
-    const {
-      type,
-      url
-    } = e.currentTarget.dataset;
-    if (type == 1) {
-      wx.navigateTo({
-        url: url,
-      })
-    } else {
-      wx.switchTab({
-        url: url
-      })
-    }
+  gotoPage: function (e) { 
+    jsEvent(e);
   },
+
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({

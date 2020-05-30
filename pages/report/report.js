@@ -66,7 +66,8 @@ listPart:[
         })
       } else {
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:"none"
         })
       }
     })

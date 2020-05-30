@@ -1,21 +1,21 @@
 <view class="tabbar_box">
-  <view class="tabbar_item" data-index="0" bind:tap="switchTab">
+  <view class="tabbar_item" data-index="0" bind:tap="switchTab1">
     <image src="{{tabbarIndex==0?'../icon/home_hover.png':'../icon/home.png'}}"></image>
     <text>首页</text>
   </view>
-   <view class="tabbar_item" data-index="1" bind:tap="switchTab">
+   <view class="tabbar_item" data-index="1" bind:tap="switchTab" data-url="/pages/circle/circle" data-type="2">
     <image src="{{tabbarIndex==1?'../icon/circle_hover.png':'../icon/circle.png'}}"></image>
     <text>社工圈</text>
   </view>
-   <view class="tabbar_item" data-index="2" bind:tap="switchTab">
+   <view class="tabbar_item" data-index="2" bind:tap="switchTab" data-url="/pages/release/release" data-type="2">
     <image src="{{tabbarIndex==2?'../icon/release_hover.png':'../icon/release.png'}}"></image>
     <text>发布</text>
   </view>
-   <view class="tabbar_item" data-index="3" bind:tap="switchTab">
+   <view class="tabbar_item" data-index="3" bind:tap="switchTab"  data-url="/pages/exercise/exercise" data-type="2">
     <image src="{{tabbarIndex==3?'../icon/activity_hover.png':'../icon/activity.png'}}"></image>
     <text>活动</text>
   </view>
-   <view class="tabbar_item" data-index="4" bind:tap="switchTab">
+   <view class="tabbar_item" data-index="4" bind:tap="switchTab1">
     <image src="{{tabbarIndex==4?'../icon/my_hover.png':'../icon/my.png'}}"></image>
     <text>我的</text>
   </view>

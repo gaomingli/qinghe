@@ -3,6 +3,9 @@ const app = getApp()
 var {
   urlApi
 } = require("../../utils/request.js");
+const {
+  jsEvent
+} = require("../../utils/util");
 var activityAllList = [];
 Page({
 
@@ -40,6 +43,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let params={currentTarget:{dataset:{url:"/pages/exercise/exercise",type:2}}}
+    jsEvent(params);
     this.setData({
       noMore: false,
       loading: false,
@@ -47,7 +52,7 @@ Page({
       activityList: [],
       page: 1
     })
-    this.queryActivityList();
+    this.queryActivityList(); 
   },
   // tab切换
   handleChange({ detail }) {
