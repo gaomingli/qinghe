@@ -2,6 +2,8 @@
 var {
   urlApi
 } = require("../../utils/request.js");
+
+var util = require('../../utils/util.js');
 Page({
 
   /**

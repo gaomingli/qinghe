@@ -30,8 +30,10 @@
 <view class="release" style="background:url('/icon/radius.png') no-repeat;background-size:100% 100%">适应情况分析</view>
 
 <view class="circle">
-<view class="echartTitle">适应指数</view>
-<view class="echart"></view>
+<view class="box">
+ <canvas canvas-id="pieCanvas" class="canvas" style="height:200px;width:200px;" bindtouchstart="touchHandler">
+</canvas>
+</view>
 <view class="warning">注:  满分40，分数越高，说明您当前状态越良好</view>
 </view>
 
@@ -42,5 +44,10 @@
 </view>
 
 <view class="goodresult">根据您的自评结果，您对疫情适应良好，希望您能 保持当前的状态，并为身边的亲友提供支持。</view>
+
+<view class="homeWarning">
+<view class="tit">温馨提示</view>
+<view class="content">疫情之下，我们需要信息，而过多的信息往往会产生新 的压力。我们建议您适当降低大脑的负荷，信息足够即 可。关于疫情动态和健康知识</view>
+</view>
 
 </view>
