@@ -79,3 +79,26 @@ height:140rpx;
 .score{
   color: #E62828
 }
+.defaultAddress{
+  display: flex;
+justify-content: space-around;
+border-radius: 10px;
+background-color: #fff;
+margin: 10px;
+padding: 10px;
+box-sizing: border-box;
+font-size: 14px;
+}
+.addressPic{
+  width: 16px;
+  height:16px;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: 14px;  
+}
+.addressPic1{
+  width: 16px;
+  height:16px;
+  vertical-align: middle;
+  margin-right: 10px;
+}

@@ -1,45 +1,45 @@
 <!--pages/address/address.wxml-->
 <view class='adddress_item'>
-  <radio-group class="radio-group">
-    <view class='adddress_list'  wx:for-items="{{list}}" hidden='{{hiddenName}}' data-index="{{index}}" data-id="{{item.id}}">
-      
-      <view bindtap="choiceAddressClick" data-id="{{item.id}}">
-        <view class='name_tel'>
-          <text>{{item.full_name}}</text>
-          <text>{{item.tel}}</text>
-        </view>
-        <view class='address_img_view'>
-          <image src='/icon/address3.png' class='address_img'></image>
-          <text class='address'>{{item.area}}{{item.address}}</text>
-        </view>
-      </view>
+	<radio-group class="radio-group">
+		<view class='adddress_list' wx:for-items="{{list}}" hidden='{{hiddenName}}' data-index="{{index}}" data-id="{{item.id}}">
 
-      <view class='input_view input_view_sp'>
-        <view class='check_box'>
-          <radio class="radio"  wx:key="name" value="{{item.name}}" checked="{{item.default == 1?true:false}}" color='#fff'>
-            <text class='mrdz'>默认地址</text>
-          </radio>
-        </view>
-        <view class='eduit_del'>
-          <view bindtap='eduit_address' data-id="{{item.id}}" >
-            <image src="/icon/editor.png"></image>
-            <text>编辑</text>
-          </view>
+			<view data-id="{{item.id}}">
+				<view class='name_tel'>
+					<text>{{item.full_name}}</text>
+					<text>{{item.tel}}</text>
+				</view>
+				<view class='address_img_view'>
+					<image src='/icon/address3.png' class='address_img'></image>
+					<text class='address'>{{item.area}}{{item.address}}</text>
+				</view>
+			</view>
 
-          <view bindtap='textHide' data-id="{{item.id}}">
-            <image src="/icon/delete.png"></image>
-            <text>删除</text>
-          </view>
-        </view>
-      </view>
-    </view>
-  </radio-group>
+			<view class='input_view input_view_sp'>
+				<view class='check_box'>
+					<radio class="radio"  bindtap="choiceAddressClick" data-item="{{item}}" wx:key="name" value="{{item.name}}" checked="{{item.default == 1?true:false}}" color='#fff'>
+						<text class='mrdz'>默认地址</text>
+					</radio>
+				</view>
+				<view class='eduit_del'>
+					<view bindtap='eduit_address' data-id="{{item.id}}">
+						<image src="/icon/editor.png"></image>
+						<text>编辑</text>
+					</view>
+
+					<view bindtap='textHide' data-id="{{item.id}}">
+						<image src="/icon/delete.png"></image>
+						<text>删除</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</radio-group>
 </view>
 <!-- <view class='no_address'>暂无收货地址</view> -->
 <view class='btn_view'>
-  <navigator url="/pages/addaddress/addaddress" hover-class='none'>
-    <view >
-      <image src='/icon/addIcon.png'></image>新增收货地址
-    </view>
-  </navigator>
+	<navigator url="/pages/addaddress/addaddress" hover-class='none'>
+		<view>
+			<image src='/icon/addIcon.png'></image>新增收货地址
+		</view>
+	</navigator>
 </view>

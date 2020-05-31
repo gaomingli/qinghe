@@ -35,14 +35,16 @@ Page({
       'menuListObj.last_news.articles':[],
       page:1
     });
+    wx.showLoading({
+      title: '',
+    })
      this.getData();
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getData();
-    
+    this.getData(); 
   },
   getData:function(){
     var that = this;
@@ -62,7 +64,8 @@ Page({
           title: res.data.msg,
           icon:"none"
         })
-      }   
+      } 
+      wx.hideLoading();
     })
   },
 

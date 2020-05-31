@@ -42,6 +42,9 @@ Page({
       page:1,
       'dataObject.articles':[]
     })
+    wx.showLoading({
+      title: ''
+    })
      this.getData();
   },
 

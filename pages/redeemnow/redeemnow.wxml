@@ -4,11 +4,25 @@
 		<view class='line'>
 			<image src="/icon/line.png"></image>
 		</view>
-		<navigator url='/pages/generalinformation/generalinformation' hover-class="none">
-			<view class='address'>
-				<image src='/icon/add.png'></image>新增收获地址
-			</view>
-		</navigator>
+	</view>
+
+ <view class="defaultAddress" wx:if="{{!addressData}}" bindtap="goAddAddress">
+		<view>
+	 	   <image src="../../icon/add.png" class="addressPic1"></image>添加地址
+		</view>
+	</view>
+
+	<view class="defaultAddress" wx:if="{{addressData}}" bindtap="goAddAddress">
+		<view>
+	 	   <image src="../../icon/address.png" class="addressPic"></image>
+		</view>
+ 	  <view>
+			<view>{{addressData.full_name}} <text>{{addressData.tel}}</text></view>
+			<view>{{addressData.area}}-{{addressData.address}}</view>
+		</view>
+		<view>
+	 	   <image src="../../icon/more.png"  class="addressPic"></image>
+		</view>
 	</view>
 
 
@@ -22,10 +36,10 @@
 		</view>
 	</view>
 
-	<view class='message'>
+	<!-- <view class='message'>
 		<text>给卖家留言:</text>
     <textarea style="border: 1px solid #eee;width: 100%;padding: 6px;margin-top: 18px;"></textarea>
-	</view>
+	</view> -->
 
 	<view class='content'>
 		<view class='content_integral'>
