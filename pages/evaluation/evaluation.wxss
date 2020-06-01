@@ -5,16 +5,20 @@
   border-top-right-radius: 40rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
+  padding-bottom:30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .do_problem_people .user_img{
-  width: 100%;
+  width: 40%;
   height: 281rpx;
-  margin-top: -100rpx;
+  margin-left: auto;
+  margin-right: auto;  
 }
 .doneimg image{
 width: 40rpx;
 height: 40rpx;
-}
+border-radius: 50%;}
 .title{
   color: #333333;
   font-size: 42rpx;
@@ -71,7 +75,20 @@ navigator{
 margin-top: 62rpx;
 color: #666666;
 font-size: 28rpx;
+text-align: left;
+text-indent: 2em;
 }
 .parthree,.partfour,.partfive{
+  text-align: center;
+}
+.do_problem_people{
+  text-align: center;
+}
+.evaluation{
+  position: relative;
+}
+.do_problem_people{
+  position: absolute;
+  top:100px;
   text-align: center;
 }

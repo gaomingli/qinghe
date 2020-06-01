@@ -63,8 +63,7 @@ Page({
     this.getTabBar().setData({
       tabbarIndex: 0
     })
-    this.getData();
-   
+    this.getData(); 
   },
   getData:function(){
     var that = this;
