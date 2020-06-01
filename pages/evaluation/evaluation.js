@@ -9,9 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-id:"",
-category_id:"",
-list:null
+    id:"",
+    category_id:"",
+    list:null
   },
 
   /**

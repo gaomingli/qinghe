@@ -33,6 +33,7 @@ Page({
     })
   },
   getData:function(){
+    debugger
     var that = this;
     var params = {};
     params.num = Number(that.data.num);

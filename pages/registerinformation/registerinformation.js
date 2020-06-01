@@ -1,4 +1,7 @@
 // pages/registerinformation/registerinformation.js
+var {
+  urlApi
+} = require("../../utils/request.js");
 Page({
 
   /**
@@ -14,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({'id':options.id})
+    this.setData({'id':options.id,category_id: options.category_id})
   },
 
   /**
@@ -31,10 +34,31 @@ Page({
 
   },
   submit:function(){
-  
-wx.navigateTo({
-  url:`/pages/successful/successful?id=${this.data.id}&fullName=${this.data.value1}&tel=${this.data.value2}`
-})
+      let that = this;
+      let params={};
+      params["id"]=this.data.id;
+      params["full_name"]=this.data.value1;
+      params["tel"]=this.data.value2;
+      urlApi('portal/article/activity_book', "post",params).then((res) => {
+        if(res.data.code){
+          wx.navigateTo({
+            url:`/pages/successful/successful?category_id=${this.data.category_id}&id=${this.data.id}`
+          })
+          // that.setData({
+          //   swiperList: res.data.data.banner,
+          //   boardList: res.data.data.announcement,
+          //   psychological: res.data.data.psychological,
+          //   articleData: res.data.data.last_news,
+          //   activity: res.data.data.activity,
+          //   shopData: res.data.data.product
+          // })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      })
   },
 
   /**

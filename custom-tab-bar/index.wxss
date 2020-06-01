@@ -18,6 +18,17 @@
   flex-direction: column;
   align-items: center;
 }
+.tabbar_box .item_list{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item_list image{
+  width: 42rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
 .tabbar_item image{
   width: 42rpx;
   height: 40rpx;

@@ -37,8 +37,7 @@ listPart:[
     let that = this;
     that.setData({
       id: options.id,
-      out_order: options.out_order,
-      answer: options.answer
+      category_id: options.category_id
     })
   },
 
@@ -57,7 +56,7 @@ listPart:[
   },
   getData: function () {
     var that = this;
-    urlApi('portal/article/psychological_book', "post", { id: this.data.id, out_order: this.data.out_order,answer:this.data.answer}).then((res) => {
+    urlApi('portal/article/index', "post", { id: this.data.id, category_id: this.data.category_id}).then((res) => {
       if (res.data.code) {
         that.setData({
           list: res.data.data
