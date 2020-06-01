@@ -9,9 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-id:"",
-category_id:"",
-list:null
+    id:"",
+    category_id:"",
+    list:null
   },
 
   /**
@@ -45,7 +45,8 @@ this.getData();
       })
     }else{
       wx.showToast({
-        title: res.data.msg
+        title: res.data.msg,
+        icon:'none'
       })
     }  
     })

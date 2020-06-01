@@ -1,11 +1,12 @@
 <!--pages/starttest/starttest.wxml-->
-<view class='starttest' wx:for="{{listData.all_problem}}" wx:for-index="index" wx:key="id">
-<view class='partwo'>{{index+1}}.{{item.title}}</view>
-<view class='module'>
-<view class="choice {{flag==false?'bg1':'bg2'}}" bindtap='choice'  wx:for="{{item.content}}" wx:for-item="list" wx:for-index="_index">{{list}}({{item.options[_index]}})</view>
-</view>
-<view class='footer'>
-<view class='return' bindtap="return">上一题</view>
-<view class='total'><text>{{current+1}}</text>/{{listData.problem_count}}道题</view>
-</view>
+<!-- <view class='starttest' wx:for="{{listData.all_problem}}" wx:for-index="index" wx:key="id"> -->
+<view class='starttest'>
+	<view class='partwo'>{{current+1}}.{{listData.all_problem[current].title}}</view>
+	<view class='module'>
+		<view class="choice {{flag==false?'bg1':'bg2'}}" bindtap='choice' wx:for="{{listData.all_problem[current].content}}" wx:for-item="list" wx:for-index="_index" data-id="{{listData.all_problem[current].id}}" data-currentIndex="{{_index}}">{{list}}({{listData.all_problem[current].options[_index]}})</view>
+	</view>
+	<view class='footer'>
+		<view class='return' wx:if="{{current != 0}}" bindtap="return">上一题</view>
+		<view class='total'><text>{{current+1}}</text>/{{listData.problem_count}}道题</view>
+	</view>
 </view>

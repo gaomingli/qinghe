@@ -2,6 +2,9 @@
 var {
   jsEvent
 } = require("../utils/util");
+var {
+  urlApi
+} = require("../utils/request.js");
 Component({
   /**
    * 组件的属性列表
@@ -15,6 +18,7 @@ Component({
    */
   data: {
     tabbarIndex:0,
+    userDetail: {},
     urls:[
       '/pages/index/index',
       '/pages/circle/circle',
@@ -23,7 +27,13 @@ Component({
       '/pages/my/my'
     ]
   },
-
+  created() {
+    this.getUserList()
+    let that = this
+    setInterval(function() {
+      that.getUserList()
+    }, 5000)
+  },
   /**
    * 组件的方法列表
    */
@@ -37,6 +47,18 @@ Component({
       var urls=self.data.urls
       wx.switchTab({
         url: urls[index],
+      })
+    },
+    getUserList: function() {
+      let data = {}
+      let that = this
+      urlApi('user/Profile/index', "post", data).then((res) => {
+        console.log(res);
+        if (res.data.code == 1) {
+          that.setData({
+            userDetail: res.data.data
+          })
+        } 
       })
     }
   }

@@ -48,7 +48,8 @@ Page({
        e.WxParse.wxParse("agreement", "html",res.data.data.post_content, this, 5); 
         }else{
           wx.showToast({
-            title: res.data.msg
+            title: res.data.msg,
+            icon:'none'
           })
         } 
 

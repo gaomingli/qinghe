@@ -101,11 +101,10 @@ Page({
             console.log("data===========", data);
             if (data.code == 1) {
               that.setData({
-                photoPath: data.data.photo_path,
-                photoValue: data.data.photo_value
+                photoPath: data.data.path,
+                photoValue: data.data.value
               })
             }
-
           },
           fail: function (err) {
             console.log(err)

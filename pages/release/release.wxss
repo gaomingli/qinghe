@@ -31,7 +31,7 @@
 }
 
 .releaseView{
-  width: 90%;
+  width: calc(100% - 140rpx);
   height: 88rpx;
   font-size: 32rpx;
   color: #FFFFFF;
@@ -39,7 +39,7 @@
   border-radius: 44rpx;
   text-align: center;
   line-height: 88rpx;
-  margin: 0 auto;  
+  margin: 229rpx 70rpx 100rpx 70rpx;  
 }
 .bg1{background-color: #c6c6c6;}
 .bg2{background-color: rgba(63, 202, 170,1);}
@@ -48,7 +48,7 @@
   justify-content: space-between;
   color: #666666;
   font-size: 13px;
-  padding: 10px;
+  padding: 20rpx 20rpx 20rpx 39rpx;
   border-bottom: 1px solid #eee;  
 }
 .flex-gird image{
@@ -64,6 +64,7 @@ vertical-align: middle;
     float: left;
     position: relative;
     margin-right: 2%;
+    margin-top:20rpx
 }
 .phoneTop  .imageList:nth-child(3n){
   margin-right: 0;
@@ -77,8 +78,12 @@ vertical-align: middle;
    height: 20px;
 }
 .phoneTop{
-  margin-top: 40rpx;
+  margin-top: 30rpx;
   margin-bottom: 40rpx;
+  padding-left: 40rpx;
+padding-right: 40rpx;
+box-sizing: border-box;
+
 }
 .clearfix{
   clear: both;

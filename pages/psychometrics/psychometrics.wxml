@@ -19,8 +19,9 @@
                   <view class="hot_right">
                     <view class="hot_title">{{item.post_title}}</view>
                     <view class="hot_num">{{item.num}}人测过</view>
-                    
-                    <view class="hot_submit">立即测评</view>
+                    <navigator url='/pages/evaluation/evaluation?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
+                    <view class="hot_submit">立即测评</view></navigator>
+                    <!-- <view class="hot_submit">立即测评</view> -->
                   </view>
                 </view>        
               </view>

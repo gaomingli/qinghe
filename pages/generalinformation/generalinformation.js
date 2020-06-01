@@ -17,7 +17,19 @@ Page({
   onLoad: function (options) {
 
   },
-
+  choiceAddressClick:function(e){
+   let params= e.currentTarget.dataset.item;
+   params.default=1;
+    urlApi("/user/Profile/address_post", "post",params).then((res) => {
+      if (res.data.code) {
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+    })
+  },
   // 编辑地址
   eduit_address: function (e) {
     var id = e.currentTarget.dataset.id;

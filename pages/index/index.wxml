@@ -55,7 +55,7 @@
             <view class="hot_right">
               <view class="hot_title">{{item.post_title}}</view>
               <view class="hot_num">{{item.num}}人测过</view>
-               <navigator url=""  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
+               <navigator url='/pages/evaluation/evaluation?id={{item.id}}&category_id={{item.category_id}}'  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
               <view class="hot_submit">立即测评</view></navigator>
             </view>
           </view>        
@@ -136,7 +136,7 @@
         </view>
         <view class="sign_bottom">
           <view class="sign_bottom_left">
-            <image src="{{i.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
+            <image src="{{item.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
           </view>
           <view class="sign_bottom_right grayAct"    bindtap="goActivity"   data-id="{{item.id}}" data-categoryid="{{item.category_id}}" wx:if="{{item.activity_status==0}}">{{item.activity_btn_name}}</view>
             <view class="sign_bottom_right  Activityactive" bindtap="goActivity" data-id="{{item.id}}" data-categoryid="{{item.category_id}}"    wx:if="{{item.activity_status==1}}">{{item.activity_btn_name}}</view>

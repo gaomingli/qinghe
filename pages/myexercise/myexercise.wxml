@@ -1,40 +1,48 @@
 <!--pages/myexercise/myexercise.wxml-->
 <!--pages/exercise/exercise.wxml-->
-<view class='exercise'  wx:if="{{myActivityList && myActivityList.length > 0}}">
-<!-- 内容 -->
-<navigator wx:for="{{myActivityList}}" url='/pages/my_exercisedetail/my_exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
-<view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
-      <view class="sign_up">
+<view class='exercise' wx:if="{{myActivityList && myActivityList.length > 0}}">
+	<!-- 内容 -->
+	<navigator wx:for="{{myActivityList}}" url='/pages/my_exercisedetail/my_exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">
+		<view class="common_content" style="display:flex;justify-content:center;margin-top:20rpx;">
+			<view class="sign_up">
 
-        <view class="sign_top">
-          <image src="../../icon/sign_up.png"></image>
-          <view class="sign_top_right">
-            <view class="title">{{item.post_title}}</view>
-            <view class="clock"><image src="../../icon/clock.png"></image> <span>{{item.activity_start}}-{{item.activity_end}}</span></view>
-            <view class="address"><image src="../../icon/address.png"></image> <span>{{item.address}}</span></view>
-            <view class="people"><image src="../../icon/people.png"></image> <span>{{item.user_nickname}}</span></view>        
-          </view>
-        </view>
+				<view class="sign_top">
+					<image src="{{item.thumbnail}}"></image>
+					<view class="sign_top_right">
+						<view class="title">{{item.post_title}}</view>
+						<view class="clock">
+							<image src="../../icon/clock.png"></image> <span>{{item.activity_start}}-{{item.activity_end}}</span>
+						</view>
+						<view class="address">
+							<image src="../../icon/address.png"></image> <span>{{item.address}}</span>
+						</view>
+						<view class="people">
+							<image src="../../icon/people.png"></image> <span>{{item.user_nickname}}</span>
+						</view>
+					</view>
+				</view>
 
-        <view class="sign_bottom">
-          <view class="sign_bottom_left" wx:if="{{item.activity_book_join_num > 0}}">
-            <image wx:for="{{item.activity_book_people}}" wx:for-item="activityBookPeople" src="{{activityBookPeople.avatar}}"></image>
-            <span>等{{item.activity_book_join_num}}人已报名</span>
-          </view>
-<!-- 
+				<view class="sign_bottom">
+					<view class="sign_bottom_left" wx:if="{{item.activity_book_join_num > 0}}">
+						<image wx:for="{{item.activity_book_people}}" wx:for-item="activityBookPeople" src="{{activityBookPeople.avatar}}"></image>
+						<span>等{{item.activity_book_join_num}}人已报名</span>
+					</view>
+					<!-- 
           <view class="sign_bottom_right" >进行中</view>
            <view class="sign_bottom_right" >已结束</view> -->
 
-           <!-- <view class="sign_bottom_right" style="background:#999999" wx:if="{{item.activity_status == 0 || item.activity_status == 2 || item.activity_status == 4}}">{{item.activity_btn_name}}</view>
+					<!-- <view class="sign_bottom_right" style="background:#999999" wx:if="{{item.activity_status == 0 || item.activity_status == 2 || item.activity_status == 4}}">{{item.activity_btn_name}}</view>
 
           <view class="sign_bottom_right"  wx:if="{{item.activity_status == 1}}">{{item.activity_btn_name}}</view> -->
 
-        </view>
+				</view>
 
-      </view>
-    </view>
-    </navigator>
-<!--  -->
+			</view>
+		</view>
+	</navigator>
+	<!--  -->
 </view>
 
-<view class="show-icon" wx:else><image src="/icon/nodata.png" class="zanwushuju"></image></view>
+<view class="show-icon" wx:else>
+	<image src="/icon/nodata.png" class="zanwushuju"></image>
+</view>

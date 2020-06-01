@@ -11,42 +11,57 @@ Page({
     visible1:false,
     num:"",
     id:"",
-    address_id:"",
+    addressData:null,
     dataSource:null
-
   },
-  handleOpen1() {
+  
+
+  handleOpen1:function() {
     this.setData({
       visible1: true
     });
   },
-  handleClose1() {
+  handleClose1:function() {
     this.setData({
       visible1: false
     });
     this.getData()
   },
+  goAddAddress:function() {
+    wx.redirectTo({
+      url:"/pages/generalinformation/generalinformation"
+    })
+  },
   getData:function(){
+    debugger
     var that = this;
     var params = {};
-    params.num = that.data.num;
-    params.address_id= that,data.address_id;
-    params.id = that.data.id;
-    console.log(data);
+    params.num = Number(that.data.num);
+    params.id = Number(that.data.id);
+    params['address_id']=this.data.addressData.id;
+    if(!params['address_id']){
+      wx.showToast({
+        title: '请填写收货地址',
+        icon:'none'
+      })
+      return;
+    }
      urlApi('portal/article/shop_book', "post",params).then((res) => {
        if (res.data.code) {     
         wx.showToast({
-          title: "兑换成功"
+          title: "兑换成功",
+          icon:'none'
         })
        }else{
          wx.showToast({
-           title: res.data.msg
+           title: res.data.msg,
+           icon:'none'
          })
        } 
 
      })
    },
-  handleClose2() {
+  handleClose2:function() {
     this.setData({
       visible1: false
     });
@@ -69,19 +84,22 @@ Page({
     params['id']=this.data.id;
     urlApi('portal/article/shop', "post",params).then((res) => {
       if(res.data.code){
+       let obj=null;
+       res.data.data.address.length>0&&res.data.data.address.map((item,index)=>{
+         if(item.default){
+          obj=item;
+         }
+       })
         that.setData({
-          dataSource: res.data.data
+          dataSource: res.data.data,
+          addressData:obj
         })
-      }else{
+       }else{
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
-      
     })
-
-
-
   }
-
 })

@@ -82,6 +82,8 @@ Page({
     var full_name = data.full_name;
     var address = data.address;
     var area = data.area;
+    data.default=Number(data.default)
+
     if (!full_name) {
       wx.showToast({
         title: '收货人不能为空',

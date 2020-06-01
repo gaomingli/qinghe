@@ -64,7 +64,7 @@ page{padding-bottom: 110rpx;}
 .article_box:last-child{
   border-bottom: none;
 }
-/* .article_left{width:456rpx;} */
+
 .article_right{margin-left: 43rpx;}
 .article_title{
   color: #333333;font-size: 32rpx;font-weight: 500;line-height: 48rpx;
@@ -93,9 +93,9 @@ page{padding-bottom: 110rpx;}
 .sign_top_right span{font-size:24rpx;color: #999999; margin-left: 20rpx;}
 .clock,.address,.people{display: flex;align-items: center;height: 20rpx;}
 
-.sign_bottom{display: flex;justify-content: flex-end;align-items: center;margin-top: 20rpx;}
+.sign_bottom{display: flex;justify-content: space-between;align-items: center;margin-top: 20rpx;}
 .sign_bottom .sign_bottom_left{width: 250rpx;display: flex;overflow: hidden;}
-.sign_bottom_left image{width: 50rpx;height: 50rpx;flex-shrink: 0;}
+.sign_bottom_left image{width: 50rpx;height: 50rpx;flex-shrink: 0;border-radius:50%}
 .sign_bottom .sign_bottom_right{
  /* flex: 1; */
   height: 64rpx;
@@ -123,7 +123,17 @@ page{padding-bottom: 110rpx;}
 .shop_item{width: 330rpx;margin: 43rpx 0rpx;}
 .shop_item image{width: 330rpx;height: 345rpx;}
 .shop_item{font-size: 24rpx;color: #999999;}
-.shop_item .title{font-size: 26rpx;color: #333333;line-height: 34rpx;}
+.shop_item .title{font-size: 26rpx;color: #333333;
+  line-height: 60rpx;
+  /* display: -webkit-box; */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  height:60rpx;
+  text-overflow: ellipsis;
+white-space: nowrap;
+
+}
 .shop_item .points,.shop_item .price{line-height: 48rpx;}
 .shop_item .points span{font-size: 40rpx;color:#FE3730;font-weight: bold;margin-right: 8rpx;}
 .shop_item .points{
@@ -132,10 +142,10 @@ page{padding-bottom: 110rpx;}
 .shop_item .price{
   color: #999999;
   font-size: 24rpx;
+  text-decoration: line-through;
 }
 .clearfix{clear: both}
 /* 热门推荐 */
-/**热门推荐*/
 .common_box{padding: 20rpx 30rpx;margin: 20rpx 0rpx;line-height: 60rpx;background: #ffffff;}
 .common_title{display: flex;justify-content: space-between;align-items: center;}
 .common_title .title_left{display: flex;align-items: center;}

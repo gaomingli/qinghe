@@ -42,6 +42,9 @@ Page({
       page:1,
       'dataObject.articles':[]
     })
+    wx.showLoading({
+      title: ''
+    })
      this.getData();
   },
 
@@ -162,7 +165,8 @@ Page({
         this.setData({dataObject:res.data.data})
       }else{
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
     wx.hideLoading();

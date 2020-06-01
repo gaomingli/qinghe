@@ -19,7 +19,7 @@
       <text wx:if="{{userDetail.user_status == 3}}">(审核不通过)</text>
       </view>
 		</view>
-		<navigator url='/pages/personalinfo/personalinfo'>
+		<navigator url='/pages/personalinfo/personalinfo' hover-class="none">
 			<view class='right_part'>
 				<i-icon type="enter" color="#ffffff" />
 			</view>
