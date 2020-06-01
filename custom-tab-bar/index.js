@@ -30,7 +30,7 @@ Component({
   created() {
     this.getUserList()
     let that = this
-    setTimeout(function() {
+    setInterval(function() {
       that.getUserList()
     }, 5000)
   },

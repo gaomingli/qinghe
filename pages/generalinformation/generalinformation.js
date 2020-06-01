@@ -20,7 +20,7 @@ Page({
   choiceAddressClick:function(e){
    let params= e.currentTarget.dataset.item;
    params.default=1;
-    urlApi("/user/Profile/address", "post",params).then((res) => {
+    urlApi("/user/Profile/address_post", "post",params).then((res) => {
       if (res.data.code) {
       } else {
         wx.showToast({

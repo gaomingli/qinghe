@@ -55,7 +55,7 @@
             <view class="hot_right">
               <view class="hot_title">{{item.post_title}}</view>
               <view class="hot_num">{{item.num}}人测过</view>
-               <navigator url=""  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
+               <navigator url='/pages/evaluation/evaluation?id={{item.id}}&category_id={{item.category_id}}'  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
               <view class="hot_submit">立即测评</view></navigator>
             </view>
           </view>        
