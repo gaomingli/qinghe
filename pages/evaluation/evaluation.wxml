@@ -1,19 +1,19 @@
 <!--pages/evaluation/evaluation.wxml-->
-<view class='evaluation' style="background:url('/icon/testBg.png') no-repeat;background-size:100% 100%">
+<view class='evaluation' style="background:url('/icon/testBg.png') no-repeat;">
 <view class="partone">
 
 <view class="do_problem_people">
 <image class="user_img" src=""></image>
 </view>
 
-<view class="title">{{list.post_title}}</view>
+<view class="title">{{list.post_title}}测试</view>
 
 <view class="module">
 <view class="moduleone">
 <view class="doneimg"><image src="{{item.avatar}}" wx:for="{{list.do_problem_people}}"></image></view>
-<view class="num">{{list.do_problem_num}}人已测试</view>
+<view class="num"><text class="numFont">{{list.do_problem_num}}</text>人已测试</view>
 </view>
-<view class="total">共{{list.problem_count}}道题</view>
+<view class="total">共<text class="numFont">{{list.problem_count}}</text>道题</view>
 </view>
 
 <navigator url="/pages/starttest/starttest?id={{list.id}}&category_id={{list.category_id}}" hover-class="none">
