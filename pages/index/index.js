@@ -89,10 +89,11 @@ Page({
   },
   getintsearch:function(e){
     this.setData({searchValue:e.detail.value})
+    this.getSearchValue();
   },
   getSearchValue:function(){
     var that = this;
-    urlApi('portal/Search/index', "post",{keyword:this.data.searchValue,page_type:1}).then((res) => {
+    urlApi('portal/Search/index', "post",{keyword:this.data.searchValue,page_type:2}).then((res) => {
     if(res.data.code){
       // that.setData({
       //   dataList:res.data.data

@@ -1,6 +1,8 @@
 /* pages/choicerole/choicerole.wxss */
 .role{
-  width: 84%;
+  width: calc(100% - 80rpx);
+  margin-left: 40rpx;
+  margin-right: 40rpx;  
   height: 200rpx;
   padding: 40rpx 30rpx;
   display: flex;
@@ -8,10 +10,11 @@
   background-color: #fff;
   border-radius: 10rpx;
   box-shadow: 2rpx 2rpx 10rpx #ccc;
-  margin-top: 46rpx;
+  margin-top: 36rpx;
   margin-left: auto;
   margin-right: auto;
-align-items: center
+align-items: center;
+box-sizing: border-box;
 }
 .part{
   display: flex;
@@ -32,8 +35,7 @@ align-items: center
 }
 .goto{
   font-size: 26rpx;
-  color: #73757F;
-  margin-top:10rpx;
+  color: #73757F;  margin-top:10rpx;
 
 }
 .gotobtn{
@@ -45,5 +47,7 @@ align-items: center
   border-radius: 44rpx;
   width: 610rpx;
   background-color: #53B2AA;
-  margin:156rpx auto;
+  margin-top: 177rpx;
+  margin-left: auto;
+  margin-right: auto;
 }

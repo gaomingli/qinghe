@@ -1,8 +1,0 @@
-<template name="demo">
-  <view class='tempDemo'>
-    <text class='name'>{{flag}}</text>
-    <text class='fr'> clcikMe </text>
-  </view>
-</template>
-
-

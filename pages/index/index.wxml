@@ -136,7 +136,7 @@
         </view>
         <view class="sign_bottom">
           <view class="sign_bottom_left">
-            <image src="{{i.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
+            <image src="{{item.avatar}}" wx:for="{{item.activity_book_people}}"  wx:key="index" wx:for-index="index"></image>
           </view>
           <view class="sign_bottom_right grayAct"    bindtap="goActivity"   data-id="{{item.id}}" data-categoryid="{{item.category_id}}" wx:if="{{item.activity_status==0}}">{{item.activity_btn_name}}</view>
             <view class="sign_bottom_right  Activityactive" bindtap="goActivity" data-id="{{item.id}}" data-categoryid="{{item.category_id}}"    wx:if="{{item.activity_status==1}}">{{item.activity_btn_name}}</view>
