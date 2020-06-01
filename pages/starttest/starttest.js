@@ -36,7 +36,8 @@ Page({
     urlApi('portal/article/psychological_book', "post", { id: id, out_order: out_order, answer: currentindex + 1 }).then((res) => {
       if (res.data.code) {
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
         if (current + 1 == that.data.listData.all_problem.length) {
           wx.navigateTo({
@@ -50,7 +51,8 @@ Page({
         }
       } else {
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
     })
@@ -88,7 +90,8 @@ Page({
         })
       } else {
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
     })

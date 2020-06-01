@@ -24,7 +24,8 @@ Page({
     obj.msg = this.data.content
     urlApi("/user/Profile/guestbook_post","post", obj).then((res)=>{
       wx.showToast({
-        title: res.data.msg
+        title: res.data.msg,
+        icon:'none'
       })         
     })
   },

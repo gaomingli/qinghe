@@ -78,7 +78,8 @@ Page({
       })
     }else{
       wx.showToast({
-        title: res.data.msg
+        title: res.data.msg,
+        icon:'none'
       })
     }  
     wx.hideLoading(); 
@@ -100,7 +101,8 @@ Page({
       // })
     }else{
       wx.showToast({
-        title: res.data.msg
+        title: res.data.msg,
+        icon:'none'
       })
     }  
     })

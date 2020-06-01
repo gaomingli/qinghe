@@ -41,18 +41,21 @@ Page({
     params['address_id']=this.data.addressData.id;
     if(!params['address_id']){
       wx.showToast({
-        title: '请填写收货地址'
+        title: '请填写收货地址',
+        icon:'none'
       })
       return;
     }
      urlApi('portal/article/shop_book', "post",params).then((res) => {
        if (res.data.code) {     
         wx.showToast({
-          title: "兑换成功"
+          title: "兑换成功",
+          icon:'none'
         })
        }else{
          wx.showToast({
-           title: res.data.msg
+           title: res.data.msg,
+           icon:'none'
          })
        } 
 
@@ -93,7 +96,8 @@ Page({
         })
        }else{
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
     })

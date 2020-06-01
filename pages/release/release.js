@@ -83,7 +83,8 @@ Page({
         })
       } else {
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
       wx.hideLoading();
@@ -120,13 +121,15 @@ Page({
    
    if(!params['categories']){
      wx.showToast({
-       title: '请选择分类'
+       title: '请选择分类',
+       icon:'none'
      })
      return;
    }
     if(!params['post_content']){
       wx.showToast({
-        title: '请填写内容'
+        title: '请填写内容',
+        icon:'none'
       })
       return;
     }
@@ -139,7 +142,8 @@ Page({
    params['photo']=arr;
    if(!params['photo'].length){
     wx.showToast({
-      title: '请填写图片'
+      title: '请填写图片',
+      icon:'none'
     })
     return;
   }
@@ -155,7 +159,8 @@ Page({
         })
       } else {
         wx.showToast({
-          title: res.data.msg
+          title: res.data.msg,
+          icon:'none'
         })
       }
       wx.hideLoading();
