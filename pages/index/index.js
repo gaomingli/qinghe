@@ -9,7 +9,8 @@ const app = getApp()
 Page({
   data: {
     dataList:{},
-    searchValue:'',
+    searchValue:"",
+    searchList:[],
     menuList: [{
         id: 1,
         menu_img: "/icon/menuHeart.png",
@@ -63,6 +64,11 @@ Page({
     this.getTabBar().setData({
       tabbarIndex: 0
     })
+    this.setData({
+      searchValue:"",
+      searchList:[],
+    })
+
     this.getData(); 
   },
   getData:function(){
@@ -93,16 +99,25 @@ Page({
   },
   getSearchValue:function(){
     var that = this;
-    urlApi('portal/Search/index', "post",{keyword:this.data.searchValue,page_type:2}).then((res) => {
+    urlApi('portal/Search/index', "post",{keyword:this.data.searchValue,page_type:1}).then((res) => {
     if(res.data.code){
-      // that.setData({
-      //   dataList:res.data.data
-      // })
-    }else{
-      wx.showToast({
-        title: res.data.msg,
-        icon:'none'
+     if(res.data.data!=="没有数据"){
+      that.setData({
+        searchList:res.data.data
       })
+     } else{
+      wx.showToast({
+        title:"暂无数据",
+        icon:'none'
+      }) 
+      that.setData({
+        searchList:[]
+      }) 
+     }
+    }else{
+      that.setData({
+        searchList:[]
+      }) 
     }  
     })
   },

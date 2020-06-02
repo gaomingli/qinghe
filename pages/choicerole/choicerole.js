@@ -44,7 +44,6 @@ Page({
     data.user_type = current;
     //验证当前角色是否提交信息或是否审核通过
     urlApi('user/Profile/edit', "post", data).then((res) => {
-      console.log(res);
       if (res.data.code == 1) {
         var userInfoDetail = res.data.data;
         var user_status = userInfoDetail.user_status;

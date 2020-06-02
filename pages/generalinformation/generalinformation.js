@@ -20,6 +20,7 @@ Page({
   choiceAddressClick:function(e){
    let params= e.currentTarget.dataset.item;
    params.default=1;
+   delete params.checked;
     urlApi("/user/Profile/address_post", "post",params).then((res) => {
       if (res.data.code) {
       } else {

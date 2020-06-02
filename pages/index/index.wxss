@@ -27,6 +27,7 @@ page{padding-bottom: 110rpx;}
   font-family:Microsoft YaHei;
   font-weight:400;
   color:#999999;
+  width:100%
 }
 
 /*轮播部分*/
@@ -42,7 +43,7 @@ page{padding-bottom: 110rpx;}
 .index_menu{display: flex;padding:40rpx 10rpx  40rpx 10rpx;}
 .index_menu navigator{width:25%;display: flex;align-items: center;flex-direction: column;}
 .index_menu navigator image{width: 76rpx;height: 76rpx;}
-.menu_text{font-size:24rpx;color:#333333;}
+.menu_text{font-size:24rpx;color:#333333;margin-top:7px}
 .index_menu .navto{width:25%;display: flex;align-items: center;flex-direction: column;}
 .index_menu .navto image{width: 76rpx;height: 76rpx;}
 /*公告部分*/
@@ -121,7 +122,7 @@ page{padding-bottom: 110rpx;}
 
 
 .shop_item{width: 330rpx;margin: 43rpx 0rpx;}
-.shop_item image{width: 330rpx;height: 345rpx;}
+.shop_item image{width: 330rpx;height:290rpx;}
 .shop_item{font-size: 24rpx;color: #999999;}
 .shop_item .title{font-size: 26rpx;color: #333333;
   line-height: 60rpx;
@@ -201,4 +202,25 @@ white-space: nowrap;
 .grayAct{
   background: #C6C6C6!important;
   padding:2px 10px;
+}
+.storePosition{
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+  padding: 14px;
+  padding-bottom: 40px;
+  padding-top: 20px;  
+  box-sizing: border-box;
+ 
+}
+
+.storePosition .list view{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 10px;
 }

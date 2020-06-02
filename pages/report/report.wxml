@@ -43,4 +43,38 @@
 
 <view class="goodresult">根据您的自评结果，您对疫情适应良好，希望您能 保持当前的状态，并为身边的亲友提供支持。</view>
 
+
+<view class="goodwarning">
+<view class="tishi">温馨提示</view>
+<view class="producet">疫情之下，我们需要信息，而过多的信息往往会产生新 的压力。我们建议您适当降低大脑的负荷，信息足够即 可。关于疫情动态和健康知识，我们向您推荐中国疾病预防控制中心的官方账号《中国疾控动态》希望对您管理信息有所帮助。</view>
+</view>
+
+<view class="good">
+<view class="one"><image src="/icon/circlemore.png"></image></view>
+<view class="two">热门推荐</view>
+</view>
+
+      <view class='hot_content'>
+<view class="common_content">
+     <scroll-view class="" scroll-x>
+        <view class="scroll_box">
+          <view class="hot_box" wx:for="{{dataList}}" wx:key="index" wx:for-index="index">
+            <image src="{{item.thumbnail}}"></image>
+            <view class="hot_right">
+              <view class="hot_title">{{item.post_title}}</view>
+              <view class="hot_num"><text>{{item.num}}</text>人测过</view>
+               <navigator url='/pages/evaluation/evaluation?id={{item.id}}&category_id={{item.category_id}}'  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
+              <view class="hot_submit">立即测评</view></navigator>
+            </view>
+          </view>        
+        </view>
+     </scroll-view>
+    </view>
+</view>
+
+<view class="fixBtn">
+<view class="return" bindtap="retrunHome">返回首页</view>
+<view class="next" bindtap="">再次测试</view>
+</view>
+
 </view>

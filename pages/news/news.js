@@ -15,8 +15,9 @@ Page({
     current: 0,
     page:1,
     id:1,
-    dataObject:null
-
+    dataObject:null,
+    searchValue:"",
+    searchList:[],
   },
 // tab切换
   handleChange({ detail }) {
@@ -32,7 +33,42 @@ Page({
   },
 
   onShow: function () {
+    this.setData({
+      searchValue:"",
+      searchList:[],
+    })
     this.getData();
+  },
+  getSearch:function(){
+    this.getSearchValue();
+  },
+  getintsearch:function(e){
+    this.setData({searchValue:e.detail.value})
+    this.getSearchValue();
+  },
+  getSearchValue:function(){
+    var that = this;
+    urlApi('portal/Search/index', "post",{keyword:this.data.searchValue,page_type:2}).then((res) => {
+    if(res.data.code){
+     if(res.data.data!=="没有数据"){
+      that.setData({
+        searchList:res.data.data
+      })
+     } else{
+      wx.showToast({
+        title:"暂无数据",
+        icon:'none'
+      }) 
+      that.setData({
+        searchList:[]
+      }) 
+     }
+    }else{
+      that.setData({
+        searchList:[]
+      }) 
+    }  
+    })
   },
   getData:function(){
     var that = this;

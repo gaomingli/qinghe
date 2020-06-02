@@ -9,7 +9,7 @@ Page({
    */
   data: {
 list:null,
-id:"",
+id:null,
 answer:"",
 out_order:"",
 list:[
@@ -19,7 +19,6 @@ list:[
   {cont:"本报告不可作为临床诊断的依据，也不赞成把它作为 你生活和工作中重大决策的唯一依据;"},
   {cont:"如对报告内容有不理解的地方，建议向有专业资质的 人员进行咨询;"},
   {cont:"本报告为专业测评结果，建议你在分享时务必谨慎。"}
-
 ],
 listPart:[
   {title:"兴趣",data:"打球"},
@@ -27,6 +26,11 @@ listPart:[
   {title:"所在省份",data:"上海市"},
   {title:"身体状况",data:"身体健康"},
   {title:"气质领域",data:"多血质（活泼）"},
+],
+dataList:[
+  {thumbnail:"/icon/hot1.png",post_title:'情感心理测试',num:58597},
+  {thumbnail:"/icon/hot1.png",post_title:'情感心理测试',num:58597},
+  {thumbnail:"/icon/hot1.png",post_title:'情感心理测试',num:58597}
 ]
   },
 
@@ -36,11 +40,16 @@ listPart:[
   onLoad: function (options) {
     let that = this;
     that.setData({
-      id: options.id,
-      category_id: options.category_id
+      id: options.id
     })
   },
-
+ 
+  retrunHome:function(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -56,7 +65,7 @@ listPart:[
   },
   getData: function () {
     var that = this;
-    urlApi('portal/article/index', "post", { id: this.data.id, category_id: this.data.category_id}).then((res) => {
+    urlApi('user/Profile/my_psychological_article', "post", { id: this.data.id}).then((res) => {
       if (res.data.code) {
         that.setData({
           list: res.data.data

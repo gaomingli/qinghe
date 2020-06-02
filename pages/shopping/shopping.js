@@ -1,5 +1,5 @@
 var {
-  urlApi
+  urlApi,host
 } = require("../../utils/request.js");
 var shoppingAllList = [];
 Page({
@@ -11,6 +11,7 @@ Page({
     banner:"",
     page: 1,
     shoppingList:[],
+    host:host,
     userInfo:null,
     arr:['普通会员','社工','组织']
   },
