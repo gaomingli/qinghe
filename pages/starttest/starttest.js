@@ -42,7 +42,7 @@ Page({
         })
         if (current + 1 == that.data.listData.all_problem.length) {
           wx.navigateTo({
-            url: `/pages/report/report?id=${ids}&category_id=${category_id}`,
+            url: `/pages/report/report?id=${ids}`,
           })
         } else {
           current++
@@ -66,7 +66,7 @@ Page({
     that.setData({
       id: options.id,
       category_id: options.category_id,
-      out_order: String(options.out_order)
+      out_order: options.out_order? options.out_order:''
     })
   },
 
@@ -91,8 +91,10 @@ Page({
     var that = this;
     urlApi('portal/article/index', "post", { id: this.data.id, category_id: this.data.category_id }).then((res) => {
       if (res.data.code) {
+        debugger;
         that.setData({
-          listData: res.data.data
+          listData: res.data.data,
+          out_order:res.data.data.out_order
         })
       } else {
         wx.showToast({

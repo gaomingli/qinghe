@@ -8,8 +8,7 @@
     </swiper>
 
 <view wx:if="{{list.photos.length==0&&list.video}}">
-<video></video>
-
+<video src="{{list.video}}" autoplay style="width:100%"></video>
 </view>
 
 <view wx:if="{{list.photos.length==0&&!list.video}}">

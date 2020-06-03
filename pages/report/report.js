@@ -2,6 +2,8 @@
 var {
   urlApi
 } = require("../../utils/request.js");
+
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -26,6 +28,7 @@ lists:[
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    debugger;
     let that = this;
     that.setData({
       id: options.id
