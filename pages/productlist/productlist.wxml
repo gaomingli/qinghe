@@ -1,11 +1,23 @@
 <!--pages/productlist/productlist.wxml-->
 <view class='productlist'>
   <view class="shop_item">
-    <swiper autoplay indicator-dots circular>
+    <swiper autoplay indicator-dots circular wx:if="{{list.photos.length>0}}">
       <swiper-item wx:for="{{list.photos}}" wx:key="index" wx:for-index="index">
-          <image mode="widthFix" src="{{item.url}}"></image>
+          <image class="detailIcon" src="{{item.url}}"></image>
       </swiper-item>
     </swiper>
+
+<view wx:if="{{list.photos.length==0&&list.video}}">
+<video></video>
+
+</view>
+
+<view wx:if="{{list.photos.length==0&&!list.video}}">
+   <image src="{{list.thumbnail}}"></image>
+</view>
+
+
+
     <view class="title">{{list.post_title}}</view>
     <view class='pointsandprice'>
       <view class="points">
@@ -30,7 +42,8 @@
   <view class='content'>
     <view class='content_title'>图文详情</view>
     <view class='content_img'>
-      <image src="{{list.thumbnail}}" mode="widthFix"></image>
+      <!-- <image src="{{list.thumbnail}}" mode="widthFix"></image> -->
+       <template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
     </view>
     <view class='content_integral'>
       <view class='total'>合计:
@@ -45,4 +58,5 @@
   </view>
 
 </view>
+<import src="/library/wxParse/wxParse.wxml"></import>
 <i-toast id="toast" />

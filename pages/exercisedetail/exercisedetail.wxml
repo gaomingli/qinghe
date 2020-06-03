@@ -2,7 +2,7 @@
 <import src="/library/wxParse/wxParse.wxml"></import>
 <view class='exercisedetail'>
 	<view class='exercise_bg'>
-		<image src='{{thumbnail}}'></image>
+		<image src='{{thumbnail}}' mode="widthFix"></image>
 	</view>
 	<view class='exercise_cont'>
 		<view class="common_title" style="background:#ffffff;padding:20rpx 30rpx;">

@@ -9,10 +9,10 @@
 
 <view class='baseinfo'>
 <i-panel>
-    <i-input value="{{ value1 }}" title="姓名" maxlength="100" autofocus placeholder="请输入姓名" bind:change="bindTap"/>
+    <i-input value="{{ value1 }}" title="姓名" maxlength="100"  placeholder="请输入姓名" bind:change="bindTap"/>
 </i-panel>
 <i-panel>
-    <i-input value="{{ value2 }}" title="手机号" maxlength="100"  autofocus placeholder="请输入手机号"  bind:change="bindTapPhone" />
+    <i-input value="{{ value2 }}" title="手机号" maxlength="100"  placeholder="请输入手机号"  bind:change="bindTapPhone" />
 </i-panel>
 </view>
 
