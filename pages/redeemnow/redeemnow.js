@@ -33,7 +33,6 @@ Page({
     })
   },
   getData:function(){
-    debugger
     var that = this;
     var params = {};
     params.num = Number(that.data.num);
@@ -51,6 +50,9 @@ Page({
         wx.showToast({
           title: "兑换成功",
           icon:'none'
+        })
+        wx.navigateTo({
+          url: '/pages/shopping/shopping',
         })
        }else{
          wx.showToast({

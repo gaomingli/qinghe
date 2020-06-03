@@ -54,7 +54,7 @@ Page({
     params['id']=this.data.id;
     urlApi('portal/list/index', "post",params).then((res) => {
       if(res.data.code){
-        res.data.data.child_category.unshift({id:3,name:'推荐'});
+        // res.data.data.child_category.unshift({id:3,name:'推荐'});
         // 此时应对数组拼接
         if(that.data.menuListObj&&that.data.menuListObj.last_news&&that.data.menuListObj.last_news.articles){
           res.data.data.last_news.articles=that.data.menuListObj.last_news.articles.concat(res.data.data.last_news.articles)

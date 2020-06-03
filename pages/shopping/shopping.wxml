@@ -24,7 +24,7 @@
 </view>
 <!--  -->
   <swiper autoplay indicator-dots circular>
-      <swiper-item wx:for="{{banner}}" wx:key="index" wx:for-index="index">
+      <swiper-item wx:for="{{banner}}" wx:key="index" wx:for-index="index" style="height:190px">
         <navigator hover-class="none" url='item.url'>
           <image mode="widthFix" src="{{host+'upload/'+item.image}}" style="width:100%"></image>
         </navigator>
