@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    flag:false  //为false为正常进入，为true时表示代参数过来
   },
 
   /**
@@ -92,8 +93,20 @@ Page({
    */
   onShow: function () {
     this.queryAddressList();
+    if(wx.getStorageSync('addressInfo').id){
+       this.setData({flag:true})
+    }
   },
-
+  chooseAddress:function(e){
+      if(this.data.flag){
+      let  addressInfo= wx.getStorageSync('addressInfo');
+        addressInfo.DizhiInfo=e.currentTarget.dataset.item;
+        wx.setStorageSync('addressInfo', addressInfo);
+       wx.navigateTo({
+         url: '/pages/redeemnow/redeemnow?id='+addressInfo.id,
+       })
+      }
+  },
  //查询地址集合
   queryAddressList: function(){
     urlApi("/user/Profile/address", "post", {}).then((res) => {

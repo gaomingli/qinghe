@@ -13,7 +13,8 @@ Page({
     num: 5,
     id: "",
     category_id: "",
-    current: 0
+    current: 0,
+    out_order:''
   },
 
   return: function() {
@@ -26,7 +27,7 @@ Page({
 
   choice: function (e) {
     let current = this.data.current
-    let out_order = this.data.listData.out_order
+    let out_order =this.data.out_order?this.data.out_order:this.data.listData.out_order
     let id = e.currentTarget.dataset.id
     let currentindex = e.currentTarget.dataset.currentindex
     let that = this
@@ -64,7 +65,8 @@ Page({
     let that = this;
     that.setData({
       id: options.id,
-      category_id: options.category_id
+      category_id: options.category_id,
+      out_order: String(options.out_order)
     })
   },
 
@@ -79,11 +81,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getData();
+    if(!this.data.out_order){
+      this.getData();
+    }else{
+      this.getPhy();
+    }
   },
   getData: function () {
     var that = this;
     urlApi('portal/article/index', "post", { id: this.data.id, category_id: this.data.category_id }).then((res) => {
+      if (res.data.code) {
+        that.setData({
+          listData: res.data.data
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon:'none'
+        })
+      }
+    })
+  },
+  getPhy: function () {
+    var that = this;
+    urlApi('user/Profile/my_psychological_article', "post", { id: this.data.id}).then((res) => {
       if (res.data.code) {
         that.setData({
           listData: res.data.data

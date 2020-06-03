@@ -90,10 +90,6 @@ Page({
             activityAllList.push(res.data.data.articles[i]);
           }
           if (res.data.data.articles.length * page >= res.data.data.page_total && page > 1) {
-            wx.showToast({
-              title: '没有更多数据了',
-              icon: "none"
-            })
             that.setData({//没有更多了显示
               noMore: true,
               loading: true,

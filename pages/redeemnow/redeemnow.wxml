@@ -12,7 +12,7 @@
 		</view>
 	</view>
 
-	<view class="defaultAddress" wx:if="{{addressData}}" bindtap="goAddAddress">
+	<view class="defaultAddress"  wx:if="{{addressData&&!flag}}" bindtap="goAddAddress">
 		<view>
 	 	   <image src="../../icon/address.png" class="addressPic"></image>
 		</view>
@@ -21,9 +21,24 @@
 			<view>{{addressData.area}}-{{addressData.address}}</view>
 		</view>
 		<view>
-	 	   <image src="../../icon/more.png"  class="addressPic"></image>
+	 	   <image src="../../icon/more.png"  class="addressPic addressPic2"></image>
 		</view>
 	</view>
+
+
+	<view class="defaultAddress"  wx:if="{{addressInfo.DizhiInfo&&flag}}" bindtap="goAddAddress">
+		<view>
+	 	   <image src="../../icon/address.png" class="addressPic"></image>
+		</view>
+ 	  <view>
+			<view>{{addressInfo.DizhiInfo.full_name}} <text>{{addressInfo.DizhiInfo.tel}}</text></view>
+			<view>{{addressInfo.DizhiInfo.area}}-{{addressInfo.DizhiInfo.address}}</view>
+		</view>
+		<view>
+	 	   <image src="../../icon/more.png"  class="addressPic addressPic2"></image>
+		</view>
+	</view>
+
 
 
 	<view class='order'>

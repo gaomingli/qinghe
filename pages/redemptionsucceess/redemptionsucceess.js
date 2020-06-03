@@ -21,6 +21,11 @@ Page({
   onReady: function () {
 
   },
+  jixuDuihuan:function(){
+   wx.navigateTo({
+     url: '/pages/shopping/shopping'
+   })
+  },
 
   /**
    * 生命周期函数--监听页面显示

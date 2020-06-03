@@ -1,4 +1,7 @@
 /* pages/report/report.wxss */
+page{
+  overflow-x: hidden;
+}
 .report{
   padding-bottom: 160rpx;
 
@@ -19,6 +22,7 @@ box-shadow: 5px 5px 5px #e7e7e7;
 left: 50rpx;
 border-top-left-radius: 53rpx;
 border-bottom-left-radius: 53rpx;
+box-sizing: border-box;
 
 }
 .username{
@@ -116,6 +120,7 @@ border-bottom-left-radius: 53rpx;
 text-align: center;
 color: #333333;
 font-size: 34rpx;
+margin-bottom:30rpx
 }
 .good{
   display: flex;
@@ -230,4 +235,13 @@ width: 100%;
   background-color: #53B2AA;
   width: 50%;
 
+}
+.box{
+  width:100%;
+	height:100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }

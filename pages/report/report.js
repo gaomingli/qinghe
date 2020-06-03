@@ -12,7 +12,7 @@ list:null,
 id:null,
 answer:"",
 out_order:"",
-list:[
+lists:[
   {cont:"感谢您的参与，阅读本报告时，请注意以下事项:"},
   {cont:"阅读时可以先查看图表快速掌握报告内容，然后有针 对性地阅读对应文字;"},
   {cont:"如报告与你自己或他人的感知有出入，可回忆测试时 是否有事情影响了你，或者是否自己答题时有所顾虑;"},
@@ -20,18 +20,6 @@ list:[
   {cont:"如对报告内容有不理解的地方，建议向有专业资质的 人员进行咨询;"},
   {cont:"本报告为专业测评结果，建议你在分享时务必谨慎。"}
 ],
-listPart:[
-  {title:"兴趣",data:"打球"},
-  {title:"特长",data:"跑步"},
-  {title:"所在省份",data:"上海市"},
-  {title:"身体状况",data:"身体健康"},
-  {title:"气质领域",data:"多血质（活泼）"},
-],
-dataList:[
-  {thumbnail:"/icon/hot1.png",post_title:'情感心理测试',num:58597},
-  {thumbnail:"/icon/hot1.png",post_title:'情感心理测试',num:58597},
-  {thumbnail:"/icon/hot1.png",post_title:'情感心理测试',num:58597}
-]
   },
 
   /**
@@ -55,6 +43,11 @@ dataList:[
    */
   onReady: function () {
 
+  },
+  againTest:function(){
+     wx.navigateTo({
+       url: '/pages/psychometrics/psychometrics'
+     })
   },
 
   /**

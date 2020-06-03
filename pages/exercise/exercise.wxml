@@ -19,9 +19,11 @@
           </view>
         </view>
         <view class="sign_bottom">
+          <view style="flex:2">
           <view class="sign_bottom_left" wx:if="{{item.activity_book_join_num > 0}}">
             <image src="{{item.avatar}}" wx:for="{{item.activity_book_people}}"></image>
             <span>等{{item.activity_book_join_num}}人报名活动</span>
+          </view>
           </view>
           <view class="sign_bottom_right" style="background:#999999" wx:if="{{item.activity_status == 0 || item.activity_status == 2 || item.activity_status == 4}}" hover-class="none">{{item.activity_btn_name}}</view>
 <navigator url='../exercisedetail/exercisedetail?id={{item.id}}&category_id={{item.category_id}}' hover-class="none">

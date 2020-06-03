@@ -37,6 +37,7 @@ Page({
   },
     onShow: function() {
       this.getData();
+      wx.removeStorageSync("addressInfo");
     },
     getData:function(){
      var that = this;

@@ -30,9 +30,9 @@ Component({
   created() {
     this.getUserList()
     let that = this
-    // setInterval(function() {
-    //   that.getUserList()
-    // }, 5000)
+    setInterval(function() {
+      that.getUserList()
+    }, 5000)
   },
   /**
    * 组件的方法列表
@@ -58,6 +58,7 @@ Component({
           that.setData({
             userDetail: res.data.data
           })
+          wx.setStorageSync('userInfo', res.data.data)
         } 
       })
     }

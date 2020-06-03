@@ -102,3 +102,6 @@ font-size: 14px;
   vertical-align: middle;
   margin-right: 10px;
 }
+.addressPic2{
+  width: 10px;
+}

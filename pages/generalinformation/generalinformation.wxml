@@ -1,8 +1,7 @@
 <!--pages/address/address.wxml-->
 <view class='adddress_item'>
 	<radio-group class="radio-group">
-		<view class='adddress_list' wx:for-items="{{list}}" hidden='{{hiddenName}}' data-index="{{index}}" data-id="{{item.id}}">
-
+		<view class='adddress_list' wx:for-items="{{list}}"  data-item="{{item}}" hidden='{{hiddenName}}' data-index="{{index}}" data-id="{{item.id}}" bindtap="chooseAddress">
 			<view data-id="{{item.id}}">
 				<view class='name_tel'>
 					<text>{{item.full_name}}</text>

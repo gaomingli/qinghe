@@ -48,6 +48,8 @@ Page({
     this.setData({
       tokenn: tokenn
     })
+// 清除地址信息缓存
+    wx.removeStorageSync("addressInfo");
     // let userInfo = wx.getStorageSync("userInfo");
     // console.log(userInfo)
     // if (!userInfo) {

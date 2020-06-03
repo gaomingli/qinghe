@@ -7,6 +7,6 @@
 	</view>
 	<view class='footer'>
 		<view class='return' wx:if="{{current != 0}}" bindtap="return">上一题</view>
-		<view class='total'><text>{{current+1}}</text>/{{listData.problem_count}}道题</view>
+		<view class='total'><text>{{current+1}}</text>/{{listData.all_problem.length}}道题</view>
 	</view>
 </view>

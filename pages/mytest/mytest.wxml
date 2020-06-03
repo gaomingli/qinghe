@@ -14,9 +14,9 @@
 
 		<view class='module'>
 			<view class='name'>{{item.post_title}}</view>
-			<view class='num' wx:if="{{current===1}}">{{item.do_problem_count}}/{{item.problem_count}}道题</view>
-				<view class='num' wx:if="{{current===2}}">{{num}}人评测</view>
-			<navigator  wx:if="{{current==1}}"  url="/pages/starttest/starttest?id={{item.id}}&category_id={{item.category_id}}" hover-class="none">
+			<view class='num' wx:if="{{current==1}}">{{item.do_problem_count}}/{{item.problem_count}}道题</view>
+				<view class='num' wx:if="{{current==2}}">{{num}}人评测</view>
+			<navigator  wx:if="{{current==1}}"  url="/pages/starttest/starttest?id={{item.id}}&out_order={{item.out_order}}" hover-class="none">
 				<view class='look'>{{current==1?'继续测评':'查看报告'}}</view>
 			</navigator>
     	<navigator  wx:if="{{current==2}}"  url="/pages/report/report?id={{item.id}}&category_id={{item.category_id}}" hover-class="none">

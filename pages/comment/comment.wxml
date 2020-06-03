@@ -1,18 +1,24 @@
 <!--pages/comment/comment.wxml-->
-<view class='comment'  wx:if="{{commentList && commentList.length > 0}}">
-<view class='record' wx:for="{{commentList}}" wx:key="index">
-<view class='photo'><image src="{{item.avatar}}"></image></view>
+<view class='comment' wx:if="{{commentList && commentList.length > 0}}">
+	<view class='record' wx:for="{{commentList}}" wx:key="index">
+		<view class='photo'>
+			<image src="{{item.avatar}}"></image>
+		</view>
 
-<view class='detail'>
-<view class='info'>
-<view class="title">{{item.user_nickname}}</view>
-<view class='return'>回复<text>{{item.num}}</text>:{{item.cont}}</view>
-<view class='time'>{{item.time}}</view>
-</view>
-<view class='review'><image src="{{item.url2}}"></image></view>
+		<view class='detail'>
+			<view class='info'>
+				<view class="title">{{item.user_nickname}}</view>
+				<view class='return'>回复<text>{{item.num}}</text>:{{item.content}}</view>
+				<view class='time'>{{item.date}}</view>
+			</view>
+			<view class='review'>
+				<image src="{{item.thumbnail}}"></image>
+			</view>
+		</view>
+
+	</view>
 </view>
 
+<view class="show-icon" wx:else>
+	<image mode="widthFix" src="/icon/none.png" class="zanwushuju"></image>
 </view>
-</view>
-
- <view class="show-icon" wx:else><image mode="widthFix" src="/icon/none.png"  class="zanwushuju"></image></view>

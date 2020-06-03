@@ -12,10 +12,25 @@ Page({
     num:"",
     id:"",
     addressData:null,
-    dataSource:null
+    dataSource:null,
+    flag:false,
+    addressInfo:null
   },
-  
-
+  onShow:function(){
+   let addressInfo=  wx.getStorageSync('addressInfo');
+   if(addressInfo){
+      this.setData({
+       flag:true,
+       addressInfo:addressInfo
+      })
+   }
+  },
+  goAddAddress:function() {
+    wx.redirectTo({
+      url:"/pages/generalinformation/generalinformation"
+    })
+    wx.setStorageSync('addressInfo',{id:this.data.id})
+  },
   handleOpen1:function() {
     this.setData({
       visible1: true
@@ -27,17 +42,31 @@ Page({
     });
     this.getData()
   },
-  goAddAddress:function() {
-    wx.redirectTo({
-      url:"/pages/generalinformation/generalinformation"
-    })
-  },
   getData:function(){
     var that = this;
+// 判断是否选择了地址
+if(!flag){
+  if(!that.data.addressData){
+    wx.showToast({
+      title: '地址不能为空',
+      icon:'none'
+    })
+    return;
+  }
+}else{
+// 判断是否选择了地址
+  if(!wx.getStorageSync('addressInfo').DizhiInfo){
+    wx.showToast({
+      title: '地址不能为空',
+      icon:'none'
+    })
+    return;
+  }
+}
     var params = {};
     params.num = Number(that.data.num);
     params.id = Number(that.data.id);
-    params['address_id']=this.data.addressData.id;
+    params['address_id']= that.data.flag?wx.getStorageSync('addressInfo').DizhiInfo.id:this.data.addressData.id;
     if(!params['address_id']){
       wx.showToast({
         title: '请填写收货地址',
@@ -47,12 +76,8 @@ Page({
     }
      urlApi('portal/article/shop_book', "post",params).then((res) => {
        if (res.data.code) {     
-        wx.showToast({
-          title: "兑换成功",
-          icon:'none'
-        })
         wx.navigateTo({
-          url: '/pages/shopping/shopping',
+          url: '/pages/redemptionsucceess/redemptionsucceess',
         })
        }else{
          wx.showToast({
@@ -74,8 +99,8 @@ Page({
   onLoad: function (options) {
     var that=this;
     that.setData({
-      id: options.id,
-      num: options.num,
+      id: options.id||6,
+      num: options.num||1,
     })
     this.getGoodDetail();
   },

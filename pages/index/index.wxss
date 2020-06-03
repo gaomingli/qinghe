@@ -95,7 +95,7 @@ page{padding-bottom: 110rpx;}
 .clock,.address,.people{display: flex;align-items: center;height: 20rpx;}
 
 .sign_bottom{display: flex;justify-content: space-between;align-items: center;margin-top: 20rpx;}
-.sign_bottom .sign_bottom_left{width: 250rpx;display: flex;overflow: hidden;}
+.sign_bottom .sign_bottom_left{display: flex;overflow: hidden;}
 .sign_bottom_left image{width: 50rpx;height: 50rpx;flex-shrink: 0;border-radius:50%}
 .sign_bottom .sign_bottom_right{
  /* flex: 1; */

@@ -21,6 +21,7 @@
   margin-left: 16rpx;
   border-bottom: 1rpx solid #E7E7E7;
   padding-bottom: 35rpx;
+  width:100%;
   }
   .review{
     width: 113rpx;

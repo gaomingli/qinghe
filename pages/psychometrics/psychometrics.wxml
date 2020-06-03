@@ -1,6 +1,6 @@
 <view class='psychometrics'>
 <view class="bg_bottom">
-<view class='bg_index'><image src="../../icon/Xinlibg.png"></image></view>
+<view class='bg_index'><image src="../../icon/orderbg.png"></image></view>
 <view class='bg_main'><image src="{{menuListObj.banner}}"></image></view>
   <!--热门推荐-->
   <view class="common_box common_boxt">
