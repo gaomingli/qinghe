@@ -2,6 +2,7 @@
 const {
   $Toast
 } = require('../../components/base/index');
+let time;
 Page({
 
   /**
@@ -53,7 +54,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(time)
   },
   abx:function(){
     const that=this;
@@ -63,7 +64,7 @@ Page({
       content: '已发送验证码',
       type: 'none'
     });
-    let time= setInterval(()=>{
+     setInterval(()=>{
       that.setData({ inputNum: that.data.inputNum-1});
       if (that.data.inputNum === 0) {
         that.setData({ flag: true, inputNum: 10 });

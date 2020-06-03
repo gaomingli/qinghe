@@ -30,7 +30,7 @@
   <view class='content'>
     <view class='content_title'>图文详情</view>
     <view class='content_img'>
-      <image src="{{list.thumbnail}}"></image>
+      <image src="{{list.thumbnail}}" mode="widthFix"></image>
     </view>
     <view class='content_integral'>
       <view class='total'>合计:

@@ -1,6 +1,6 @@
 // pages/psychometrics/psychometrics.js
 var {
-  urlApi
+  urlApi,host
 } = require("../../utils/request.js");
 Page({
 
@@ -13,6 +13,7 @@ Page({
     current:0,
     id:3,
     page:1,
+    host:host
   },
 
   /**

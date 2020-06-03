@@ -38,4 +38,11 @@
     </view>
   </view>
   </view>
+    <view class="storePosition" wx:if="{{searchList.length}}">
+      <view class="list" wx:for="{{searchList}}"  wx:for-item="item" wx:for-index="index">
+        <navigator url="/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}">
+            <view>{{index+1}}、{{item.post_title}}</view>
+        </navigator>
+      </view>
+    </view>
 </view>

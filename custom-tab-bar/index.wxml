@@ -7,7 +7,7 @@
 		<image src="{{tabbarIndex==1?'../icon/circle_hover.png':'../icon/circle.png'}}"></image>
 		<text>社工圈</text>
 	</view>
-	<view wx:if="{{userDetail.user_type_name != '普通用户'}}" class="tabbar_item" data-index="2" bind:tap="switchTab" data-url="/pages/release/release" data-type="2">
+	<view wx:if="{{userDetail.user_type_name&&userDetail.user_type_name != '普通用户'}}" class="tabbar_item addHOst" data-index="2" bind:tap="switchTab" data-url="/pages/release/release" data-type="2">
 		<image src="{{tabbarIndex==2?'../icon/release_hover.png':'../icon/release.png'}}"></image>
 		<text>发布</text>
 	</view>

@@ -1,4 +1,8 @@
 /* pages/report/report.wxss */
+.report{
+  padding-bottom: 160rpx;
+
+}
 .reportBg image{
 width: 100%;
 height: 351rpx;
@@ -36,6 +40,7 @@ border-bottom-left-radius: 53rpx;
   margin-right: 42rpx;
   background-color: #F8F8F8;
   padding: 39rpx;
+  border-radius: 20rpx;
 }
 .title{
   color: #333333;
@@ -48,6 +53,8 @@ border-bottom-left-radius: 53rpx;
   margin-bottom: 41rpx;
   color: #666666;
   font-size: 24rpx;
+  line-height: 46rpx;
+
 }
 .result{
   height: 567rpx;
@@ -67,6 +74,8 @@ border-bottom-left-radius: 53rpx;
 .options{
   color: #333333;
   font-size: 30rpx;
+  font-weight: bold;
+
 }
 .listData{
   color: #333333;
@@ -81,8 +90,8 @@ border-bottom-left-radius: 53rpx;
 .release{
   color: #FFFFFF;
   font-size: 42rpx;
-  height: 149rpx;
-  line-height: 149rpx;
+  height: 102rpx;
+  line-height: 102rpx;
   text-align: center;
   width: 70%;
   margin-left: auto;
@@ -135,16 +144,90 @@ font-size: 34rpx;
   color: #333333;
   padding-left: 41rpx;
 }
-.homeWarning{
-  width: 96%;
+.goodwarning{
   background-color: #F8F8F8;
+  border-radius: 20rpx;
   padding: 55rpx 31rpx;
+  margin-top: 85rpx;
+  margin-left: 42rpx;
+  margin-right: 42rpx;
 }
-.tit{
+.tishi{
 color: #333333;
 font-size: 26rpx;
+margin-bottom: 35rpx;
 }
-.content{
+.producet{
   color: #666666;
   font-size: 24rpx;
+  line-height:55rpx
+}
+.scroll_box{
+  display: flex;
+}
+.hot_box{
+  margin-left: 40rpx;
+  text-align: center;
+  background-color: #fff;
+  padding: 30rpx;
+  
+}
+.hot_box image{
+  width:228rpx;
+  height:187rpx
+}
+.hot_right{
+  margin-top:30rpx
+}
+.hot_right .hot_title{
+  color: #333333;
+  font-size: 28rpx;
+}
+.hot_right .hot_num{
+  color: #666666;
+  font-size: 24rpx;
+  margin: 29rpx 0;
+}
+.hot_num text{
+  color: #333333;
+}
+.hot_submit{
+  width:155rpx;
+  height:62rpx;
+  text-align: center;
+  line-height: 62rpx;
+  border-radius: 31rpx;
+  background-color: #53B2AA;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  margin-left: auto;
+margin-right: auto;
+
+}
+.fixBtn{
+  position: fixed;
+  bottom: 0;
+  height: 110rpx;
+  display: flex;
+justify-content: space-between;
+width: 100%;
+
+}
+.return{
+  line-height: 110rpx;
+  color: #53B2AA;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #EEF7F6;
+  width: 50%;
+
+}
+.next{
+  line-height: 110rpx;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #53B2AA;
+  width: 50%;
+
 }

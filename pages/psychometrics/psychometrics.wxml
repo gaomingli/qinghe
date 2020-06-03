@@ -1,6 +1,6 @@
 <view class='psychometrics'>
 <view class="bg_bottom">
-<view class='bg_index'><image src="../../icon/mainbg.png"></image></view>
+<view class='bg_index'><image src="../../icon/Xinlibg.png"></image></view>
 <view class='bg_main'><image src="{{menuListObj.banner}}"></image></view>
   <!--热门推荐-->
   <view class="common_box common_boxt">
@@ -35,7 +35,7 @@
   <!-- 分类 -->
     <view class="index_menu">
       <view wx:key="index" wx:for-index="index" wx:for="{{menuListObj.child_category}}" data-id="{{item.id}}" bindtap="getCurrent" data-type="{{index}}" class="{{current===index?'active':''}}">
-        <image src="{{item.more.icon}}" class="grantImage"></image>
+        <image src="{{host+'upload/'+item.more.icon}}" class="grantImage"></image>
         <view class="menu_text">{{item.name}}</view>
       </view>
     </view>

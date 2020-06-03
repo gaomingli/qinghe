@@ -1,52 +1,78 @@
 <!--pages/evaluation/evaluation.wxml-->
-<view class='evaluation' style="background:url('/icon/testBg.png') no-repeat;background-size:100% 100%">
-	<view class="partone">
-
-		<view class="do_problem_people">
+<view class='evaluation'> 
+  <view><image src="/icon/Xinlibg.png" style="width:100%;height:276rpx"></image></view>
+  	<view class="do_problem_people">
 			<image class="user_img" src="{{list.thumbnail}}"></image>
-		</view>
-
-		<view class="title">{{list.post_title}}</view>
-
+				<view class="partone">	
+		<view class="title">{{list.post_title}}测试</view>
 		<view class="module">
 			<view class="moduleone">
 				<view class="doneimg">
 					<image src="{{item.avatar}}" wx:for="{{list.do_problem_people}}"></image>
 				</view>
-				<view class="num">{{list.do_problem_num}}人已测试</view>
+				<view class="num"><text>{{list.do_problem_num}}</text>人已测试</view>
 			</view>
-			<view class="total">共{{list.problem_count}}道题</view>
+			<view class="total">共<text>{{list.problem_count}}</text>道题</view>
 		</view>
 
 		<navigator url="/pages/starttest/starttest?id={{list.id}}&category_id={{list.category_id}}" hover-class="none">
 			<view class="nowTest">立即测试</view>
 		</navigator>
 	</view>
+		</view>
+
+
+<view style="background:url('/icon/testBg.png') no-repeat;padding-top: 75rpx;background-size:100% 100%;padding-bottom:236rpx">
+
 
 	<view class="parttwo">
+	<view class="line"></view>
 		<view class="testtitle">测试背景</view>
+		<view class="line"></view>
 		<view class="testcontent">{{list.post_excerpt}}</view>
 	</view>
 
 	<view class="parthree">
+	<view class="conttitle">
+	<view class="contain"></view>
 		<view class="testtitle">测评内容</view>
+			<view class="contain"></view>
+			</view>
 		<view class="testcontent">
 			<template is="wxParse" data="{{wxParseData:agreement.nodes}}"></template>
 		</view>
 	</view>
 
 	<view class="partfour">
+	<view class="line"></view>
 		<view class="testtitle">专业参数</view>
-		<view>技术范式</view>
+		<view class="line"></view>
+		<view class="row" style="margin-top:50rpx">
+			<view>技术范式</view>
 		<view>自评问卷</view>
-		<view>测评时长</view>
-		<view>约{{list.duration}}分钟</view>
+		</view>
+
+		<view class="row">
+		
+		<view style="margin-top:10rpx;margin-bottom:10rpx">测评时长</view>
+		<view style="margin-top:10rpx;margin-bottom:10rpx">约{{list.duration}}分钟</view></view>
+	
+	<view class="row">
 		<view>测评题数</view>
 		<view>{{list.problem_count}}题</view>
 	</view>
+		
+	
+	</view>
 
 	<view class="partfive">
-		<view class="testtitle">使用指南</view>
+	<view class="specail"></view>
+		<view class="userguid">使用指南</view>
+		<view style="padding:20rpx 60rpx 80rpx 60rpx">
+		<view wx:for="{{userlist}}" wx:for-index="index" wx:key="index" class="userlist">{{item.name}}</view>
+	</view>
+	</view>
+
 	</view>
 
 </view>

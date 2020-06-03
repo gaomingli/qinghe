@@ -30,9 +30,9 @@ Component({
   created() {
     this.getUserList()
     let that = this
-    setInterval(function() {
-      that.getUserList()
-    }, 5000)
+    // setInterval(function() {
+    //   that.getUserList()
+    // }, 5000)
   },
   /**
    * 组件的方法列表

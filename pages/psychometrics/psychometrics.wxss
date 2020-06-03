@@ -61,7 +61,7 @@ text-align: center;
 }
 .grantImage{
   width:130rpx;
-  height:110rpx;
+  height:98rpx;
 }
 
 

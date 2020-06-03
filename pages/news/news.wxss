@@ -16,3 +16,24 @@ margin:50rpx 30rpx 59rpx 30rpx;
   padding:0rpx 30rpx;
 margin:0rpx 0rpx;
 }
+.storePosition{
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+  padding: 14px;
+  padding-bottom: 40px;
+  padding-top: 20px;  
+  box-sizing: border-box;
+ 
+}
+
+.storePosition .list view{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 10px;
+}

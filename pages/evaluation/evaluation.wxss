@@ -1,29 +1,28 @@
 /* pages/evaluation/evaluation.wxss */
-.partone{
-  background-color: #FFFFFF;
-  border-top-left-radius: 40rpx;
-  border-top-right-radius: 40rpx;
-  padding-left: 30rpx;
-  padding-right: 30rpx;
-}
 .do_problem_people .user_img{
-  width: 100%;
+  width: 282rpx;
   height: 281rpx;
-  margin-top: -100rpx;
+  margin-top: -100rpx; 
 }
 .doneimg image{
 width: 40rpx;
 height: 40rpx;
-}
+border-radius: 50%;}
 .title{
   color: #333333;
   font-size: 42rpx;
   margin-top: 79rpx;
+  text-align: left;
+padding-left: 27rpx;
+
 }
 .module{
   display: flex;
   justify-content: space-between;
   margin-top: 46rpx;
+  padding-left: 27rpx;
+margin-right: 27rpx;
+
 }
 .moduleone{
   display: flex;
@@ -43,7 +42,7 @@ height: 40rpx;
 }
 navigator{
   width: 90%;
-  margin-top: 96rpx;
+  margin-top: 104rpx;
   margin-left: auto;
   margin-right: auto;
   color: #FFFFFF;
@@ -53,25 +52,136 @@ navigator{
   border-radius: 41rpx;
   background-color: #53B2AA;
   font-size: 30rpx;
+  margin-bottom: 69rpx;
 }
 .parttwo{
-  margin-top: 75rpx;
-  padding: 56rpx 40rpx;
   background-color: #FFFFFF;
   margin-left: 30rpx;
   margin-right: 30rpx;
   text-align: center;
+  border-radius: 30rpx;
+  padding: 56rpx 40rpx;
+
+}
+.line{
+  background: #53B2AA;
+  width: 83rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  margin-left: auto;
+margin-right: auto;
+
 }
 .testtitle{
   color: #14AEA5;
   font-size: 50rpx;
   font-weight: bold;
+  margin: 50rpx 0;
+
 }
 .testcontent{
 margin-top: 62rpx;
 color: #666666;
 font-size: 28rpx;
+text-align: left;
+/* text-indent: 2em; */
+}
+.conttitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contain{
+  width: 30rpx;
+height: 4rpx;
+background-color: #53B2AA;
+margin-right: 20rpx;
+margin-left: 20rpx;
+
+}
+.parthree,.partfour{
+  padding-top: 87rpx;
+
+}
+.parthree .testtitle{
+  margin: 0rpx;
+}
+.parthree .testcontent{
+  margin-left: 60rpx;
+  margin-right: 60rpx;
 }
 .parthree,.partfour,.partfive{
   text-align: center;
+}
+.do_problem_people{
+  text-align: center;
+  border-top-left-radius: 50rpx;
+border-top-right-radius: 50rpx;
+background-color: #FFFFFF;
+
+}
+.evaluation{
+  position: relative;
+}
+.num text,.total text{
+  color: #333333;
+}
+.row{
+  display: flex;
+  margin-left: 49rpx;
+margin-right: 49rpx;
+
+}
+.row view{
+  background-color: #FFFFFF;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #333333;
+  font-size: 24rpx;
+  width: calc((100% - 16rpx) / 2);
+}
+.row view:nth-child(even){
+  margin-left: 16rpx;
+}
+.userguid{
+  color: #53B2AA;
+  font-size: 40rpx;
+  padding-top: 59rpx;
+
+}
+.partfive{
+  margin-top: 100rpx;
+background-color: #FFFFFF;
+margin-left: 40rpx;
+margin-right: 40rpx;
+border-radius: 20rpx;
+}
+.userlist{
+  list-style-type: circle;
+  color: #53B2AA;
+  font-size: 28rpx;
+  margin-top: 59rpx;
+  text-align: left;
+}
+.parthree .testcontent{
+  color: #53B2AA;
+  font-size: 24rpx;
+}
+.specail{
+  background-color: #14AEA5;
+  height: 21rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin-top: -20rpx;
+  width:100%;
+}
+
+.WxEmojiView{
+  border-radius: 10px;
+  background-color: #fff;
+  width: 100%;padding: 20px;
+  box-sizing: border-box;
+  font-size: 24rpx;
+line-height: 48rpx;
 }

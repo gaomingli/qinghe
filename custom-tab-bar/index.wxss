@@ -11,6 +11,7 @@
   left: 0;
   background-color: #FFFFFF;
   border-top: 1rpx solid #d7d7d7;
+  justify-content: space-between;
 }
 .tabbar_box .tabbar_item{
   width: 20%;
@@ -34,13 +35,13 @@
   height: 40rpx;
   margin-bottom: 10rpx;
 }
-.tabbar_item:nth-child(3) image{
+.addHOst image{
   width: 80rpx;
   height: 80rpx;
   position: relative;
   top: -12rpx;
 }
-.tabbar_item:nth-child(3) text{
+.addHOst text{
   position: relative;
   top: -12rpx;
 }

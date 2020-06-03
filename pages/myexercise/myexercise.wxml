@@ -44,5 +44,5 @@
 </view>
 
 <view class="show-icon" wx:else>
-	<image src="/icon/nodata.png" class="zanwushuju"></image>
+	<image mode="widthFix" src="/icon/none.png"  class="zanwushuju"></image>
 </view>

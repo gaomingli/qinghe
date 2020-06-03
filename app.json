@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/report/report",
+    "pages/report/report",  
+    "pages/evaluation/evaluation",
     "pages/starttest/starttest",
     "pages/circle/circle",
     "pages/release/release",
@@ -16,7 +17,6 @@
     "pages/uploadqualification/uploadqualification",
     "pages/mytest/mytest",
     "pages/comment/comment",  
-    
     "pages/myexercise/myexercise",
     "pages/exercise/exercise",
     "pages/registerinformation/registerinformation",
@@ -31,13 +31,11 @@
     "pages/underreview/underreview",
     "pages/productlist/productlist", 
     "pages/shopping/shopping",
-    "pages/personalinfo/personalinfo",
-  
+    "pages/personalinfo/personalinfo", 
     "pages/logs/logs",
     "pages/newsdetail/newsdetail",   
     "pages/editaddress/editaddress",   
-    "pages/connect/connect",
-    "pages/evaluation/evaluation",
+    "pages/connect/connect",   
     "pages/store-agreement/store-agreement",
     "pages/examine_success/examine_success",
     "pages/boots/boots"
