@@ -20,7 +20,9 @@ Page({
     flag1:false,
     postId:0,
     current1:-1,
-    obj:null
+    obj:null,
+    nowContent:'',//当前评论内容
+    nowReplayContent:''//当前回复内容
   },
 
   /**
@@ -52,10 +54,14 @@ Page({
   TouchDiscuss: function (e) {
       const {postid} = e.target.dataset;
       let {flag}=this.data;
-      this.setData({flag:!flag,postId:postid,flag1:false})
+      this.setData({
+        flag:!flag,
+        postId:postid,
+        flag1:false,
+        nowContent: ''
+        })
   },
-  bindinput:function(e){
-  },
+
   TouchZanUser:function(e){
     const {postid,active,userid,id,} = e.currentTarget.dataset;
     let {flag1}=this.data;
@@ -63,9 +69,61 @@ Page({
      params['postid']=postid;
      params['userid']=userid
      params['id']=id;
-    this.setData({flag1:!flag1,current1:active,obj:params,flag:false})
+    this.setData({
+      flag1:!flag1,
+      current1:active,
+      obj:params,
+      flag:false,
+      nowReplayContent:''
+      })
   },
+  
+  //发送回复
+  sendReplyClick:function(){
+    var that = this;
+    var nowReplayContent = that.data.nowReplayContent;
+    if (!nowReplayContent) {
+      wx.showToast({
+        title: "回复内容不能为空",
+        icon: 'none'
+      })
+      return false;
+    }
+    const { postid, userid, id } = this.data.obj;
+    let params = {};
+    params['id'] = id;
+    params['to_user_id'] = userid;
+    params['post_id'] = postid;
+    params['content'] = nowReplayContent;
+
+    wx.showLoading({
+      title: '提交中'
+    })
+    urlApi('portal/article/circle_comment', "post", params).then((res) => {
+      if (res.data.code) {
+        //当确认后应重新刷新数据   
+        that.setData({ 'dataObject.articles': [], page: 1, current1: -1, nowReplayContent:"" })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+      that.setData({ flag1: false }, () => {
+        that.getData();
+      });
+    })
+  },
+
+  //评论
   bindconfirm:function(e){
+    if (!e.detail.value) {
+      wx.showToast({
+        title: "评论内容不能为空",
+        icon: 'none'
+      })
+      return false;
+    }
     const that=this;
     let params={};
     params['post_id'] = that.data.postId;
@@ -98,8 +156,16 @@ Page({
       that.setData({flag:false,});
     })
   },
+
+  //回复
   bindconfirm1:function(e){
-  
+    if (!e.detail.value) {
+      wx.showToast({
+        title: "回复内容不能为空",
+        icon: 'none'
+      })
+      return false;
+    }
   const {postid,userid,id}=this.data.obj;
    let params={};
    params['id']=id;
@@ -126,6 +192,43 @@ Page({
       });
     })
   },
+
+  //发送评论
+  sendClick:function(e){
+    const that = this;
+    let params = {};
+    var nowContent = that.data.nowContent;
+    if (!nowContent){
+      wx.showToast({
+        title: "评论内容不能为空",
+        icon: 'none'
+      })
+      return false;
+    }
+    params['post_id'] = that.data.postId;
+    params['content'] = nowContent;
+    wx.showLoading({
+      title: '提交中'
+    })
+    urlApi('portal/article/circle_comment', "post", params).then((res) => {
+      if (res.data.code) {
+        //当确认后应重新刷新数据   
+        that.setData({ 'dataObject.articles': [], page: 1, nowContent:'' }, () => {
+          that.getData();
+        })
+
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+      that.setData({ flag: false, });
+    })
+  },
+
+
+
   // 点击图片进行大图查看
   LookPhoto: function (e) {
     var that=this;
@@ -138,9 +241,21 @@ Page({
       urls:arr
     })
   },
+  
+  //监控评论输入值
   bindinput:function(e){
-
+     this.setData({
+       nowContent: e.detail.value
+     })
   },
+
+  //监控回复输入值
+  bindinput1: function (e) {
+    this.setData({
+      nowReplayContent: e.detail.value
+    })
+  },
+  
 
   /**
    * 生命周期函数--监听页面显示

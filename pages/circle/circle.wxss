@@ -246,3 +246,50 @@ page {
   margin-bottom: 20rpx;
   padding: 2px;
 }
+
+
+
+.sendBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+}
+.textarea{
+  width: 450rpx;
+  height: 60rpx;
+  border: 1px solid #b5bfb9;
+  border-radius: 6rpx;
+
+  min-height: 60rpx;
+line-height: 30rpx;
+max-height: 90rpx;
+}
+.sendView{
+  width: 100rpx;
+height: 60rpx;
+background: #53B2AA;
+text-align: center;
+line-height: 60rpx;
+border-radius: 10rpx;
+color: #ffffff;
+font-size: 26rpx;
+
+}
+
+.sendBox2 {
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.sendBox2 .textarea{
+  width: 420rpx;
+min-height: 60rpx;
+border: 1px solid #b5bfb9;
+border-radius: 6rpx;
+line-height: 30rpx;
+max-height: 90rpx;
+
+}

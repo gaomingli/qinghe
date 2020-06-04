@@ -36,7 +36,7 @@
 
 	<view class='part'>
 		<i-cell-group>
-			<i-cell title="我的测评" is-link url="/pages/mytest/mytest" typeFlag="1">
+			<i-cell title="我的测评" is-link url="/pages/mytest/mytest" typeFlag="1" wx:if="{{isShowMenu == 1}}">
 				<i-icon slot="icon" myIcon="/icon/part1.png" size="28" style="margin-right:20rpx" />
 			</i-cell>
 			<i-cell title="我的活动" is-link url="/pages/myexercise/myexercise"  typeFlag="1">

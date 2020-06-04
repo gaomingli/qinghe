@@ -40,7 +40,7 @@ Page({
               params['code'] = a.code;
               urlApi("/user/Login/wechatLogin","post",params).then((res)=>{
                 if(res.data.code){
-                  console.log(res.data.data)
+                  res.data.data.coin=res.data.data.coin.split('.')[0];
                   wx.setStorageSync("userInfo", res.data.data);
                   wx.setStorageSync("tokenn",res.data.data.token);
                   if(that.data.type==1||!that.data.type){

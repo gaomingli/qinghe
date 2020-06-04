@@ -55,3 +55,8 @@ align-items:center;
     color: #333333;
     font-size: 24rpx;
   }
+ 
+  .choiceClass{
+   background-color: #EEF7F6;
+   color: #53B2AA;
+  }

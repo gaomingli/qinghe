@@ -1,68 +1,78 @@
- <!--搜索部分-->
- <view class="searchBox">
- 	<view class="searchBox_input">
- 		<image src='/icon/search.png'></image>
- 		<input placeholder='搜索社区动态' bindinput='getintsearch' bindconfirm="getSearch" type="text" confirm-type="search"></input>
- 	</view>
- </view>
+<!--搜索部分-->
+<view class="searchBox">
+  <view class="searchBox_input">
+    <image src='/icon/search.png'></image>
+    <input placeholder='搜索社区动态' bindinput='getintsearch' bindconfirm="getSearch" type="text" confirm-type="search"></input>
+  </view>
+</view>
 
- <!--5个内容切换部分-->
- <view class="swiper-tab">
- 	<view wx:for="{{dataObject.child_category}}" wx:key="*this" class="swiper-tab-list {{currentTab==index ? 'on_pdd' : ''}}" data-current="{{index}}" data-id="{{item.id}}" bindtap="switchNav">{{item.name}}</view>
- </view>
- <!--列表-->
- <view class="circleList" wx:for='{{dataObject.articles}}' wx:key='index' wx:for-index="index">
- 	<!--头像、昵称、内容-->
- 	<view class="body-view">
- 		<!--头像-->
- 		<view class="left-view">
- 			<image class="user-icon" src="{{item.thumbnail}}"></image>
- 		</view>
- 		<view class="right-view">
- 			<!--昵称-->
- 			<view class="user-name-view">
- 				<label class="user-name">{{item.user_nickname}}</label>
- 			</view>
- 			<!--内容-->
- 			<view class="user-content-view">
- 				<text class="user-content">{{item.post_title}}</text>
- 			</view>
- 			<!--图片-->
- 			<view class="photo-view" wx:if="{{item.photos}}">
- 				<view class="photo" wx:for='{{item.photos}}' wx:for-item="list" class="imgIcon" wx:for-index="{{index}}">
- 					<image bindtap='LookPhoto' data-urls='{{item.photos}}' data-photUrl='{{list.url}}' src='{{list.url}}'></image>
- 				</view>
- 				<view class="clearfix"></view>
- 			</view>
- 			<!--时间、删除按钮、点赞评论按钮-->
- 			<view class="TDD-view">
- 				<label>{{item.date}}</label>
- 				<image class="commentIcon" bindtap='TouchDiscuss' data-postId="{{item.id}}" src='/icon/comment.png'></image>
- 			</view>
+<!--5个内容切换部分-->
+<view class="swiper-tab">
+  <view wx:for="{{dataObject.child_category}}" wx:key="*this" class="swiper-tab-list {{currentTab==index ? 'on_pdd' : ''}}" data-current="{{index}}" data-id="{{item.id}}" bindtap="switchNav">{{item.name}}</view>
+</view>
+<!--列表-->
+<view class="circleList" wx:for='{{dataObject.articles}}' wx:key='index' wx:for-index="index">
+  <!--头像、昵称、内容-->
+  <view class="body-view">
+    <!--头像-->
+    <view class="left-view">
+      <image class="user-icon" src="{{item.thumbnail}}"></image>
+    </view>
+    <view class="right-view">
+      <!--昵称-->
+      <view class="user-name-view">
+        <label class="user-name">{{item.user_nickname}}</label>
+      </view>
+      <!--内容-->
+      <view class="user-content-view">
+        <text class="user-content">{{item.post_title}}</text>
+      </view>
+      <!--图片-->
+      <view class="photo-view" wx:if="{{item.photos}}">
+        <view class="photo" wx:for='{{item.photos}}' wx:for-item="list" class="imgIcon" wx:for-index="{{index}}">
+          <image bindtap='LookPhoto' data-urls='{{item.photos}}' data-photUrl='{{list.url}}' src='{{list.url}}'></image>
+        </view>
+        <view class="clearfix"></view>
+      </view>
+      <!--时间、删除按钮、点赞评论按钮-->
+      <view class="TDD-view">
+        <label>{{item.date}}</label>
+        <image class="commentIcon" bindtap='TouchDiscuss' data-postId="{{item.id}}" src='/icon/comment.png'></image>
+      </view>
 
- 			<view wx:if="{{flag}}">
+      <!-- <view wx:if="{{flag}}">
  				<input name="search" class="commentStyle"  type='text' confirm-type="search" bindconfirm="bindconfirm" bindinput='bindinput'></input>
- 			</view>
+ 			</view> -->
 
- 			<!-- 评论 -->
- 			<view class='discuss-view'>
- 				<view class='discuss' wx:for='{{item.comment}}' wx:key='index' wx:for-index="index">
- 				<view bindtap='TouchZanUser' data-active="{{index}}" data-userid="{{item.user_id}}" 
-          data-id="{{item.id}}"  data-postid="{{item.post_id}}"  wx:if="{{item.to_user_nickname}}">
-					<label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}&&{{item.to_user_nickname}}：</label>
- 					<label class='content'>{{item.content}}</label>
+      <view wx:if="{{flag}}">
+        <view class="sendBox">
+          <textarea class="textarea" bindconfirm="bindconfirm" bindinput='bindinput' auto-height="{{true}}"></textarea>
+          <view class="sendView" bindtap="sendClick">发送</view>
         </view>
-				<view bindtap='TouchZanUser' data-active="{{index}}" data-userid="{{item.user_id}}" 
-          data-id="{{item.id}}"  data-postid="{{item.post_id}}"  wx:else>
-					<label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}：</label>
- 					<label class='content'>{{item.content}}</label>
-        </view>
-        <view wx:if="{{flag1&&current1==index}}" style="margin-top:6px">
-          <input name="search" class="commentStyle"  type='text' confirm-type="search" bindconfirm="bindconfirm1"></input>
-        </view>
- 				</view>
- 			</view>
 
- 		</view>
- 	</view>
- </view>
+      </view>
+
+      <!-- 评论 -->
+      <view class='discuss-view'>
+        <view class='discuss' wx:for='{{item.comment}}' wx:key='index' wx:for-index="index">
+          <view bindtap='TouchZanUser' data-active="{{index}}" data-userid="{{item.user_id}}" data-id="{{item.id}}" data-postid="{{item.post_id}}" wx:if="{{item.to_user_nickname}}">
+            <label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}&&{{item.to_user_nickname}}：</label>
+            <label class='content'>{{item.content}}</label>
+          </view>
+          <view bindtap='TouchZanUser' data-active="{{index}}" data-userid="{{item.user_id}}" data-id="{{item.id}}" data-postid="{{item.post_id}}" wx:else>
+            <label data-name='{{item.user_nickname}}' class='discuss-user'>{{item.user_nickname}}：</label>
+            <label class='content'>{{item.content}}</label>
+          </view>
+          <view wx:if="{{flag1&&current1==index}}" style="margin-top:6px">
+            <!-- <input name="search" class="commentStyle" type='text' confirm-type="search" bindconfirm="bindconfirm1"></input> -->
+            <view class="sendBox2">
+              <textarea class="textarea" bindconfirm="bindconfirm1" bindinput='bindinput1' auto-height="{{true}}"></textarea>
+              <view class="sendView" bindtap="sendReplyClick">发送</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

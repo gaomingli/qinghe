@@ -70,6 +70,14 @@ Page({
     }  
     })
   },
+
+  //查询按钮
+  searchIndexClick: function () {
+    wx.navigateTo({
+      url: '/pages/search/search?page_type=2',
+    })
+  },
+
   getData:function(){
     var that = this;
     urlApi('portal/list/index', "post",{page:this.data.page,id:this.data.id}).then((res) => {

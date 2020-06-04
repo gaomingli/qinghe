@@ -3,7 +3,7 @@
   <view class="searchBox">
     <view class="searchBox_input">
       <image src='/icon/search.png'></image>
-      <input placeholder='搜索' bindinput='getintsearch' bindconfirm="getSearch" type="text" confirm-type="search"></input>
+      <input placeholder='搜索' disabled="true" bindtap="searchIndexClick" type="text" confirm-type="search"></input>
     </view>
   </view>
 
@@ -18,7 +18,7 @@
   </view>
 
   <view class="index_menu">
-    <view class="navto" wx:key="index"  bindtap="gotoPage"  wx:for="{{menuList}}"  wx:for-index="index" data-url="{{item.url}}" data-type="{{item.type}}">
+    <view class="navto" wx:key="index"  bindtap="gotoPage"  wx:for="{{menuList}}"  wx:for-index="index" data-url="{{item.url}}" data-type="{{item.type}}" wx:if="{{item.isShow == 1}}">
       <image mode="widthFix" src="{{item.menu_img}}"></image>
       <view class="menu_text">{{item.menu_name}}</view>
     </view>
@@ -37,7 +37,7 @@
 </view>
 
 <view class="bg_bottom">
-  <view class="common_box">
+  <view class="common_box"  wx:if="{{isShowMenu == 1}}">
     <view class="common_title">
       <view class="title_left">
         <image src="/icon/common.png"></image>
@@ -46,26 +46,27 @@
     </view>
     <view>
       <!-- <template is="hotrecommed" data="{{dataList.psychological}}"></template> -->
-      <view class='hot_content'>
-<view class="common_content">
-     <scroll-view class="" scroll-x>
-        <view class="scroll_box">
-          <view class="hot_box" wx:for="{{dataList.psychological}}" wx:key="index" wx:for-index="index">
-            <image src="{{item.thumbnail}}"></image>
-            <view class="hot_right">
-              <view class="hot_title">{{item.post_title}}</view>
-              <view class="hot_num">{{item.num}}人测过</view>
-               <navigator url='/pages/evaluation/evaluation?id={{item.id}}&category_id={{item.category_id}}'  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation" data-type="1"  hover-class="none">
-              <view class="hot_submit">立即测评</view></navigator>
+   <view class='hot_content'>
+      <view class="common_content">
+        <scroll-view class="" scroll-x>
+            <view class="scroll_box">
+              <view class="hot_box" wx:for="{{dataList.psychological}}" wx:key="index" wx:for-index="index">
+                <image src="{{item.thumbnail}}"></image>
+                <view class="hot_right">
+                  <view class="hot_title">{{item.post_title}}</view>
+                  <view class="hot_num">{{item.num}}人测过</view>
+                  <view url=''  bindtap='gotoPage'  data-url="/pages/evaluation/evaluation?id={{item.id}}&category_id={{item.category_id}}" data-type="1"  hover-class="none">
+                  <view class="hot_submit">立即测评</view></view>
+                </view>
+              </view>        
             </view>
-          </view>        
+        </scroll-view>
         </view>
-     </scroll-view>
-    </view>
-</view>
+      </view>
       <!--  -->
     </view>
   </view>
+
 
   <view class="common_box">
     <view class="common_title">
@@ -147,7 +148,7 @@
 
   </view>
 
-  <view class="common_box">
+  <view class="common_box" wx:if="{{isShowMenu == 1}}">
     <view class="common_title">
       <view class="title_left">
         <image src="/icon/common.png"></image>

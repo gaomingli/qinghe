@@ -1,0 +1,27 @@
+ <!--搜索部分-->
+ <view class="searchBox">
+ 	<view class="searchBox_input">
+ 		<image src='/icon/search.png'></image>
+ 		<input placeholder='请输入搜索内容' bindinput='getintsearch' bindconfirm="getintsearch" type="text" confirm-type="search"></input>
+ 	</view>
+
+   <view class="btnView" bindtap="jumpSearchClick">搜索</view>
+ </view>
+
+ <view class="box" wx:if="{{searchList && searchList.length > 0}}">
+  <view class="module" wx:for="{{searchList}}">
+    <view class="text">
+     <text wx:if="{{item.post_type == 1}}">【资讯】</text>
+     <text wx:if="{{item.post_type == 3}}">【活动】</text>
+     <text wx:if="{{item.post_type == 4}}">【心理测评】</text>
+     <text wx:if="{{item.post_type == 5}}">【社工圈】</text>
+     {{item.post_title}}
+    </view>
+    <view class="watch" data-id="{{item.id}}" data-category_id="{{item.category_id}}" data-type="{{item.post_type}}" bindtap="searchDetailClick">查看详情</view>
+  </view>
+
+ </view>
+
+<view class="show-icon box" style="display:flex;" wx:else>
+	<image mode="widthFix" src="/icon/none.png"  class="zanwushuju"></image>
+</view>

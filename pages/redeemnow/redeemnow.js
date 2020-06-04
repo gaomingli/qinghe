@@ -45,7 +45,7 @@ Page({
   getData:function(){
     var that = this;
 // 判断是否选择了地址
-if(!flag){
+if(!that.data.flag){
   if(!that.data.addressData){
     wx.showToast({
       title: '地址不能为空',

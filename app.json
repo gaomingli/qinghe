@@ -38,7 +38,8 @@
     "pages/connect/connect",   
     "pages/store-agreement/store-agreement",
     "pages/examine_success/examine_success",
-    "pages/boots/boots"
+    "pages/boots/boots",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -11,7 +11,7 @@ Page({
    */
   data: {
 list:null,
-id:null,
+out_order:null,//标识out_order
 answer:"",
 out_order:"",
 lists:[
@@ -28,10 +28,9 @@ lists:[
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    debugger;
     let that = this;
     that.setData({
-      id: options.id
+      out_order: options.out_order
     })
   },
  
@@ -61,7 +60,11 @@ lists:[
   },
   getData: function () {
     var that = this;
-    urlApi('user/Profile/my_psychological_article', "post", { id: this.data.id}).then((res) => {
+    var data = {};
+    data.out_order = that.data.out_order;
+    console.log(data);
+    urlApi('user/Profile/my_psychological_article', "post", data).then((res) => {
+      console.log(res);
       if (res.data.code) {
         that.setData({
           list: res.data.data

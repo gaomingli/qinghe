@@ -13,13 +13,7 @@ Page({
   data: {
     flag: false,
     userInfo: null,
-    // menuList: [
-    //   { id: 1, menu_img: "/icon/my/pay1.png", menu_name: "待付款", url: "/pages/psychometrics/psychometrics" },
-    //   { id: 2, menu_img: "/icon/my/pay2.png", menu_name: "待发货", url: "/pages/news/news" },
-    //   { id: 3, menu_img: "/icon/my/pay3.png", menu_name: "待收货", url: "/pages/exercise/exercise" },
-    //   { id: 4, menu_img: "/icon/my/pay4.png", menu_name: "已完成", url: "/pages/shopping/shopping" },
-    // ],
-    userDetail: '',//用户详情
+      userDetail: '',//用户详情
     tokenn: ''
   },
 
@@ -50,14 +44,29 @@ Page({
     })
 // 清除地址信息缓存
     wx.removeStorageSync("addressInfo");
-    // let userInfo = wx.getStorageSync("userInfo");
-    // console.log(userInfo)
-    // if (!userInfo) {
-    //   this.setData({ flag: false })
-    // } else {
-    //   this.setData({ userInfo: userInfo,flag: true})
-    // }
+    let userInfo = wx.getStorageSync("userInfo");
+    console.log(userInfo)
+    if (!userInfo) {
+      this.setData({ flag: false })
+    } else {
+      this.setData({ userInfo: userInfo,flag: true})
+    }
     this.queryUserDetail();
+    this.queryMenuIsShow();
+  },
+
+  //菜单显示问题:0隐藏 1显示
+  queryMenuIsShow: function () {
+    var that = this;
+    urlApi('user/profile/nav', "post", {}).then((res) => {
+      console.log("res======", res);
+      if (res.data.code) {
+        that.setData({
+          isShowMenu: res.data.data.status,
+        })
+
+      }
+    })
   },
 
   //查询用户详情
@@ -67,6 +76,7 @@ Page({
     urlApi('user/Profile/index', "post", data).then((res) => {
       console.log(res);
       if (res.data.code == 1) {
+        res.data.data.coin=res.data.data.coin.split('.')[0];
         that.setData({
           userDetail: res.data.data
         })

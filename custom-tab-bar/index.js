@@ -28,7 +28,8 @@ Component({
     ]
   },
   created() {
-    this.getUserList()
+    this.getUserList();
+    this.queryMenuIsShow();
     let that = this
     setInterval(function() {
       that.getUserList()
@@ -53,14 +54,27 @@ Component({
       let data = {}
       let that = this
       urlApi('user/Profile/index', "post", data).then((res) => {
-        console.log(res);
         if (res.data.code == 1) {
           that.setData({
             userDetail: res.data.data
           })
+          res.data.data.coin=res.data.data.coin.split('.')[0];
           wx.setStorageSync('userInfo', res.data.data)
         } 
       })
-    }
+    },
+    //菜单显示问题:0隐藏 1显示
+    queryMenuIsShow: function () {
+      var that = this;
+      urlApi('user/profile/nav', "post", {}).then((res) => {
+        console.log("res======", res);
+        if (res.data.code) {
+          that.setData({
+            isShowMenu: res.data.data.status,
+          })
+
+        }
+      })
+    },
   }
 })

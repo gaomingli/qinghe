@@ -103,6 +103,7 @@ Page({
     const that =this;
     urlApi("user/Profile/index", "post",{}).then((res) => {
        if(res.data.code){
+            res.data.data.coin=res.data.data.coin.split('.')[0];
             that.setData({userInfo:res.data.data})
             wx.setStorageSync("userInfo", res.data.data);
        }

@@ -95,3 +95,6 @@ padding: 30rpx
 .detailIcon{
   height:109px;
 }
+.shop_item{
+  margin-top: 0px;
+}

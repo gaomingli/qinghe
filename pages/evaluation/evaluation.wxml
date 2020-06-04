@@ -22,7 +22,7 @@
 		</view>
 
 
-<view style="background:url('/icon/testBg.png') no-repeat;padding-top: 75rpx;background-size:100% 100%;padding-bottom:236rpx">
+<view style="background:url('{{host}}static/images/splash_pic2.png') no-repeat;padding-top: 75rpx;background-size:100% 100%;padding-bottom:236rpx">
 
 
 	<view class="parttwo">

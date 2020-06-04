@@ -5,7 +5,7 @@
   <view class="searchBox">
     <view class="searchBox_input">
           <image src='/icon/search.png'></image>
-          <input placeholder='搜索资讯' bindinput='getintsearch' bindconfirm="getSearch" type="text" confirm-type="search"></input>
+          <input placeholder='搜索资讯' disabled="true" bindtap="searchIndexClick" type="text" confirm-type="search"></input>
     </view>      
   </view>
   <!-- tab切换 -->
@@ -18,8 +18,9 @@
 <view class='review_img'>
 <image src='{{dataObject.banner}}'></image>
 </view>
+
   <!-- 内容 -->
-   <view class="common_box" wx:for="{{dataObject.articles}}" wx:key="index">
+<view class="common_box" wx:for="{{dataObject.articles}}" wx:key="index">
     <view class="common_content">
       <navigator class="article_box" hover-class="none" url='/pages/newsdetail/newsdetail?id={{item.id}}&category_id={{item.category_id}}'>
         <view class="article_left">

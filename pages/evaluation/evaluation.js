@@ -2,6 +2,9 @@
 var {
   urlApi
 } = require("../../utils/request.js");
+var {
+  host
+} = require("../../utils/request.js");
 var e = getApp();
 Page({
 
@@ -9,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    host: host,
     id:"",
     category_id:"",
     list:null,

@@ -31,7 +31,7 @@ height: 50rpx
 .menu_text{
   font-size:30rpx;
   color:#666666;
-/* margin-top: 0rpx; */
+margin-top: 0rpx;
 text-align: center;
 }
 .common_boxs .hot_box .hot_right{
